@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avant | Telecom Infrastructure & IT Services</title>
+    <title>Avant | Telecom & IT Solutions</title>
     <meta name="description" content="Avant Telecom and Avant IT Services — gentle, reliable, and future-ready enterprise engineering.">
     <link rel="icon" type="image/png" href="logo.png">
     
@@ -14,130 +14,108 @@
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
 
-        /* Gentle Palette Theme Definitions */
-        :root {
-            --bg-deep: #0b0f19;
-        }
-
-        /* 3D Wireframe Rotating Earth Animation */
-        .globe-wrap {
+        /* Canvas Particle Container */
+        .globe-canvas-wrap {
             position: relative;
-            width: 240px;
-            height: 240px;
-            margin: 0 auto 1.5rem auto;
+            width: 320px;
+            height: 320px;
+            margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         @media (min-width: 640px) {
-            .globe-wrap { width: 300px; height: 300px; }
+            .globe-canvas-wrap { width: 380px; height: 380px; }
         }
 
-        .globe-sphere {
+        #globe-canvas {
             position: absolute;
             inset: 0;
-            border-radius: 50%;
-            background: radial-gradient(circle at 35% 35%, rgba(56, 178, 172, 0.12), rgba(11, 15, 25, 0.95) 75%);
-            border: 1px solid rgba(226, 232, 240, 0.12);
-            box-shadow: 0 0 60px -15px rgba(56, 178, 172, 0.25);
-            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
         }
 
-        /* Spinning map grid lines */
-        .globe-lines {
+        /* Pulsing Holographic Ring */
+        .holo-ring {
             position: absolute;
-            inset: 0;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
-            background-image: 
-                radial-gradient(ellipse at center, transparent 40%, rgba(148, 163, 184, 0.15) 100%),
-                repeating-linear-gradient(0deg, transparent, transparent 18px, rgba(148, 163, 184, 0.15) 19px, transparent 20px),
-                repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(56, 178, 172, 0.2) 29px, transparent 30px);
-            background-size: 100% 100%, 100% 100%, 200% 100%;
-            animation: rotateGlobe 14s linear infinite;
+            border: 1px dashed rgba(56, 178, 172, 0.4);
+            animation: rotateHolo 20s linear infinite;
+            pointer-events: none;
+        }
+        @keyframes rotateHolo {
+            0% { transform: rotate(0deg) scale(0.95); opacity: 0.3; }
+            50% { transform: rotate(180deg) scale(1.05); opacity: 0.6; }
+            100% { transform: rotate(360deg) scale(0.95); opacity: 0.3; }
         }
 
-        @keyframes rotateGlobe {
-            0% { background-position: 0 0, 0 0, 0 0; }
-            100% { background-position: 0 0, 0 0, 200% 0; }
-        }
-
-        /* Glowing Center Word Emerging From Globe */
-        .emerging-word {
+        /* Glowing Avant Typography */
+        .hero-title-avant {
             position: relative;
             z-index: 10;
             opacity: 0;
-            transform: scale(0.6);
-            filter: blur(8px);
-            animation: emergeAvant 2.2s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
+            transform: scale(0.7);
+            filter: blur(12px);
+            animation: revealAvant 1.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+            background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        @keyframes emergeAvant {
-            0% {
-                opacity: 0;
-                transform: scale(0.6);
-                filter: blur(10px);
-            }
-            60% {
-                opacity: 1;
-                filter: blur(0px);
-                transform: scale(1.06);
-            }
-            100% {
-                opacity: 1;
-                filter: blur(0px);
-                transform: scale(1);
-            }
+        @keyframes revealAvant {
+            0% { opacity: 0; transform: scale(0.7); filter: blur(14px); }
+            60% { opacity: 1; transform: scale(1.04); filter: blur(0px); }
+            100% { opacity: 1; transform: scale(1); filter: blur(0px); }
         }
 
-        /* Gentle Fade-In Stage Controls */
-        .staged-fade {
+        /* Subtitle & Selection Fade-In */
+        .stage-reveal {
             opacity: 0;
-            transform: translateY(16px);
-            animation: stageAppear 1.2s cubic-bezier(0.16, 1, 0.3, 1) 2.2s forwards;
+            transform: translateY(18px);
+            animation: stageIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 1.8s forwards;
+        }
+        @keyframes stageIn {
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes stageAppear {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Gentle Card Hover Subtle Transitions */
         .gentle-card {
-            transition: all 0.35s ease;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .gentle-card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-4px);
         }
     </style>
 </head>
 <body class="bg-[#0b0f19] text-slate-200 antialiased selection:bg-slate-700 selection:text-white">
 
-    <section id="portal-hub" class="min-h-screen flex flex-col items-center justify-center relative px-4 sm:px-6 py-12 overflow-hidden bg-gradient-to-b from-[#0b0f19] via-[#0f172a] to-[#0b0f19]">
+    <section id="portal-hub" class="min-h-screen flex flex-col items-center justify-center relative px-4 sm:px-6 py-10 overflow-hidden bg-gradient-to-b from-[#070a12] via-[#0b0f19] to-[#070a12]">
         
-        <div class="absolute w-96 h-96 rounded-full bg-slate-700/10 blur-3xl pointer-events-none -top-20"></div>
+        <div class="absolute w-[500px] h-[500px] rounded-full bg-cyan-900/10 blur-[120px] pointer-events-none -top-24"></div>
+        <div class="absolute w-[400px] h-[400px] rounded-full bg-slate-800/15 blur-[100px] pointer-events-none -bottom-20"></div>
 
         <div class="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center">
             
-            <div class="globe-wrap">
-                <div class="globe-sphere">
-                    <div class="globe-lines"></div>
-                </div>
-                <h1 class="emerging-word text-6xl sm:text-7xl font-extrabold tracking-tight text-white drop-shadow-md">
+            <div class="globe-canvas-wrap">
+                <canvas id="globe-canvas"></canvas>
+                <div class="holo-ring"></div>
+                
+                <h1 class="hero-title-avant text-6xl sm:text-7xl font-black tracking-tight drop-shadow-2xl">
                     Avant
                 </h1>
             </div>
 
-            <div class="staged-fade w-full max-w-xl flex flex-col items-center mt-2">
+            <div class="stage-reveal w-full max-w-xl flex flex-col items-center mt-3">
                 
                 <p class="text-xs uppercase tracking-[0.25em] text-slate-400 font-medium mb-8">
                     Select a Division to Proceed
                 </p>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full px-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full px-2">
                     
-                    <button onclick="openPortal('telecom')" class="group p-5 rounded-2xl bg-gradient-to-b from-[#1a2234] to-[#121927] border border-[#2d3a54] hover:border-[#E27D60]/60 hover:shadow-lg hover:shadow-[#E27D60]/10 transition-all text-left flex items-center justify-between">
+                    <button onclick="openPortal('telecom')" class="group p-5 rounded-2xl bg-gradient-to-b from-[#182133] to-[#101726] border border-[#26354f] hover:border-[#E27D60]/60 hover:shadow-xl hover:shadow-[#E27D60]/10 transition-all text-left flex items-center justify-between">
                         <div>
                             <div class="flex items-center gap-2 text-xs font-semibold text-[#E27D60]">
                                 <i data-lucide="radio" class="w-4 h-4"></i> Division 01
@@ -150,7 +128,7 @@
                         </div>
                     </button>
 
-                    <button onclick="openPortal('it')" class="group p-5 rounded-2xl bg-gradient-to-b from-[#14232e] to-[#0f1922] border border-[#1f3747] hover:border-[#38B2AC]/60 hover:shadow-lg hover:shadow-[#38B2AC]/10 transition-all text-left flex items-center justify-between">
+                    <button onclick="openPortal('it')" class="group p-5 rounded-2xl bg-gradient-to-b from-[#13222e] to-[#0e1822] border border-[#1d3545] hover:border-[#38B2AC]/60 hover:shadow-xl hover:shadow-[#38B2AC]/10 transition-all text-left flex items-center justify-between">
                         <div>
                             <div class="flex items-center gap-2 text-xs font-semibold text-[#38B2AC]">
                                 <i data-lucide="server" class="w-4 h-4"></i> Division 02
@@ -239,207 +217,4 @@
                         <div class="text-xs text-slate-400 mt-1">SLA Standard</div>
                     </div>
                     <div class="pt-2 md:pt-0">
-                        <div class="text-3xl font-extrabold text-slate-200">5+</div>
-                        <div class="text-xs text-slate-400 mt-1">Years of Service</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="services-telecom" class="py-16 bg-[#0e1422]">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-xl mx-auto mb-12">
-                    <span class="text-xs font-bold text-[#E27D60] uppercase tracking-widest">CAPABILITIES</span>
-                    <h3 class="text-3xl font-extrabold text-slate-100 mt-1">End-to-End Telecom Solutions</h3>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                    <div class="gentle-card p-6 bg-[#121927] border border-[#222d42] rounded-2xl">
-                        <i data-lucide="radio" class="w-7 h-7 text-[#E27D60] mb-3"></i>
-                        <h4 class="text-base font-bold text-slate-100 mb-1">5G & 4G Installation</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">Turnkey installation, commissioning, alignment, and de-installation for operator cell sites.</p>
-                    </div>
-                    <div class="gentle-card p-6 bg-[#121927] border border-[#222d42] rounded-2xl">
-                        <i data-lucide="satellite" class="w-7 h-7 text-[#E27D60] mb-3"></i>
-                        <h4 class="text-base font-bold text-slate-100 mb-1">Microwave & UBR Solutions</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">High-capacity MW and UBR links, LOS surveys, and backhaul transmission infrastructure.</p>
-                    </div>
-                    <div class="gentle-card p-6 bg-[#121927] border border-[#222d42] rounded-2xl">
-                        <i data-lucide="package" class="w-7 h-7 text-[#E27D60] mb-3"></i>
-                        <h4 class="text-base font-bold text-slate-100 mb-1">Equipment Packaging</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">Professional protection and specialized handling of sensitive radio hardware.</p>
-                    </div>
-                    <div class="gentle-card p-6 bg-[#121927] border border-[#222d42] rounded-2xl">
-                        <i data-lucide="truck" class="w-7 h-7 text-[#E27D60] mb-3"></i>
-                        <h4 class="text-base font-bold text-slate-100 mb-1">Transportation Services</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">Reliable logistics and material movement across remote regional and mountain terrains.</p>
-                    </div>
-                    <div class="gentle-card p-6 bg-[#121927] border border-[#222d42] rounded-2xl">
-                        <i data-lucide="tower-control" class="w-7 h-7 text-[#E27D60] mb-3"></i>
-                        <h4 class="text-base font-bold text-slate-100 mb-1">Tower Base Construction</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">Civil foundation pouring, mast and pole erections built to rigorous stability specs.</p>
-                    </div>
-                    <div class="gentle-card p-6 bg-[#121927] border border-[#222d42] rounded-2xl">
-                        <i data-lucide="hard-hat" class="w-7 h-7 text-[#E27D60] mb-3"></i>
-                        <h4 class="text-base font-bold text-slate-100 mb-1">Telecom Civil Works</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">Comprehensive passive infrastructure preparation and skilled manpower provision.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact-telecom" class="py-16 bg-[#0b0f19] border-t border-[#1f293d]">
-            <div class="max-w-4xl mx-auto px-4 text-center">
-                <h3 class="text-2xl font-bold text-slate-100">Connect with Avant Telecom</h3>
-                <p class="text-xs text-slate-400 mt-2">Email your requirements to our operations team at <a href="mailto:support@avanttelecom.in" class="text-[#E27D60] font-semibold">support@avanttelecom.in</a></p>
-            </div>
-        </section>
-
-    </div>
-
-    <div id="view-it" class="hidden">
-        
-        <header class="sticky top-0 z-40 bg-[#0d161d]/90 backdrop-blur-md border-b border-[#1b2b38]">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-                <div class="flex items-center gap-3">
-                    <img src="logo.png" alt="Avant" class="h-8 w-auto">
-                    <span class="text-sm font-bold tracking-wide text-slate-200">Avant <span class="text-[#38B2AC] font-semibold text-xs ml-1 bg-[#38B2AC]/10 px-2 py-0.5 rounded border border-[#38B2AC]/20">IT Services</span></span>
-                </div>
-                <div class="flex items-center gap-3">
-                    <button onclick="returnToHub()" class="px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 bg-[#13222e] border border-[#213749] transition">
-                        &larr; Switch Division
-                    </button>
-                    <a href="https://accounts.zoho.in/signin?servicename=VirtualOffice" target="_blank" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-200 bg-[#13222e] border border-[#213749] hover:bg-[#192f3f] transition">
-                        Webmail
-                    </a>
-                </div>
-            </div>
-        </header>
-
-        <section class="py-16 sm:py-24 bg-gradient-to-b from-[#0d161d] to-[#091017] border-b border-[#1b2b38]">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <span class="text-xs font-bold tracking-widest text-[#38B2AC] uppercase">INNOVATE. INTEGRATE. ELEVATE.</span>
-                        <h2 class="text-4xl sm:text-6xl font-black text-slate-100 tracking-tight mt-2 leading-tight">
-                            Smart IT Solutions <br>for a <span class="text-[#38B2AC]">Digital Tomorrow</span>
-                        </h2>
-                        <p class="mt-5 text-slate-400 text-sm sm:text-base leading-relaxed max-w-lg">
-                            Avant IT Services delivers reliable, scalable, and secure IT solutions that empower modern enterprises to grow, adapt, and lead.
-                        </p>
-                        <div class="mt-8 flex flex-wrap gap-4">
-                            <a href="#services-it" class="px-6 py-2.5 rounded-xl bg-[#38B2AC] hover:bg-[#2c9690] text-slate-950 font-bold text-xs shadow-md transition">
-                                Explore IT Services &rarr;
-                            </a>
-                            <a href="#contact-it" class="px-6 py-2.5 rounded-xl bg-[#13222e] hover:bg-[#192f3f] border border-[#213749] text-slate-300 font-semibold text-xs transition">
-                                Consult With Us
-                            </a>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="rounded-3xl overflow-hidden border border-[#1d3140] bg-[#0f1922] relative shadow-xl">
-                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="Cloud Network" class="w-full h-72 lg:h-96 object-cover opacity-75">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0d161d] via-transparent to-transparent"></div>
-                            <div class="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-[#0d161d]/85 backdrop-blur-sm border border-[#1d3140]">
-                                <div class="text-xs font-bold text-[#38B2AC]">Enterprise Security & Cloud</div>
-                                <div class="text-xs text-slate-300 mt-0.5">Software Engineering, Cloud Backups & Infrastructure</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="services-it" class="py-16 bg-[#0d161d]">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-xl mx-auto mb-12">
-                    <span class="text-xs font-bold text-[#38B2AC] uppercase tracking-widest">WHAT WE DO</span>
-                    <h3 class="text-3xl font-extrabold text-slate-100 mt-1">Comprehensive IT Services</h3>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                    <div class="gentle-card p-6 bg-[#111e28] border border-[#1d3140] rounded-2xl">
-                        <i data-lucide="monitor" class="w-7 h-7 text-[#38B2AC] mb-3"></i>
-                        <h4 class="text-base font-bold text-slate-100 mb-1">IT Infrastructure</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">Workplace LAN/WAN architecture, rack mounting, switches, and high-speed enterprise routing.</p>
-                    </div>
-                    <div class="gentle-card p-6 bg-[#111e28] border border-[#1d3140] rounded-2xl">
-                        <i data-lucide="cloud" class="w-7 h-7 text-[#38B2AC] mb-3"></i>
-                        <h4 class="text-base font-bold text-slate-100 mb-1">Cloud Services</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">Workplace email provisioning (Zoho / Google Workspace) and automated cloud data backups.</p>
-                    </div>
-                    <div class="gentle-card p-6 bg-[#111e28] border border-[#1d3140] rounded-2xl">
-                        <i data-lucide="shield-check" class="w-7 h-7 text-[#38B2AC] mb-3"></i>
-                        <h4 class="text-base font-bold text-slate-100 mb-1">Cyber Security</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">Advanced perimeter firewall implementation, secure remote VPNs, and endpoint safety audits.</p>
-                    </div>
-                    <div class="gentle-card p-6 bg-[#111e28] border border-[#1d3140] rounded-2xl">
-                        <i data-lucide="code" class="w-7 h-7 text-[#38B2AC] mb-3"></i>
-                        <h4 class="text-base font-bold text-slate-100 mb-1">Software Development</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">Custom ERP/CRM internal applications, operational dashboards, and database tools.</p>
-                    </div>
-                    <div class="gentle-card p-6 bg-[#111e28] border border-[#1d3140] rounded-2xl">
-                        <i data-lucide="headphones" class="w-7 h-7 text-[#38B2AC] mb-3"></i>
-                        <h4 class="text-base font-bold text-slate-100 mb-1">IT Support & AMC</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">Dedicated workstation setup, hardware maintenance contracts, and 24/7 issue escalation.</p>
-                    </div>
-                    <div class="gentle-card p-6 bg-[#111e28] border border-[#1d3140] rounded-2xl">
-                        <i data-lucide="bar-chart-2" class="w-7 h-7 text-[#38B2AC] mb-3"></i>
-                        <h4 class="text-base font-bold text-slate-100 mb-1">Digital Solutions</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">Digital business modernization, workflow process automation, and cloud migration.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact-it" class="py-16 bg-[#091017] border-t border-[#1b2b38]">
-            <div class="max-w-4xl mx-auto px-4 text-center">
-                <h3 class="text-2xl font-bold text-slate-100">Partner With Avant IT Services</h3>
-                <p class="text-xs text-slate-400 mt-2">Reach our technology consultants at <a href="mailto:support@avanttelecom.in" class="text-[#38B2AC] font-semibold">support@avanttelecom.in</a></p>
-            </div>
-        </section>
-
-    </div>
-
-    <footer class="bg-[#080b12] text-slate-500 py-6 border-t border-slate-800/60 text-xs">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between items-center gap-3">
-            <p>&copy; 2026 Avant. All rights reserved.</p>
-            <div class="flex items-center gap-4">
-                <a href="https://accounts.zoho.in/signin?servicename=VirtualOffice" target="_blank" class="text-slate-400 hover:text-slate-200">Zoho Webmail Login</a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        function openPortal(portal) {
-            const hub = document.getElementById('portal-hub');
-            const telecomView = document.getElementById('view-telecom');
-            const itView = document.getElementById('view-it');
-
-            hub.classList.add('hidden');
-
-            if (portal === 'telecom') {
-                telecomView.classList.remove('hidden');
-                itView.classList.add('hidden');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            } else {
-                itView.classList.remove('hidden');
-                telecomView.classList.add('hidden');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-            lucide.createIcons();
-        }
-
-        function returnToHub() {
-            document.getElementById('view-telecom').classList.add('hidden');
-            document.getElementById('view-it').classList.add('hidden');
-            document.getElementById('portal-hub').classList.remove('hidden');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            lucide.createIcons();
-        });
-    </script>
-</body>
-</html>
+                        <div class="text-3
