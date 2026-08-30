@@ -6,7 +6,6 @@
     <title>Avant | Telecom Infrastructure & IT Solutions</title>
     <meta name="description" content="Avant — Turnkey telecom infrastructure, 5G rollouts, cloud engineering, iOS & Android software development.">
     <link rel="icon" type="image/png" href="logo.png">
-    <!-- Hybrid male Telecom/IT hero artwork generated for the interactive slider. -->
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -27,7 +26,6 @@
             min-height: 700px;
             overflow: hidden;
             user-select: none;
-            touch-action: none;
         }
 
         .split-side {
@@ -94,18 +92,19 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            height: 100%;
-            min-height: 700px;
-            width: 100vw;
-            max-width: none;
-            object-fit: cover;
-            object-position: center center;
+            height: 80vh;
+            max-height: 720px;
+            width: auto;
+            object-fit: contain;
             pointer-events: none;
         }
 
-        /* Keep both copies pixel-perfectly registered for the drag reveal. */
-        .hybrid-hero-image {
-            will-change: clip-path;
+        /* Duotone treatment: same photo, grey on the telecom side, full color on the IT side */
+        .subject-img.tone-telecom {
+            filter: grayscale(100%) contrast(1.05) brightness(1.02);
+        }
+        .subject-img.tone-it {
+            filter: saturate(1.15) contrast(1.05);
         }
 
         /* CREAMS Style Big Typography */
@@ -210,7 +209,9 @@
             <div class="absolute left-16 top-32 w-14 h-14 border border-slate-300 rounded-xl transform -rotate-12 pointer-events-none opacity-40"></div>
             <div class="absolute left-1/4 bottom-40 w-4 h-4 bg-slate-400 rounded-full pointer-events-none opacity-30"></div>
 
-            <img src="/mnt/data/wide_hero_webpage_banner_illustration_with_interac.png" alt="Male Telecom Engineer and IT Professional" class="subject-img hybrid-hero-image drop-shadow-2xl brightness-100">
+            <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186156f?auto=format&fit=crop&w=1200&q=85" 
+                 alt="Avant team member" 
+                 class="subject-img tone-telecom drop-shadow-2xl">
         </div>
 
         <div id="it-layer" class="split-side side-it">
@@ -221,7 +222,9 @@
             <div class="absolute right-48 bottom-48 w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-b-[18px] border-b-black pointer-events-none"></div>
             <div class="absolute right-32 bottom-36 w-4 h-4 bg-black rounded-full pointer-events-none"></div>
 
-            <img src="/mnt/data/wide_hero_webpage_banner_illustration_with_interac.png" alt="Male IT Professional and Telecom Engineer" class="subject-img hybrid-hero-image drop-shadow-2xl brightness-105">
+            <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186156f?auto=format&fit=crop&w=1200&q=85" 
+                 alt="Avant team member" 
+                 class="subject-img tone-it drop-shadow-2xl">
         </div>
 
         <div class="absolute inset-x-0 bottom-14 z-30 flex flex-col items-center justify-center text-center pointer-events-none px-4">
