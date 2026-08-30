@@ -3,476 +3,457 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avant Telecom | Telecom Infrastructure, 5G Rollout & IT Solutions</title>
-    <meta name="description" content="Avant Telecom delivers turnkey telecom infrastructure, 5G network rollout, BTS/Microwave installation, optical fiber solutions, IT services, and managed services.">
+    <title>Avant Group | Avant Telecom & Avant IT Services</title>
+    <meta name="description" content="Avant Telecom & Avant IT Services deliver turnkey telecom infrastructure, 5G rollouts, cloud infrastructure, cybersecurity, and enterprise software solutions.">
     <link rel="icon" type="image/png" href="logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-        
-        /* Interactive Split Panel Transitions */
-        .split-panel {
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        /* Custom scrollbar for inner containers */
-        .custom-scroll::-webkit-scrollbar {
-            width: 6px;
-        }
-        .custom-scroll::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.05);
-            border-radius: 4px;
-        }
-        .custom-scroll::-webkit-scrollbar-thumb {
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 4px;
-        }
-        .dark-custom-scroll::-webkit-scrollbar {
-            width: 6px;
-        }
-        .dark-custom-scroll::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 4px;
-        }
-        .dark-custom-scroll::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 4px;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .view-transition { transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased">
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-blue-600 selection:text-white">
 
-    <div class="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-            <div class="flex items-center gap-4">
-                <span class="flex items-center gap-1"><i data-lucide="mail" class="w-3.5 h-3.5 text-red-500"></i> support@avanttelecom.in</span>
-                <span class="hidden md:flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-red-500"></i> Telecom Infrastructure & IT Solutions</span>
-            </div>
-            <div class="flex items-center gap-4">
-                <a href="https://accounts.zoho.in/signin?servicename=VirtualOffice" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 text-red-400 hover:text-red-300 font-semibold transition">
-                    <i data-lucide="lock" class="w-3.5 h-3.5"></i> Employee Webmail Login &rarr;
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+    <header class="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#home" class="flex items-center">
-                <img src="logo.png" alt="Avant Telecom Logo" class="h-12 w-auto object-contain transition hover:opacity-95">
+            
+            <a href="#home" class="flex items-center gap-3">
+                <img src="logo.png" alt="Avant Logo" class="h-10 w-auto object-contain">
+                <span id="nav-brand-title" class="text-xl font-black tracking-tight text-white flex items-center gap-1.5">
+                    AVANT <span id="nav-brand-sub" class="text-blue-500 font-bold text-sm tracking-widest bg-blue-500/10 px-2 py-0.5 rounded-full border border-blue-500/30">TELECOM</span>
+                </span>
             </a>
 
-            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-700">
-                <a href="#home" class="hover:text-red-500 transition">Home</a>
-                <a href="#about" class="hover:text-red-500 transition">About Us</a>
-                <a href="#services" class="hover:text-red-500 transition">Services</a>
-                <a href="#contact" class="hover:text-red-500 transition">Contact</a>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-300">
+                <a href="#home" class="hover:text-blue-400 transition">Home</a>
+                <a href="#about" class="hover:text-blue-400 transition">About Us</a>
+                <a href="#services" class="hover:text-blue-400 transition">Services</a>
+                <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+                <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
             </nav>
 
             <div class="flex items-center gap-3">
-                <a href="https://accounts.zoho.in/signin?servicename=VirtualOffice" target="_blank" class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 rounded-lg shadow transition">
+                <a href="https://accounts.zoho.in/signin?servicename=VirtualOffice" target="_blank" class="hidden sm:inline-flex items-center px-4 py-2 text-xs font-semibold text-slate-300 bg-slate-900 border border-slate-700 hover:bg-slate-800 rounded-lg transition">
                     Webmail
                 </a>
-                <a href="#contact" class="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-red-500 hover:bg-red-600 rounded-lg shadow-md hover:shadow-lg transition">
-                    Get a Quote
+                <a href="#contact" class="inline-flex items-center justify-center px-5 py-2.5 text-xs font-bold text-white bg-blue-600 hover:bg-blue-500 rounded-full shadow-lg shadow-blue-600/30 transition">
+                    Get in Touch &rarr;
                 </a>
             </div>
         </div>
     </header>
 
-    <section id="home" class="relative bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-white py-24 lg:py-32 overflow-hidden">
-        <div class="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-40"></div>
+    <section id="home" class="relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white pt-16 pb-20 overflow-hidden border-b border-slate-800">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-semibold mb-6">
-                <i data-lucide="radio" class="w-4 h-4"></i> Next-Gen 5G, Telecom & Enterprise IT Solutions
-            </div>
-            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight max-w-4xl mx-auto leading-tight">
-                Empowering India's Digital Backbone with <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">Reliable Infrastructure</span>
-            </h1>
-            <p class="mt-6 text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
-                Full-lifecycle engineering: 5G Network Rollout, BTS/Microwave I&C, Optical Fiber Systems, Enterprise IT, and Managed Maintenance Contracts.
-            </p>
-            <div class="mt-10 flex flex-wrap justify-center gap-4">
-                <a href="#services" class="px-7 py-3.5 text-base font-semibold text-white bg-red-500 hover:bg-red-600 rounded-xl shadow-lg transition flex items-center gap-2">
-                    Explore Services <i data-lucide="arrow-down" class="w-4 h-4"></i>
-                </a>
-                <a href="https://accounts.zoho.in/signin?servicename=VirtualOffice" target="_blank" class="px-7 py-3.5 text-base font-semibold text-slate-200 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-xl transition flex items-center gap-2">
-                    <i data-lucide="user-check" class="w-4 h-4 text-red-400"></i> Employee Portal
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-12 bg-white border-b border-slate-200 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
-                <div class="pt-4 md:pt-0">
-                    <div class="text-3xl lg:text-4xl font-extrabold text-red-500">5G / 4G</div>
-                    <div class="text-sm font-medium text-slate-500 mt-1">Rollout Ready</div>
-                </div>
-                <div class="pt-4 md:pt-0">
-                    <div class="text-3xl lg:text-4xl font-extrabold text-slate-900">99.9%</div>
-                    <div class="text-sm font-medium text-slate-500 mt-1">Uptime Standards</div>
-                </div>
-                <div class="pt-4 md:pt-0">
-                    <div class="text-3xl lg:text-4xl font-extrabold text-red-500">Turnkey</div>
-                    <div class="text-sm font-medium text-slate-500 mt-1">Project Execution</div>
-                </div>
-                <div class="pt-4 md:pt-0">
-                    <div class="text-3xl lg:text-4xl font-extrabold text-slate-900">24 / 7</div>
-                    <div class="text-sm font-medium text-slate-500 mt-1">Operations & Support</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="py-16 bg-slate-900 text-white relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 text-center">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-semibold mb-3">
-                Interactive Division Browser
-            </div>
-            <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
-                Move Mouse Left or Right to Explore
-            </h2>
-            <p class="mt-3 text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
-                Hover left for Telecom Infrastructure or right for Enterprise IT Solutions. Scroll down inside either side to review all services.
-            </p>
             
-            <div class="mt-6 flex justify-center gap-3 lg:hidden">
-                <button onclick="setFocus('telecom')" class="px-4 py-2 text-xs font-bold rounded-lg bg-red-500 text-white">View Telecom</button>
-                <button onclick="setFocus('it')" class="px-4 py-2 text-xs font-bold rounded-lg bg-blue-600 text-white">View IT Services</button>
-                <button onclick="setFocus('equal')" class="px-4 py-2 text-xs font-bold rounded-lg bg-slate-800 text-slate-300">Split Both</button>
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-slate-300 text-xs font-semibold mb-6">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Select Business Division
             </div>
-        </div>
+            
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight max-w-4xl mx-auto leading-tight">
+                Engineering Next-Gen <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-indigo-400">Connectivity & Digital Infrastructure</span>
+            </h1>
+            
+            <p class="mt-5 text-base sm:text-lg text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">
+                Choose a vertical below to explore specialized telecom network operations or enterprise IT & software services.
+            </p>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div id="split-wrapper" class="flex flex-col lg:flex-row gap-6 h-[720px] transition-all duration-500">
+            <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
                 
-                <div id="panel-telecom" 
-                     onmouseenter="setFocus('telecom')" 
-                     class="split-panel flex-1 bg-slate-800/90 border border-red-500/30 rounded-3xl p-6 sm:p-8 flex flex-col justify-between overflow-hidden relative shadow-2xl">
-                    
-                    <div class="flex items-center justify-between pb-4 border-b border-slate-700/60 shrink-0">
-                        <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 rounded-2xl bg-red-500 text-white flex items-center justify-center shadow-lg shadow-red-500/30">
-                                <i data-lucide="radio" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <span class="text-xs font-bold tracking-widest text-red-400 uppercase">Division 01</span>
-                                <h3 class="text-2xl font-extrabold text-white">Telecom Engineering</h3>
-                            </div>
-                        </div>
-                        <span class="text-xs font-semibold text-slate-400 hidden sm:inline-block bg-slate-900/60 px-3 py-1 rounded-full border border-slate-700">
-                            ← Hover Left
-                        </span>
-                    </div>
+                <button id="btn-telecom-switch" onclick="switchPortal('telecom')" class="w-full sm:w-auto px-8 py-4 text-sm font-bold text-white bg-red-600 hover:bg-red-500 rounded-xl shadow-xl shadow-red-600/30 ring-2 ring-red-400 transition transform active:scale-95 flex items-center justify-center gap-2">
+                    <i data-lucide="radio" class="w-4 h-4"></i> Avant Telecom Division
+                </button>
 
-                    <div class="dark-custom-scroll overflow-y-auto space-y-4 my-4 pr-2 flex-grow">
-                        
-                        <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-700/60 hover:border-red-500/50 transition">
-                            <div class="flex items-center gap-3 mb-2">
-                                <i data-lucide="tower-control" class="w-5 h-5 text-red-400"></i>
-                                <h4 class="font-bold text-white text-base">Installation & Commissioning (I&C)</h4>
-                            </div>
-                            <p class="text-xs text-slate-300 leading-relaxed mb-3">
-                                End-to-end I&C for Microwave links, BTS (2G/4G/5G), Small Cells, UBR, and OLT systems. Antenna elevation increments and sector additions.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="text-[11px] font-medium bg-red-500/20 text-red-300 px-2 py-0.5 rounded">Microwave Links</span>
-                                <span class="text-[11px] font-medium bg-red-500/20 text-red-300 px-2 py-0.5 rounded">GSM / LTE / 5G BTS</span>
-                                <span class="text-[11px] font-medium bg-red-500/20 text-red-300 px-2 py-0.5 rounded">RET Additions</span>
-                            </div>
-                        </div>
-
-                        <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-700/60 hover:border-red-500/50 transition">
-                            <div class="flex items-center gap-3 mb-2">
-                                <i data-lucide="map" class="w-5 h-5 text-red-400"></i>
-                                <h4 class="font-bold text-white text-base">Surveys & RF Optimization</h4>
-                            </div>
-                            <p class="text-xs text-slate-300 leading-relaxed mb-3">
-                                P2P and PMP Line-of-Sight (LOS) site surveys, RF drive tests, OSS config audits, and network benchmarking.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="text-[11px] font-medium bg-red-500/20 text-red-300 px-2 py-0.5 rounded">LOS Surveys</span>
-                                <span class="text-[11px] font-medium bg-red-500/20 text-red-300 px-2 py-0.5 rounded">Pre/Post Drive Tests</span>
-                                <span class="text-[11px] font-medium bg-red-500/20 text-red-300 px-2 py-0.5 rounded">RF Benchmarking</span>
-                            </div>
-                        </div>
-
-                        <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-700/60 hover:border-red-500/50 transition">
-                            <div class="flex items-center gap-3 mb-2">
-                                <i data-lucide="activity" class="w-5 h-5 text-red-400"></i>
-                                <h4 class="font-bold text-white text-base">CAMC & Managed Services</h4>
-                            </div>
-                            <p class="text-xs text-slate-300 leading-relaxed mb-3">
-                                Comprehensive Annual Maintenance Contracts, preventive routine checks, 24/7 breakdown recovery, and active site maintenance.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="text-[11px] font-medium bg-red-500/20 text-red-300 px-2 py-0.5 rounded">24/7 Breakdown</span>
-                                <span class="text-[11px] font-medium bg-red-500/20 text-red-300 px-2 py-0.5 rounded">Preventive Audits</span>
-                                <span class="text-[11px] font-medium bg-red-500/20 text-red-300 px-2 py-0.5 rounded">Site Relocation</span>
-                            </div>
-                        </div>
-
-                        <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-700/60 hover:border-red-500/50 transition">
-                            <div class="flex items-center gap-3 mb-2">
-                                <i data-lucide="cable" class="w-5 h-5 text-red-400"></i>
-                                <h4 class="font-bold text-white text-base">Optical Fiber & Equipment Supply</h4>
-                            </div>
-                            <p class="text-xs text-slate-300 leading-relaxed mb-3">
-                                High-grade single mode CPRI patch cords, RF jumper cables, DIN & 4.3-10 connectors, ACDB/DCDB boxes, and SMPS power units.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="text-[11px] font-medium bg-red-500/20 text-red-300 px-2 py-0.5 rounded">CPRI Cords</span>
-                                <span class="text-[11px] font-medium bg-red-500/20 text-red-300 px-2 py-0.5 rounded">RF Jumpers</span>
-                                <span class="text-[11px] font-medium bg-red-500/20 text-red-300 px-2 py-0.5 rounded">SMPS Units</span>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="pt-4 border-t border-slate-700/60 flex items-center justify-between shrink-0">
-                        <span class="text-xs text-slate-400">Scroll down for full telecom scope</span>
-                        <a href="#contact" class="px-4 py-2 rounded-xl text-xs font-semibold bg-red-500 hover:bg-red-600 text-white transition flex items-center gap-1.5">
-                            Telecom Inquiry <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div id="panel-it" 
-                     onmouseenter="setFocus('it')" 
-                     class="split-panel flex-1 bg-slate-800/90 border border-blue-500/30 rounded-3xl p-6 sm:p-8 flex flex-col justify-between overflow-hidden relative shadow-2xl">
-                    
-                    <div class="flex items-center justify-between pb-4 border-b border-slate-700/60 shrink-0">
-                        <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 rounded-2xl bg-blue-600 text-white flex items-center justify-center shadow-lg shadow-blue-600/30">
-                                <i data-lucide="server" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <span class="text-xs font-bold tracking-widest text-blue-400 uppercase">Division 02</span>
-                                <h3 class="text-2xl font-extrabold text-white">IT & Software Services</h3>
-                            </div>
-                        </div>
-                        <span class="text-xs font-semibold text-slate-400 hidden sm:inline-block bg-slate-900/60 px-3 py-1 rounded-full border border-slate-700">
-                            Hover Right →
-                        </span>
-                    </div>
-
-                    <div class="dark-custom-scroll overflow-y-auto space-y-4 my-4 pr-2 flex-grow">
-                        
-                        <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-700/60 hover:border-blue-500/50 transition">
-                            <div class="flex items-center gap-3 mb-2">
-                                <i data-lucide="layout-grid" class="w-5 h-5 text-blue-400"></i>
-                                <h4 class="font-bold text-white text-base">Custom Web Apps & Enterprise Portals</h4>
-                            </div>
-                            <p class="text-xs text-slate-300 leading-relaxed mb-3">
-                                Bespoke software engineering, workflow automation dashboards, internal ERP systems, and responsive web platforms.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="text-[11px] font-medium bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded">Custom ERP / CRM</span>
-                                <span class="text-[11px] font-medium bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded">REST APIs</span>
-                                <span class="text-[11px] font-medium bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded">Web Applications</span>
-                            </div>
-                        </div>
-
-                        <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-700/60 hover:border-blue-500/50 transition">
-                            <div class="flex items-center gap-3 mb-2">
-                                <i data-lucide="network" class="w-5 h-5 text-blue-400"></i>
-                                <h4 class="font-bold text-white text-base">Enterprise Networking & LAN/WAN</h4>
-                            </div>
-                            <p class="text-xs text-slate-300 leading-relaxed mb-3">
-                                Corporate office structured cabling, server room deployment, managed network switches, router configurations, and hardware VPNs.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="text-[11px] font-medium bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded">LAN / WAN Cabling</span>
-                                <span class="text-[11px] font-medium bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded">Firewall / VPN</span>
-                                <span class="text-[11px] font-medium bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded">Switch Routing</span>
-                            </div>
-                        </div>
-
-                        <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-700/60 hover:border-blue-500/50 transition">
-                            <div class="flex items-center gap-3 mb-2">
-                                <i data-lucide="cloud" class="w-5 h-5 text-blue-400"></i>
-                                <h4 class="font-bold text-white text-base">Cloud Infrastructure & Business Email</h4>
-                            </div>
-                            <p class="text-xs text-slate-300 leading-relaxed mb-3">
-                                Seamless corporate email setups (Zoho / Google Workspace), DNS authentication (SPF, DKIM, DMARC), and cloud backup systems.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="text-[11px] font-medium bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded">Zoho / Google Mail</span>
-                                <span class="text-[11px] font-medium bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded">DNS Security</span>
-                                <span class="text-[11px] font-medium bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded">Cloud Backups</span>
-                            </div>
-                        </div>
-
-                        <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-700/60 hover:border-blue-500/50 transition">
-                            <div class="flex items-center gap-3 mb-2">
-                                <i data-lucide="shield-alert" class="w-5 h-5 text-blue-400"></i>
-                                <h4 class="font-bold text-white text-base">IT Hardware Support & Maintenance</h4>
-                            </div>
-                            <p class="text-xs text-slate-300 leading-relaxed mb-3">
-                                Scheduled desktop/server maintenance, workstation deployment, software licensing audits, and dedicated IT technical helpdesk.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="text-[11px] font-medium bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded">Workstation Setup</span>
-                                <span class="text-[11px] font-medium bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded">Hardware AMC</span>
-                                <span class="text-[11px] font-medium bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded">Helpdesk Support</span>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="pt-4 border-t border-slate-700/60 flex items-center justify-between shrink-0">
-                        <span class="text-xs text-slate-400">Scroll down for full IT scope</span>
-                        <a href="#contact" class="px-4 py-2 rounded-xl text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white transition flex items-center gap-1.5">
-                            IT Inquiry <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                        </a>
-                    </div>
-                </div>
+                <button id="btn-it-switch" onclick="switchPortal('it')" class="w-full sm:w-auto px-8 py-4 text-sm font-bold text-slate-200 bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-xl shadow-xl transition transform active:scale-95 flex items-center justify-center gap-2">
+                    <i data-lucide="server" class="w-4 h-4 text-blue-400"></i> Avant IT Services Division
+                </button>
 
             </div>
         </div>
     </section>
 
-    <section id="about" class="py-20 lg:py-28 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-100 text-red-700 text-xs font-semibold mb-4">
-                        About Avant Telecom
-                    </div>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                        Specialized Engineering, Supply & Telecom Project Management
-                    </h2>
-                    <p class="mt-5 text-slate-600 leading-relaxed">
-                        Avant Telecom is an engineering and services provider catering to the expanding telecommunications and digital enterprise ecosystem in India. We assist operators, infrastructure providers, and enterprises in planning, deploying, and maintaining high-performance networks.
-                    </p>
-                    <div class="mt-6 space-y-3">
-                        <div class="flex items-start gap-3">
-                            <div class="p-1 rounded bg-red-100 text-red-500 mt-0.5"><i data-lucide="check" class="w-4 h-4"></i></div>
-                            <span class="text-sm text-slate-700 font-medium">Compliance with strict telecom quality, safety, and operational standards.</span>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="p-1 rounded bg-red-100 text-red-500 mt-0.5"><i data-lucide="check" class="w-4 h-4"></i></div>
-                            <span class="text-sm text-slate-700 font-medium">Rapid response times and dedicated field engineers for cell sites and IT deployments.</span>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="p-1 rounded bg-red-100 text-red-500 mt-0.5"><i data-lucide="check" class="w-4 h-4"></i></div>
-                            <span class="text-sm text-slate-700 font-medium">End-to-end supply of active, passive, optical fiber, and network hardware.</span>
+    <div id="view-telecom" class="view-transition">
+        
+        <section class="relative bg-slate-950 py-16 lg:py-24 border-b border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="text-xs font-extrabold tracking-widest text-blue-400 uppercase">CONNECTING TODAY</span>
+                        <h2 class="text-4xl sm:text-6xl font-black text-white tracking-tight mt-2 leading-tight">
+                            Powering <br><span class="text-blue-500">Tomorrow.</span>
+                        </h2>
+                        <p class="mt-6 text-slate-400 text-base sm:text-lg leading-relaxed max-w-lg">
+                            Avant Telecom delivers end-to-end telecom solutions with precision, passion, and performance across rugged Northeast and pan-India regions.
+                        </p>
+                        <div class="mt-8 flex flex-wrap gap-4">
+                            <a href="#services" class="px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm shadow-lg transition">
+                                Our Services &rarr;
+                            </a>
+                            <a href="#projects" class="px-6 py-3 rounded-full bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-300 font-bold text-sm transition">
+                                Explore Projects &rarr;
+                            </a>
                         </div>
                     </div>
-                </div>
-                <div class="bg-gradient-to-tr from-slate-900 to-slate-800 rounded-3xl p-8 text-white shadow-xl relative border border-slate-700">
-                    <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
-                        <i data-lucide="shield-check" class="text-red-400"></i> Core Business Principles
-                    </h3>
-                    <div class="space-y-4 text-sm text-slate-300">
-                        <div class="border-l-2 border-red-500 pl-4">
-                            <h4 class="font-semibold text-white">Timeliness & Execution</h4>
-                            <p class="mt-1">Adhering strictly to service provision schedules and project milestones.</p>
-                        </div>
-                        <div class="border-l-2 border-red-500 pl-4">
-                            <h4 class="font-semibold text-white">Engineering Precision</h4>
-                            <p class="mt-1">Pre/Post drive tests, LOS site surveys, and RF cluster optimization.</p>
-                        </div>
-                        <div class="border-l-2 border-red-500 pl-4">
-                            <h4 class="font-semibold text-white">Reliability</h4>
-                            <p class="mt-1">Building long-term infrastructure partnerships across enterprise & telecom operators.</p>
+                    <div class="relative">
+                        <div class="rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900 relative">
+                            <img src="https://images.unsplash.com/photo-1544655385-c0e44502528a?auto=format&fit=crop&w=1200&q=80" alt="Telecom Tower at Night" class="w-full h-80 lg:h-[400px] object-cover opacity-80">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-slate-900/80 backdrop-blur-md border border-slate-800">
+                                <div class="text-xs font-bold text-blue-400">Carrier-Grade Deployment</div>
+                                <div class="text-sm font-semibold text-white mt-0.5">5G Network Rollout & Tower Infrastructure</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="py-20 lg:py-28 bg-slate-900 text-white">
+        <section class="py-10 bg-slate-900/70 border-b border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-slate-800">
+                    <div class="pt-4 md:pt-0 flex flex-col items-center">
+                        <div class="text-3xl lg:text-4xl font-black text-blue-500">50+</div>
+                        <div class="text-xs font-semibold text-slate-400 mt-1">Projects Completed Across Northeast</div>
+                    </div>
+                    <div class="pt-4 md:pt-0 flex flex-col items-center">
+                        <div class="text-3xl lg:text-4xl font-black text-white">100+</div>
+                        <div class="text-xs font-semibold text-slate-400 mt-1">Skilled Field Professionals</div>
+                    </div>
+                    <div class="pt-4 md:pt-0 flex flex-col items-center">
+                        <div class="text-3xl lg:text-4xl font-black text-blue-500">99%</div>
+                        <div class="text-xs font-semibold text-slate-400 mt-1">Client Satisfaction Standards</div>
+                    </div>
+                    <div class="pt-4 md:pt-0 flex flex-col items-center">
+                        <div class="text-3xl lg:text-4xl font-black text-white">5+</div>
+                        <div class="text-xs font-semibold text-slate-400 mt-1">Years of Telecom Excellence</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-slate-950">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="text-xs font-bold text-blue-500 uppercase tracking-widest">ABOUT AVANT TELECOM</span>
+                        <h3 class="text-3xl sm:text-5xl font-black text-white tracking-tight mt-2">
+                            Building Connections. <br><span class="text-blue-500">Creating Impact.</span>
+                        </h3>
+                        <p class="mt-5 text-slate-400 leading-relaxed text-sm sm:text-base">
+                            Founded to transform communication networks, Avant Telecom is a trusted infrastructure partner delivering reliable, efficient, and future-ready solutions across India's demanding terrains.
+                        </p>
+                        
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
+                            <div class="p-3 bg-slate-900 border border-slate-800 rounded-xl text-center">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-blue-400 mx-auto mb-1"></i>
+                                <div class="text-xs font-bold text-white">Integrity</div>
+                            </div>
+                            <div class="p-3 bg-slate-900 border border-slate-800 rounded-xl text-center">
+                                <i data-lucide="award" class="w-5 h-5 text-blue-400 mx-auto mb-1"></i>
+                                <div class="text-xs font-bold text-white">Excellence</div>
+                            </div>
+                            <div class="p-3 bg-slate-900 border border-slate-800 rounded-xl text-center">
+                                <i data-lucide="lightbulb" class="w-5 h-5 text-blue-400 mx-auto mb-1"></i>
+                                <div class="text-xs font-bold text-white">Innovation</div>
+                            </div>
+                            <div class="p-3 bg-slate-900 border border-slate-800 rounded-xl text-center">
+                                <i data-lucide="shield" class="w-5 h-5 text-blue-400 mx-auto mb-1"></i>
+                                <div class="text-xs font-bold text-white">Commitment</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="p-6 bg-slate-900 border border-slate-800 rounded-2xl flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-blue-600/20 text-blue-400 flex items-center justify-center shrink-0">
+                                <i data-lucide="target" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-bold text-white">Our Mission</h4>
+                                <p class="text-xs text-slate-400 mt-1 leading-relaxed">
+                                    To deliver innovative telecom solutions that connect communities and empower a digital tomorrow with zero downtime.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="p-6 bg-slate-900 border border-slate-800 rounded-2xl flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-blue-600/20 text-blue-400 flex items-center justify-center shrink-0">
+                                <i data-lucide="eye" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-bold text-white">Our Vision</h4>
+                                <p class="text-xs text-slate-400 mt-1 leading-relaxed">
+                                    To be the most trusted and preferred telecom partner for nationwide infrastructure excellence.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-slate-900 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <span class="text-xs font-bold text-blue-400 uppercase tracking-widest">OUR SERVICES</span>
+                    <h3 class="text-3xl sm:text-4xl font-black text-white mt-1">End-to-End Telecom Solutions</h3>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="p-6 bg-slate-950 border border-slate-800 rounded-2xl hover:border-blue-500 transition">
+                        <i data-lucide="radio" class="w-8 h-8 text-blue-500 mb-4"></i>
+                        <h4 class="text-lg font-bold text-white mb-2">5G & 4G Installation</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">End-to-end installation, commissioning, and de-installation services for carrier sites.</p>
+                    </div>
+                    <div class="p-6 bg-slate-950 border border-slate-800 rounded-2xl hover:border-blue-500 transition">
+                        <i data-lucide="satellite" class="w-8 h-8 text-blue-500 mb-4"></i>
+                        <h4 class="text-lg font-bold text-white mb-2">Microwave & UBR Solutions</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Reliable MW & UBR links, alignment, LOS surveys, and seamless backhaul connectivity.</p>
+                    </div>
+                    <div class="p-6 bg-slate-950 border border-slate-800 rounded-2xl hover:border-blue-500 transition">
+                        <i data-lucide="package" class="w-8 h-8 text-blue-500 mb-4"></i>
+                        <h4 class="text-lg font-bold text-white mb-2">Equipment Packaging</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Safe and secure specialized packaging and handling for all sensitive telecom hardware.</p>
+                    </div>
+                    <div class="p-6 bg-slate-950 border border-slate-800 rounded-2xl hover:border-blue-500 transition">
+                        <i data-lucide="truck" class="w-8 h-8 text-blue-500 mb-4"></i>
+                        <h4 class="text-lg font-bold text-white mb-2">Transportation Services</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Timely and efficient logistics across challenging and remote regional terrains.</p>
+                    </div>
+                    <div class="p-6 bg-slate-950 border border-slate-800 rounded-2xl hover:border-blue-500 transition">
+                        <i data-lucide="tower-control" class="w-8 h-8 text-blue-500 mb-4"></i>
+                        <h4 class="text-lg font-bold text-white mb-2">Tower Base Construction</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Robust civil foundations and mast erections for enduring site stability.</p>
+                    </div>
+                    <div class="p-6 bg-slate-950 border border-slate-800 rounded-2xl hover:border-blue-500 transition">
+                        <i data-lucide="hard-hat" class="w-8 h-8 text-blue-500 mb-4"></i>
+                        <h4 class="text-lg font-bold text-white mb-2">Telecom Civil Works</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Execution of small to mid-level telecom civil projects and site preparation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-20 bg-slate-950">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-end mb-12">
+                    <div>
+                        <span class="text-xs font-bold text-blue-500 uppercase tracking-widest">OUR PROJECTS</span>
+                        <h3 class="text-3xl font-black text-white mt-1">Building Networks. Connecting Communities.</h3>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 hover:border-blue-500 transition">
+                        <span class="text-[10px] font-bold text-blue-400 bg-blue-500/10 px-2 py-1 rounded">Assam</span>
+                        <h4 class="font-bold text-white text-base mt-3">Jio 5G Rollout Project</h4>
+                        <p class="text-xs text-slate-400 mt-1">Installation & Commissioning</p>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 hover:border-blue-500 transition">
+                        <span class="text-[10px] font-bold text-blue-400 bg-blue-500/10 px-2 py-1 rounded">Arunachal Pradesh</span>
+                        <h4 class="font-bold text-white text-base mt-3">UBR Connectivity Project</h4>
+                        <p class="text-xs text-slate-400 mt-1">End-to-End MW Solution</p>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 hover:border-blue-500 transition">
+                        <span class="text-[10px] font-bold text-blue-400 bg-blue-500/10 px-2 py-1 rounded">Manipur</span>
+                        <h4 class="font-bold text-white text-base mt-3">4G Network Expansion</h4>
+                        <p class="text-xs text-slate-400 mt-1">Installation & Integration</p>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 hover:border-blue-500 transition">
+                        <span class="text-[10px] font-bold text-blue-400 bg-blue-500/10 px-2 py-1 rounded">Meghalaya</span>
+                        <h4 class="font-bold text-white text-base mt-3">Telecom Infra Build</h4>
+                        <p class="text-xs text-slate-400 mt-1">Civil & Installation Works</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <div id="view-it" class="view-transition hidden">
+        
+        <section class="relative bg-slate-950 py-16 lg:py-24 border-b border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="text-xs font-extrabold tracking-widest text-cyan-400 uppercase">INNOVATE. INTEGRATE. ELEVATE.</span>
+                        <h2 class="text-4xl sm:text-6xl font-black text-white tracking-tight mt-2 leading-tight">
+                            Smart IT Solutions <br>for a <span class="text-cyan-400">Digital Tomorrow</span>
+                        </h2>
+                        <p class="mt-6 text-slate-400 text-base sm:text-lg leading-relaxed max-w-lg">
+                            Avant IT Services delivers reliable, scalable, and secure IT solutions that empower modern enterprises to grow, adapt, and lead.
+                        </p>
+                        <div class="mt-8 flex flex-wrap gap-4">
+                            <a href="#services" class="px-6 py-3 rounded-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm shadow-lg transition">
+                                Explore IT Services &rarr;
+                            </a>
+                            <a href="#projects" class="px-6 py-3 rounded-full bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-300 font-bold text-sm transition">
+                                View Our Work &rarr;
+                            </a>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900 relative">
+                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="Cloud Network & Security" class="w-full h-80 lg:h-[400px] object-cover opacity-80">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-slate-900/80 backdrop-blur-md border border-slate-800">
+                                <div class="text-xs font-bold text-cyan-400">Cloud & Cyber Infrastructure</div>
+                                <div class="text-sm font-semibold text-white mt-0.5">Custom Software, Cloud Migrations & Cybersecurity</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-slate-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest">WHAT WE DO</span>
+                    <h3 class="text-3xl sm:text-4xl font-black text-white mt-1">Comprehensive IT Services</h3>
+                    <p class="mt-3 text-slate-400 text-sm">End-to-end software and infrastructure tailored to business needs.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="p-6 bg-slate-950 border border-slate-800 rounded-2xl hover:border-cyan-500 transition">
+                        <i data-lucide="monitor" class="w-8 h-8 text-cyan-400 mb-4"></i>
+                        <h4 class="text-lg font-bold text-white mb-2">IT Infrastructure Solutions</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Robust and scalable workplace LAN/WAN, switches, routers, and server rack management.</p>
+                    </div>
+                    <div class="p-6 bg-slate-950 border border-slate-800 rounded-2xl hover:border-cyan-500 transition">
+                        <i data-lucide="cloud" class="w-8 h-8 text-cyan-400 mb-4"></i>
+                        <h4 class="text-lg font-bold text-white mb-2">Cloud Services</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Migrate, manage, and optimize your cloud servers and corporate email systems.</p>
+                    </div>
+                    <div class="p-6 bg-slate-950 border border-slate-800 rounded-2xl hover:border-cyan-500 transition">
+                        <i data-lucide="shield-check" class="w-8 h-8 text-cyan-400 mb-4"></i>
+                        <h4 class="text-lg font-bold text-white mb-2">Cyber Security</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Protect your critical business data with advanced firewall, VPN, and endpoint security.</p>
+                    </div>
+                    <div class="p-6 bg-slate-950 border border-slate-800 rounded-2xl hover:border-cyan-500 transition">
+                        <i data-lucide="code" class="w-8 h-8 text-cyan-400 mb-4"></i>
+                        <h4 class="text-lg font-bold text-white mb-2">Software Development</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Custom web portals, enterprise CRM/ERP systems, and operational workflow tools.</p>
+                    </div>
+                    <div class="p-6 bg-slate-950 border border-slate-800 rounded-2xl hover:border-cyan-500 transition">
+                        <i data-lucide="headphones" class="w-8 h-8 text-cyan-400 mb-4"></i>
+                        <h4 class="text-lg font-bold text-white mb-2">IT Support & Maintenance</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">24/7 technical support, workstation provisioning, and preventive hardware AMC.</p>
+                    </div>
+                    <div class="p-6 bg-slate-950 border border-slate-800 rounded-2xl hover:border-cyan-500 transition">
+                        <i data-lucide="bar-chart-2" class="w-8 h-8 text-cyan-400 mb-4"></i>
+                        <h4 class="text-lg font-bold text-white mb-2">Digital Solutions</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Digital transformation strategies, database automation, and modern enterprise tooling.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-slate-950 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12">
+                    <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest">OUR PROJECTS</span>
+                    <h3 class="text-3xl font-black text-white mt-1">Some of Our Recent Work</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 hover:border-cyan-400 transition">
+                        <span class="text-[10px] font-bold text-cyan-400 bg-cyan-500/10 px-2 py-1 rounded">Cloud Services</span>
+                        <h4 class="font-bold text-white text-base mt-3">Cloud Migration for Enterprise</h4>
+                        <p class="text-xs text-slate-400 mt-1">Seamless database & app migration</p>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 hover:border-cyan-400 transition">
+                        <span class="text-[10px] font-bold text-cyan-400 bg-cyan-500/10 px-2 py-1 rounded">Software Development</span>
+                        <h4 class="font-bold text-white text-base mt-3">Custom ERP Solution</h4>
+                        <p class="text-xs text-slate-400 mt-1">Operations & billing workflow</p>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 hover:border-cyan-400 transition">
+                        <span class="text-[10px] font-bold text-cyan-400 bg-cyan-500/10 px-2 py-1 rounded">IT Security</span>
+                        <h4 class="font-bold text-white text-base mt-3">Cyber Security Implementation</h4>
+                        <p class="text-xs text-slate-400 mt-1">Enterprise firewall & monitoring</p>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 hover:border-cyan-400 transition">
+                        <span class="text-[10px] font-bold text-cyan-400 bg-cyan-500/10 px-2 py-1 rounded">Infrastructure</span>
+                        <h4 class="font-bold text-white text-base mt-3">IT Infrastructure Upgrade</h4>
+                        <p class="text-xs text-slate-400 mt-1">Gigabit LAN & server cabling</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <section id="contact" class="py-20 bg-slate-900 text-white border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <div>
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 text-red-400 text-xs font-semibold mb-4">
-                        Let's Connect
-                    </div>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
-                        Request a Project Proposal or SOW Quotation
-                    </h2>
-                    <p class="mt-4 text-slate-400 leading-relaxed">
-                        Reach out to our engineering and technical team to discuss site surveys, rollouts, IT deployments, or maintenance contracts.
+                    <span class="text-xs font-bold text-blue-400 uppercase tracking-widest">GET IN TOUCH</span>
+                    <h3 class="text-3xl sm:text-4xl font-black mt-2">Request a Project Quotation</h3>
+                    <p class="mt-4 text-slate-400 text-sm leading-relaxed">
+                        Connect with our engineering and technical team for project bids, scope of work consultations, or maintenance SLA inquiries.
                     </p>
 
                     <div class="mt-8 space-y-4">
-                        <div class="flex items-center gap-4 text-slate-300">
-                            <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-red-400">
-                                <i data-lucide="mail" class="w-5 h-5"></i>
-                            </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-blue-400"></i>
                             <div>
-                                <div class="text-xs text-slate-400">Email Enquiries</div>
-                                <div class="font-semibold text-white">support@avanttelecom.in</div>
+                                <div class="text-xs text-slate-400">Email</div>
+                                <div class="font-semibold text-sm">support@avanttelecom.in</div>
                             </div>
                         </div>
-
-                        <div class="flex items-center gap-4 text-slate-300">
-                            <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-red-400">
-                                <i data-lucide="globe" class="w-5 h-5"></i>
-                            </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="globe" class="w-5 h-5 text-blue-400"></i>
                             <div>
-                                <div class="text-xs text-slate-400">Official Portal</div>
-                                <div class="font-semibold text-white">www.avanttelecom.in</div>
+                                <div class="text-xs text-slate-400">Portal</div>
+                                <div class="font-semibold text-sm">www.avanttelecom.in</div>
                             </div>
                         </div>
-
-                        <div class="flex items-center gap-4 text-slate-300">
-                            <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-red-400">
-                                <i data-lucide="key" class="w-5 h-5"></i>
-                            </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="lock" class="w-5 h-5 text-blue-400"></i>
                             <div>
-                                <div class="text-xs text-slate-400">Employee Webmail Access</div>
-                                <a href="https://accounts.zoho.in/signin?servicename=VirtualOffice" target="_blank" class="font-semibold text-red-400 hover:underline">Sign in to Zoho Webmail</a>
+                                <div class="text-xs text-slate-400">Webmail</div>
+                                <a href="https://accounts.zoho.in/signin?servicename=VirtualOffice" target="_blank" class="text-blue-400 hover:underline text-sm font-semibold">Zoho Employee Login</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-slate-800/80 border border-slate-700 p-8 rounded-2xl shadow-xl">
+                <div class="bg-slate-950 p-8 rounded-3xl border border-slate-800 shadow-xl">
                     <form action="mailto:support@avanttelecom.in" method="POST" enctype="text/plain" class="space-y-4">
                         <div>
-                            <label class="block text-xs font-semibold text-slate-300 mb-1">Your Name</label>
-                            <input type="text" name="name" required placeholder="Full Name" class="w-full px-4 py-2.5 bg-slate-900 border border-slate-700 rounded-lg text-white text-sm focus:outline-none focus:border-red-500">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-300 mb-1">Company / Organization</label>
-                            <input type="text" name="company" placeholder="Company Name" class="w-full px-4 py-2.5 bg-slate-900 border border-slate-700 rounded-lg text-white text-sm focus:outline-none focus:border-red-500">
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Full Name</label>
+                            <input type="text" name="name" required placeholder="Name" class="w-full px-4 py-2.5 bg-slate-900 border border-slate-700 rounded-xl text-white text-sm focus:outline-none focus:border-blue-500">
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-xs font-semibold text-slate-300 mb-1">Email Address</label>
-                                <input type="email" name="email" required placeholder="name@company.com" class="w-full px-4 py-2.5 bg-slate-900 border border-slate-700 rounded-lg text-white text-sm focus:outline-none focus:border-red-500">
+                                <input type="email" name="email" required placeholder="name@company.com" class="w-full px-4 py-2.5 bg-slate-900 border border-slate-700 rounded-xl text-white text-sm focus:outline-none focus:border-blue-500">
                             </div>
                             <div>
                                 <label class="block text-xs font-semibold text-slate-300 mb-1">Phone Number</label>
-                                <input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" class="w-full px-4 py-2.5 bg-slate-900 border border-slate-700 rounded-lg text-white text-sm focus:outline-none focus:border-red-500">
+                                <input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" class="w-full px-4 py-2.5 bg-slate-900 border border-slate-700 rounded-xl text-white text-sm focus:outline-none focus:border-blue-500">
                             </div>
                         </div>
                         <div>
-                            <label class="block text-xs font-semibold text-slate-300 mb-1">Service Requirement</label>
-                            <select name="service" class="w-full px-4 py-2.5 bg-slate-900 border border-slate-700 rounded-lg text-white text-sm focus:outline-none focus:border-red-500">
-                                <option>Telecom: 5G / 4G Installation & Commissioning</option>
-                                <option>Telecom: Site Survey & RF Optimization</option>
-                                <option>Telecom: CAMC & Operations Maintenance</option>
-                                <option>Telecom: Optical Fiber & Consumable Supplies</option>
-                                <option>IT: Custom Web Applications & Portals</option>
-                                <option>IT: Enterprise Network & LAN/WAN Setup</option>
-                                <option>IT: Cloud & Business Email Management</option>
-                                <option>IT: Hardware AMC & Desktop Support</option>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Project Division</label>
+                            <select name="division" class="w-full px-4 py-2.5 bg-slate-900 border border-slate-700 rounded-xl text-white text-sm focus:outline-none focus:border-blue-500">
+                                <option>Telecom: 5G/4G Rollout & BTS Installation</option>
+                                <option>Telecom: Microwave, UBR & Site Survey</option>
+                                <option>Telecom: Tower Foundation & Civil Works</option>
+                                <option>IT: Custom Software & ERP Systems</option>
+                                <option>IT: Enterprise Cloud & Cybersecurity</option>
+                                <option>IT: Hardware AMC & Workplace Network</option>
                             </select>
                         </div>
                         <div>
-                            <label class="block text-xs font-semibold text-slate-300 mb-1">Scope of Work (SOW) / Message</label>
-                            <textarea name="message" rows="3" placeholder="Brief details about your project or location requirements..." class="w-full px-4 py-2.5 bg-slate-900 border border-slate-700 rounded-lg text-white text-sm focus:outline-none focus:border-red-500"></textarea>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Message / Requirements</label>
+                            <textarea name="message" rows="3" placeholder="Brief project details..." class="w-full px-4 py-2.5 bg-slate-900 border border-slate-700 rounded-xl text-white text-sm focus:outline-none focus:border-blue-500"></textarea>
                         </div>
-                        <button type="submit" class="w-full py-3 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-lg shadow transition">
-                            Submit Inquiry
+                        <button type="submit" class="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl shadow-lg transition">
+                            Submit Proposal Request
                         </button>
                     </form>
                 </div>
@@ -480,50 +461,51 @@
         </div>
     </section>
 
-    <footer class="bg-slate-950 text-slate-400 py-10 border-t border-slate-800 text-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-3">
-                <img src="logo.png" alt="Avant Telecom" class="h-8 w-auto brightness-200">
-            </div>
-            <p>&copy; 2026 Avant Telecom. All rights reserved.</p>
-            <div class="flex items-center gap-6 text-xs">
-                <a href="#services" class="hover:text-white transition">Services</a>
-                <a href="#about" class="hover:text-white transition">About</a>
-                <a href="https://accounts.zoho.in/signin?servicename=VirtualOffice" target="_blank" class="text-red-400 hover:underline">Zoho Webmail Login</a>
+    <footer class="bg-slate-950 text-slate-500 py-8 border-t border-slate-800 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p>&copy; 2026 Avant Group. All rights reserved.</p>
+            <div class="flex items-center gap-4">
+                <a href="#home" class="hover:text-white transition">Home</a>
+                <a href="https://accounts.zoho.in/signin?servicename=VirtualOffice" target="_blank" class="text-blue-400 hover:underline">Zoho Webmail</a>
             </div>
         </div>
     </footer>
 
     <script>
-        function setFocus(side) {
-            const telecomPanel = document.getElementById('panel-telecom');
-            const itPanel = document.getElementById('panel-it');
-            
-            // Only apply expanded flex ratio on larger desktop screens
-            if (window.innerWidth >= 1024) {
-                if (side === 'telecom') {
-                    telecomPanel.style.flex = "2";
-                    itPanel.style.flex = "1";
-                    telecomPanel.style.opacity = "1";
-                    itPanel.style.opacity = "0.65";
-                } else if (side === 'it') {
-                    telecomPanel.style.flex = "1";
-                    itPanel.style.flex = "2";
-                    telecomPanel.style.opacity = "0.65";
-                    itPanel.style.opacity = "1";
-                } else {
-                    telecomPanel.style.flex = "1";
-                    itPanel.style.flex = "1";
-                    telecomPanel.style.opacity = "1";
-                    itPanel.style.opacity = "1";
-                }
-            }
-        }
+        function switchPortal(portal) {
+            const telecomView = document.getElementById('view-telecom');
+            const itView = document.getElementById('view-it');
+            const telecomBtn = document.getElementById('btn-telecom-switch');
+            const itBtn = document.getElementById('btn-it-switch');
+            const navSub = document.getElementById('nav-brand-sub');
 
-        // Reset to equal split when mouse leaves the section container
-        document.getElementById('split-wrapper').addEventListener('mouseleave', () => {
-            setFocus('equal');
-        });
+            if (portal === 'telecom') {
+                // Show Telecom View
+                telecomView.classList.remove('hidden');
+                itView.classList.add('hidden');
+
+                // Active Button Styling
+                telecomBtn.className = "w-full sm:w-auto px-8 py-4 text-sm font-bold text-white bg-red-600 hover:bg-red-500 rounded-xl shadow-xl shadow-red-600/30 ring-2 ring-red-400 transition transform active:scale-95 flex items-center justify-center gap-2";
+                itBtn.className = "w-full sm:w-auto px-8 py-4 text-sm font-bold text-slate-200 bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-xl shadow-xl transition transform active:scale-95 flex items-center justify-center gap-2";
+
+                // Navbar Badge
+                navSub.innerText = "TELECOM";
+                navSub.className = "text-blue-500 font-bold text-sm tracking-widest bg-blue-500/10 px-2 py-0.5 rounded-full border border-blue-500/30";
+            } else {
+                // Show IT View
+                itView.classList.remove('hidden');
+                telecomView.classList.add('hidden');
+
+                // Active Button Styling
+                itBtn.className = "w-full sm:w-auto px-8 py-4 text-sm font-bold text-slate-950 bg-cyan-400 hover:bg-cyan-300 rounded-xl shadow-xl shadow-cyan-400/30 ring-2 ring-cyan-300 transition transform active:scale-95 flex items-center justify-center gap-2";
+                telecomBtn.className = "w-full sm:w-auto px-8 py-4 text-sm font-bold text-slate-200 bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-xl shadow-xl transition transform active:scale-95 flex items-center justify-center gap-2";
+
+                // Navbar Badge
+                navSub.innerText = "IT SERVICES";
+                navSub.className = "text-cyan-400 font-bold text-sm tracking-widest bg-cyan-500/10 px-2 py-0.5 rounded-full border border-cyan-500/30";
+            }
+            lucide.createIcons();
+        }
 
         // Initialize Lucide Icons
         lucide.createIcons();
