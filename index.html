@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avant | Avant Telecom & Avant IT Services</title>
+    <title>Avant | Telecom Infrastructure & IT Solutions</title>
     <meta name="description" content="Avant — Turnkey telecom infrastructure, 5G rollouts, cloud engineering, iOS & Android software development.">
     <link rel="icon" type="image/png" href="logo.png">
     
@@ -22,202 +22,172 @@
             font-family: 'Space Grotesk', sans-serif;
         }
 
-        /* Glassmorphism Classes */
-        .apple-glass {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(226, 232, 240, 0.8);
-        }
-
-        .apple-glass-card {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
-            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .apple-glass-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 14px 32px -4px rgba(0, 0, 0, 0.08);
-            border-color: #cbd5e1;
-        }
-
-        /* Dual Split Slider Mechanics */
-        .split-container {
+        /* Fullscreen Interactive Split Container */
+        .split-slider-wrap {
             position: relative;
-            width: 100%;
+            width: 100vw;
             height: 100vh;
-            min-height: 680px;
+            min-height: 700px;
             overflow: hidden;
             user-select: none;
         }
 
-        .split-pane {
+        .split-layer {
             position: absolute;
-            top: 0;
-            bottom: 0;
+            inset: 0;
             width: 100%;
             height: 100%;
             overflow: hidden;
         }
 
-        .pane-telecom {
-            left: 0;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
+        /* Left Side: Telecom (Soft Light Architectural Theme) */
+        .layer-telecom {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 45%, #cbd5e1 100%);
             z-index: 1;
         }
 
-        .pane-it {
-            right: 0;
-            background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 60%, #f97316 100%);
+        /* Right Side: IT Services (Vibrant Orange / Coral Gradient) */
+        .layer-it {
+            background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 55%, #f97316 100%);
             z-index: 2;
             clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
-            transition: clip-path 0.08s ease-out;
+            will-change: clip-path;
         }
 
-        /* Center Slider Handle Divider */
-        .slider-divider {
+        /* Draggable Center Divider Line & Thumb */
+        .split-divider-line {
             position: absolute;
             top: 0;
             bottom: 0;
             left: 50%;
             width: 4px;
             background: #ffffff;
-            z-index: 20;
+            z-index: 25;
             transform: translateX(-50%);
             cursor: ew-resize;
-            box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
         }
 
-        .slider-handle-btn {
+        .split-thumb {
             position: absolute;
-            top: 48%;
+            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 44px;
-            height: 44px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             background: #ffffff;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.3);
             display: flex;
             align-items: center;
             justify-content: center;
             color: #0f172a;
             cursor: ew-resize;
-            z-index: 21;
+            z-index: 26;
+            transition: transform 0.15s ease;
+        }
+        .split-thumb:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        /* High-Definition Human Cutout Positioning */
+        .person-image {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 82vh;
+            max-height: 740px;
+            width: auto;
+            object-fit: contain;
+            pointer-events: none;
+        }
+
+        /* Glassmorphism utility */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
         }
     </style>
 </head>
-<body class="bg-[#f8fafc] text-slate-800 antialiased selection:bg-slate-200 selection:text-slate-900 min-h-screen">
+<body class="bg-[#f8fafc] text-slate-800 antialiased selection:bg-slate-300 min-h-screen">
 
-    <section id="portal-hub" class="split-container relative">
+    <section id="portal-hub" class="split-slider-wrap">
 
         <header class="absolute top-0 left-0 right-0 z-30 flex items-center justify-between px-6 sm:px-12 h-20 pointer-events-auto">
             <div class="flex items-center gap-2">
-                <span class="text-xl font-black tracking-tight text-slate-900 drop-shadow-sm">AVANT<span class="text-red-500 font-extrabold">.</span></span>
+                <span class="text-2xl font-black font-display tracking-tight text-slate-900 drop-shadow-sm">AVANT<span class="text-orange-600 font-extrabold">.</span></span>
             </div>
             <div class="flex items-center gap-6 text-xs font-bold tracking-widest uppercase">
-                <span class="hidden sm:inline-block text-slate-500">Telecom Infrastructure</span>
-                <span class="hidden sm:inline-block text-white/80">Software Engineering</span>
-                <a href="https://accounts.zoho.in/signin?servicename=VirtualOffice" target="_blank" class="px-4 py-2 rounded-full bg-white/90 backdrop-blur-md text-slate-900 border border-slate-200 shadow-sm hover:bg-white transition">
+                <span class="hidden sm:inline-block text-slate-600">Telecom Infrastructure</span>
+                <span class="hidden sm:inline-block text-white/90">Software Engineering</span>
+                <a href="https://accounts.zoho.in/signin?servicename=VirtualOffice" target="_blank" class="px-4 py-2 rounded-full bg-white/90 backdrop-blur-md text-slate-900 border border-slate-200 shadow-sm hover:bg-white transition cursor-pointer">
                     Zoho Webmail
                 </a>
             </div>
         </header>
 
-        <div class="split-pane pane-telecom flex items-center justify-center">
+        <div class="split-layer layer-telecom">
             
-            <div class="absolute inset-0 pointer-events-none flex items-center justify-center opacity-40">
-                <svg class="w-[700px] h-[700px] text-slate-400/40" viewBox="0 0 100 100" fill="none" stroke="currentColor">
-                    <circle cx="50" cy="50" r="40" stroke-width="0.3" stroke-dasharray="2 2" />
-                    <circle cx="50" cy="50" r="28" stroke-width="0.4" />
-                    <line x1="50" y1="10" x2="50" y2="90" stroke-width="0.3" />
-                    <line x1="10" y1="50" x2="90" y2="50" stroke-width="0.3" />
+            <div class="absolute inset-0 pointer-events-none opacity-35 flex items-center justify-center">
+                <svg class="w-[850px] h-[850px] text-slate-400" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+                    <circle cx="50" cy="50" r="42" stroke-width="0.3" stroke-dasharray="3 3"/>
+                    <circle cx="50" cy="50" r="28" stroke-width="0.4"/>
+                    <line x1="50" y1="5" x2="50" y2="95" stroke-width="0.3"/>
+                    <line x1="5" y1="50" x2="95" y2="50" stroke-width="0.3"/>
                 </svg>
             </div>
 
-            <div class="relative z-10 w-full max-w-6xl px-8 flex flex-col items-center text-center">
-                
-                <div class="relative mb-4 h-64 sm:h-80 w-full flex items-center justify-center">
-                    <svg class="h-full w-auto max-h-72 drop-shadow-2xl" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M160 30 L110 290 M160 30 L210 290 M130 120 L190 120 M120 180 L200 180 M115 240 L205 240" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round"/>
-                        <circle cx="160" cy="25" r="5" fill="#ea580c"/>
-                        <path d="M175 20 A 15 15 0 0 1 190 35 M185 10 A 25 25 0 0 1 205 35" stroke="#f97316" stroke-width="2" stroke-linecap="round"/>
-                        
-                        <path d="M130 190 C130 160 190 160 190 190 L195 290 L125 290 Z" fill="#1e293b"/>
-                        <path d="M140 180 L180 180 L185 240 L135 240 Z" fill="#f59e0b"/> <path d="M150 180 L150 240 M170 180 L170 240" stroke="#ffffff" stroke-width="3"/> <circle cx="160" cy="145" r="16" fill="#fcd34d"/>
-                        <path d="M142 142 C142 130 178 130 178 142 Z" fill="#ffffff"/> <path d="M135 190 L105 180 L95 150" stroke="#1e293b" stroke-width="8" stroke-linecap="round"/>
-                        <ellipse cx="90" cy="140" rx="38" ry="38" fill="#334155" stroke="#e2e8f0" stroke-width="3"/>
-                        <ellipse cx="90" cy="140" rx="26" ry="26" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-                        <path d="M90 140 L70 130" stroke="#f97316" stroke-width="4" stroke-linecap="round"/>
-                        <circle cx="68" cy="128" r="4" fill="#38bdf8"/>
-                    </svg>
+            <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1000&q=85" 
+                 alt="Avant Telecom Field Engineer" 
+                 class="person-image drop-shadow-2xl brightness-105 contrast-105">
 
-                    <div class="absolute left-6 sm:left-24 top-8 p-3 rounded-2xl bg-white/90 border border-slate-200 shadow-xl backdrop-blur-md text-left hidden md:block">
-                        <div class="flex items-center gap-2 text-xs font-bold text-slate-900">
-                            <i data-lucide="radio" class="w-4 h-4 text-orange-600"></i> Telecom Division
-                        </div>
-                        <div class="text-[11px] text-slate-500 mt-0.5">5G I&C, Microwave & UBR Links</div>
-                    </div>
+            <div class="absolute left-8 sm:left-24 top-28 z-10 glass-card p-4 rounded-2xl shadow-xl border-slate-200/80 hidden md:block max-w-[240px]">
+                <div class="flex items-center gap-2 text-xs font-extrabold text-slate-900">
+                    <i data-lucide="radio" class="w-4 h-4 text-orange-600"></i> Telecom Division
                 </div>
-
+                <p class="text-[11px] text-slate-600 mt-1 leading-relaxed">
+                    Turnkey 5G Rollout, UBR MW Backhaul & Tower Base Construction
+                </p>
             </div>
+
         </div>
 
-        <div id="it-pane" class="split-pane pane-it flex items-center justify-center">
+        <div id="it-layer" class="split-layer layer-it">
             
-            <div class="absolute inset-0 pointer-events-none flex items-center justify-center opacity-30">
-                <svg class="w-[700px] h-[700px] text-white" viewBox="0 0 100 100" fill="none" stroke="currentColor">
-                    <rect x="20" y="20" width="60" height="60" rx="8" stroke-width="0.4" stroke-dasharray="3 3"/>
-                    <circle cx="50" cy="50" r="35" stroke-width="0.3" />
-                    <path d="M20 50 L80 50 M50 20 L50 80" stroke-width="0.3"/>
+            <div class="absolute inset-0 pointer-events-none opacity-30 flex items-center justify-center">
+                <svg class="w-[850px] h-[850px] text-white" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+                    <rect x="18" y="18" width="64" height="64" rx="8" stroke-width="0.4" stroke-dasharray="4 4"/>
+                    <circle cx="50" cy="50" r="36" stroke-width="0.3"/>
+                    <path d="M18 50 L82 50 M50 18 L50 82" stroke-width="0.3"/>
                 </svg>
             </div>
 
-            <div class="relative z-10 w-full max-w-6xl px-8 flex flex-col items-center text-center">
-                
-                <div class="relative mb-4 h-64 sm:h-80 w-full flex items-center justify-center">
-                    <svg class="h-full w-auto max-h-72 drop-shadow-2xl" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g opacity="0.85">
-                            <rect x="50" y="60" width="60" height="24" rx="6" fill="rgba(255,255,255,0.2)"/>
-                            <text x="58" y="76" fill="#ffffff" font-size="10" font-family="monospace">&lt;Flutter/&gt;</text>
-                            
-                            <rect x="210" y="80" width="55" height="24" rx="6" fill="rgba(255,255,255,0.2)"/>
-                            <text x="218" y="96" fill="#ffffff" font-size="10" font-family="monospace">iOS.dev</text>
-                            
-                            <rect x="220" y="140" width="60" height="24" rx="6" fill="rgba(255,255,255,0.2)"/>
-                            <text x="228" y="156" fill="#ffffff" font-size="10" font-family="monospace">CloudAPI</text>
-                        </g>
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1000&q=85" 
+                 alt="Avant IT Software Engineer" 
+                 class="person-image drop-shadow-2xl brightness-110 contrast-105">
 
-                        <path d="M125 200 C125 170 195 170 195 200 L200 290 L120 290 Z" fill="#0f172a"/>
-                        <circle cx="160" cy="150" r="16" fill="#fed7aa"/>
-                        <path d="M144 146 C144 134 176 134 176 146 Z" fill="#1e293b"/> <rect x="150" y="146" width="20" height="6" rx="2" fill="#38bdf8"/> <polygon points="120,235 200,235 210,200 130,200" fill="#38bdf8" opacity="0.4"/>
-                        <path d="M125 235 L195 235 L190 205 L130 205 Z" fill="#ffffff"/> <rect x="135" y="210" width="50" height="20" fill="#0284c7" rx="2"/>
-                        <polygon points="115,245 205,245 195,235 125,235" fill="#cbd5e1"/>
-                        
-                        <line x1="140" y1="216" x2="165" y2="216" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
-                        <line x1="140" y1="222" x2="175" y2="222" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-
-                    <div class="absolute right-6 sm:right-24 top-8 p-3 rounded-2xl bg-white/20 border border-white/30 shadow-xl backdrop-blur-md text-left hidden md:block">
-                        <div class="flex items-center gap-2 text-xs font-bold text-white">
-                            <i data-lucide="server" class="w-4 h-4 text-cyan-200"></i> IT Division
-                        </div>
-                        <div class="text-[11px] text-white/80 mt-0.5">iOS/Android, Cloud & Custom ERP</div>
-                    </div>
+            <div class="absolute right-8 sm:right-24 top-28 z-10 p-4 rounded-2xl bg-white/20 border border-white/30 backdrop-blur-xl shadow-xl text-white hidden md:block max-w-[240px]">
+                <div class="flex items-center gap-2 text-xs font-extrabold">
+                    <i data-lucide="server" class="w-4 h-4 text-cyan-200"></i> IT Services Division
                 </div>
-
+                <p class="text-[11px] text-white/90 mt-1 leading-relaxed">
+                    iOS / Android Engineering, Cloud Infrastructure & Custom ERP
+                </p>
             </div>
+
         </div>
 
-        <div class="absolute inset-x-0 bottom-12 sm:bottom-16 z-30 flex flex-col items-center justify-center text-center pointer-events-none px-4">
+        <div class="absolute inset-x-0 bottom-10 sm:bottom-14 z-30 flex flex-col items-center justify-center text-center pointer-events-none px-4">
             
-            <div class="relative mb-6">
-                <h1 class="text-6xl sm:text-8xl lg:text-9xl font-black font-display tracking-tight leading-none drop-shadow-xl flex items-center justify-center">
-                    <span class="text-slate-900 drop-shadow-sm">AV</span><span class="text-white drop-shadow-md">ANT</span>
+            <div class="relative mb-5">
+                <h1 class="text-6xl sm:text-8xl lg:text-9xl font-black font-display tracking-tight leading-none drop-shadow-2xl flex items-center justify-center">
+                    <span class="text-slate-900 drop-shadow-md">AV</span><span class="text-white drop-shadow-md">ANT</span>
                 </h1>
-                <p class="text-xs sm:text-sm font-bold tracking-[0.3em] uppercase mt-2 text-slate-700 bg-white/70 px-4 py-1 rounded-full backdrop-blur-md mx-auto inline-block border border-slate-200/80 shadow-sm">
-                    Empowering Telecom Infrastructure & Digital Software Solutions
+                <p class="text-xs sm:text-sm font-bold tracking-[0.25em] uppercase mt-2 text-slate-800 bg-white/80 px-4 py-1.5 rounded-full backdrop-blur-md mx-auto inline-block border border-slate-200 shadow-md">
+                    Telecom Infrastructure &bull; Software Solutions
                 </p>
             </div>
 
@@ -228,7 +198,7 @@
                     <span>AVANT TELECOM</span>
                 </button>
 
-                <div class="px-3 text-[10px] font-black tracking-widest text-slate-400 uppercase hidden sm:block">
+                <div class="px-3.5 text-[10px] font-black tracking-widest text-slate-400 uppercase hidden sm:block">
                     CHOOSE BUSINESS
                 </div>
 
@@ -239,14 +209,14 @@
 
             </div>
 
-            <div class="mt-4 text-[10px] font-bold text-slate-500 tracking-wider uppercase bg-white/60 px-3 py-0.5 rounded-full backdrop-blur-sm">
-                &larr; Drag Slider or Click to Enter &rarr;
+            <div class="mt-3 text-[10px] font-bold text-slate-600 tracking-wider uppercase bg-white/70 px-3.5 py-0.5 rounded-full backdrop-blur-sm border border-slate-200/60 shadow-sm">
+                &larr; Drag Slider Left or Right to Unveil &rarr;
             </div>
 
         </div>
 
-        <div id="slider-bar" class="slider-divider">
-            <div class="slider-handle-btn">
+        <div id="slider-bar" class="split-divider-line">
+            <div class="split-thumb">
                 <i data-lucide="chevrons-left-right" class="w-5 h-5"></i>
             </div>
         </div>
@@ -255,11 +225,11 @@
 
     <div id="view-telecom" class="hidden min-h-screen bg-[#fcfcfd]">
         
-        <header class="sticky top-0 z-40 apple-glass">
+        <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
                 <div class="flex items-center gap-3">
-                    <img src="logo.png" alt="Avant" class="h-8 w-auto">
-                    <span class="text-sm font-extrabold tracking-tight text-slate-900">Avant <span class="text-amber-700 font-bold text-xs bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200">Telecom</span></span>
+                    <img src="logo.png" alt="Avant Logo" class="h-8 w-auto">
+                    <span class="text-sm font-extrabold tracking-tight text-slate-900">Avant <span class="text-orange-600 font-bold text-xs bg-orange-50 px-2.5 py-0.5 rounded-full border border-orange-200">Telecom</span></span>
                 </div>
                 <div class="flex items-center gap-3">
                     <button onclick="returnToHub()" class="px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-600 hover:text-slate-900 bg-white border border-slate-200 hover:border-slate-300 shadow-sm transition cursor-pointer">
@@ -275,9 +245,9 @@
         <section class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
-                    <span class="text-xs font-extrabold tracking-widest text-amber-700 uppercase bg-amber-50 border border-amber-200/80 px-3 py-1 rounded-full">CONNECTING TODAY</span>
+                    <span class="text-xs font-extrabold tracking-widest text-orange-700 uppercase bg-orange-50 border border-orange-200/80 px-3 py-1 rounded-full">CONNECTING TODAY</span>
                     <h2 class="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight mt-4 leading-tight">
-                        Powering <br><span class="text-amber-600">Tomorrow.</span>
+                        Powering <br><span class="text-orange-600">Tomorrow.</span>
                     </h2>
                     <p class="mt-5 text-slate-600 text-base sm:text-lg leading-relaxed max-w-lg">
                         Avant Telecom delivers end-to-end telecom solutions with precision, passion, and performance across rugged Northeast and pan-India regions.
@@ -294,18 +264,18 @@
                 
                 <div>
                     <div class="rounded-3xl overflow-hidden border border-slate-200 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 relative shadow-xl p-8 h-80 flex items-center justify-center text-white">
-                        <svg class="w-full h-full max-h-60 text-amber-500/80" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="w-full h-full max-h-60 text-orange-500/80" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M50 250 L350 250 M50 200 L350 200 M50 150 L350 150 M50 100 L350 100" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-                            <circle cx="200" cy="60" r="30" stroke="rgba(245,158,11,0.25)" stroke-width="2" stroke-dasharray="4 4"/>
-                            <circle cx="200" cy="60" r="60" stroke="rgba(245,158,11,0.2)" stroke-width="2" stroke-dasharray="6 6"/>
-                            <circle cx="200" cy="60" r="90" stroke="rgba(245,158,11,0.12)" stroke-width="2" stroke-dasharray="8 8"/>
+                            <circle cx="200" cy="60" r="30" stroke="rgba(249,115,22,0.25)" stroke-width="2" stroke-dasharray="4 4"/>
+                            <circle cx="200" cy="60" r="60" stroke="rgba(249,115,22,0.2)" stroke-width="2" stroke-dasharray="6 6"/>
+                            <circle cx="200" cy="60" r="90" stroke="rgba(249,115,22,0.12)" stroke-width="2" stroke-dasharray="8 8"/>
                             <path d="M200 60 L140 270 M200 60 L260 270 M160 140 L240 140 M150 190 L250 190 M140 240 L260 240 M160 140 L250 190 M240 140 L150 190 M150 190 L260 240 M250 190 L140 240" stroke="#f8fafc" stroke-width="2.5" stroke-linecap="round"/>
-                            <circle cx="200" cy="55" r="7" fill="#f59e0b"/>
-                            <path d="M185 75 L215 75 M180 90 L220 90" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"/>
+                            <circle cx="200" cy="55" r="7" fill="#f97316"/>
+                            <path d="M185 75 L215 75 M180 90 L220 90" stroke="#f97316" stroke-width="3" stroke-linecap="round"/>
                         </svg>
 
-                        <div class="absolute bottom-4 left-4 right-4 p-4 rounded-2xl apple-glass shadow-lg">
-                            <div class="text-xs font-bold text-amber-700">Carrier-Grade Infrastructure</div>
+                        <div class="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-white/90 backdrop-blur-md border border-slate-200 shadow-lg">
+                            <div class="text-xs font-bold text-orange-700">Carrier-Grade Infrastructure</div>
                             <div class="text-xs text-slate-700 mt-0.5">5G Network Rollouts, Microwave Links & Tower Foundations</div>
                         </div>
                     </div>
@@ -317,7 +287,7 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
                     <div class="pt-3 md:pt-0">
-                        <div class="text-3xl sm:text-4xl font-black text-amber-600">50+</div>
+                        <div class="text-3xl sm:text-4xl font-black text-orange-600">50+</div>
                         <div class="text-xs font-semibold text-slate-500 mt-1">Northeast Projects Completed</div>
                     </div>
                     <div class="pt-3 md:pt-0">
@@ -325,7 +295,7 @@
                         <div class="text-xs font-semibold text-slate-500 mt-1">Skilled Field Engineers</div>
                     </div>
                     <div class="pt-3 md:pt-0">
-                        <div class="text-3xl sm:text-4xl font-black text-amber-600">99%</div>
+                        <div class="text-3xl sm:text-4xl font-black text-orange-600">99%</div>
                         <div class="text-xs font-semibold text-slate-500 mt-1">SLA Standard Compliance</div>
                     </div>
                     <div class="pt-3 md:pt-0">
@@ -338,48 +308,48 @@
 
         <section id="services-telecom" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-xl mx-auto mb-14">
-                <span class="text-xs font-bold text-amber-700 uppercase tracking-widest bg-amber-50 px-3 py-1 rounded-full border border-amber-200">CAPABILITIES</span>
+                <span class="text-xs font-bold text-orange-700 uppercase tracking-widest bg-orange-50 px-3 py-1 rounded-full border border-orange-200">CAPABILITIES</span>
                 <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">End-to-End Telecom Solutions</h3>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="apple-glass-card p-7 rounded-3xl">
-                    <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mb-5 border border-amber-100">
+                <div class="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center mb-5 border border-orange-100">
                         <i data-lucide="radio" class="w-6 h-6"></i>
                     </div>
                     <h4 class="text-base font-bold text-slate-900 mb-2">5G & 4G Installation</h4>
                     <p class="text-xs text-slate-600 leading-relaxed">Turnkey installation, commissioning, antenna height adjustment, and de-installation for carrier sites.</p>
                 </div>
-                <div class="apple-glass-card p-7 rounded-3xl">
-                    <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mb-5 border border-amber-100">
+                <div class="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center mb-5 border border-orange-100">
                         <i data-lucide="satellite" class="w-6 h-6"></i>
                     </div>
                     <h4 class="text-base font-bold text-slate-900 mb-2">Microwave & UBR Solutions</h4>
                     <p class="text-xs text-slate-600 leading-relaxed">High-capacity MW and UBR links, Line-of-Sight (LOS) surveys, and transmission routing.</p>
                 </div>
-                <div class="apple-glass-card p-7 rounded-3xl">
-                    <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mb-5 border border-amber-100">
+                <div class="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center mb-5 border border-orange-100">
                         <i data-lucide="package" class="w-6 h-6"></i>
                     </div>
                     <h4 class="text-base font-bold text-slate-900 mb-2">Equipment Packaging</h4>
                     <p class="text-xs text-slate-600 leading-relaxed">Safe, custom-padded specialized packaging and transport prep for fragile RF hardware.</p>
                 </div>
-                <div class="apple-glass-card p-7 rounded-3xl">
-                    <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mb-5 border border-amber-100">
+                <div class="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center mb-5 border border-orange-100">
                         <i data-lucide="truck" class="w-6 h-6"></i>
                     </div>
                     <h4 class="text-base font-bold text-slate-900 mb-2">Transportation Services</h4>
                     <p class="text-xs text-slate-600 leading-relaxed">Dependable terrain-ready logistics and secure movement across challenging remote geographies.</p>
                 </div>
-                <div class="apple-glass-card p-7 rounded-3xl">
-                    <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mb-5 border border-amber-100">
+                <div class="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center mb-5 border border-orange-100">
                         <i data-lucide="tower-control" class="w-6 h-6"></i>
                     </div>
                     <h4 class="text-base font-bold text-slate-900 mb-2">Tower Base Construction</h4>
                     <p class="text-xs text-slate-600 leading-relaxed">Civil foundation engineering, pole erections, and structural passive infrastructure.</p>
                 </div>
-                <div class="apple-glass-card p-7 rounded-3xl">
-                    <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mb-5 border border-amber-100">
+                <div class="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center mb-5 border border-orange-100">
                         <i data-lucide="hard-hat" class="w-6 h-6"></i>
                     </div>
                     <h4 class="text-base font-bold text-slate-900 mb-2">Telecom Civil Works</h4>
@@ -391,25 +361,25 @@
         <section id="contact-telecom" class="py-16 bg-slate-50 border-t border-slate-200">
             <div class="max-w-4xl mx-auto px-4 text-center">
                 <h3 class="text-2xl font-bold text-slate-900">Connect with Avant Telecom</h3>
-                <p class="text-sm text-slate-600 mt-2">Direct your inquiries and SOW proposals to <a href="mailto:support@avanttelecom.in" class="text-amber-700 font-semibold underline">support@avanttelecom.in</a></p>
+                <p class="text-sm text-slate-600 mt-2">Direct your inquiries and SOW proposals to <a href="mailto:support@avanttelecom.in" class="text-orange-600 font-semibold underline">support@avanttelecom.in</a></p>
             </div>
         </section>
 
     </div>
 
-    <div id="view-it" class="hidden min-h-screen bg-[#f8fafc]">
+    <div id="view-it" class="hidden min-h-screen bg-gradient-to-b from-[#ff4b2b] via-[#f97316] to-[#ea580c] text-white">
         
-        <header class="sticky top-0 z-40 apple-glass">
+        <header class="sticky top-0 z-40 bg-black/20 backdrop-blur-md border-b border-white/20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
                 <div class="flex items-center gap-3">
-                    <img src="logo.png" alt="Avant" class="h-8 w-auto">
-                    <span class="text-sm font-extrabold tracking-tight text-slate-900">Avant <span class="text-cyan-800 font-bold text-xs bg-cyan-50 px-2.5 py-0.5 rounded-full border border-cyan-200">IT Services</span></span>
+                    <img src="logo.png" alt="Avant Logo" class="h-8 w-auto brightness-200">
+                    <span class="text-sm font-extrabold tracking-tight text-white">Avant <span class="text-white font-bold text-xs bg-white/20 px-2.5 py-0.5 rounded-full border border-white/30">IT Services</span></span>
                 </div>
                 <div class="flex items-center gap-3">
-                    <button onclick="returnToHub()" class="px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-600 hover:text-slate-900 bg-white border border-slate-200 hover:border-slate-300 shadow-sm transition cursor-pointer">
+                    <button onclick="returnToHub()" class="px-3.5 py-1.5 rounded-full text-xs font-semibold text-white hover:text-slate-900 bg-white/20 hover:bg-white border border-white/30 transition cursor-pointer">
                         &larr; Switch Division
                     </button>
-                    <a href="https://accounts.zoho.in/signin?servicename=VirtualOffice" target="_blank" class="px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-900 bg-slate-100 hover:bg-slate-200 transition">
+                    <a href="https://accounts.zoho.in/signin?servicename=VirtualOffice" target="_blank" class="px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-900 bg-white hover:bg-slate-100 transition">
                         Zoho Webmail
                     </a>
                 </div>
@@ -419,55 +389,54 @@
         <section class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
-                    <span class="text-xs font-extrabold tracking-widest text-cyan-800 uppercase bg-cyan-50 border border-cyan-200/80 px-3 py-1 rounded-full">INNOVATE. INTEGRATE. ELEVATE.</span>
-                    <h2 class="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight mt-4 leading-tight">
-                        Smart IT Solutions <br>for a <span class="text-cyan-700">Digital Tomorrow</span>
+                    <span class="text-xs font-extrabold tracking-widest text-white uppercase bg-white/20 border border-white/30 px-3 py-1 rounded-full">INNOVATE. INTEGRATE. ELEVATE.</span>
+                    <h2 class="text-4xl sm:text-6xl font-black text-white tracking-tight mt-4 leading-tight">
+                        Smart IT Solutions <br>for a <span class="text-amber-200">Digital Tomorrow</span>
                     </h2>
-                    <p class="mt-5 text-slate-600 text-base sm:text-lg leading-relaxed max-w-lg">
+                    <p class="mt-5 text-white/90 text-base sm:text-lg leading-relaxed max-w-lg">
                         Avant IT Services builds native iOS, Android, and enterprise cloud applications that empower modern businesses to scale rapidly with security.
                     </p>
                     <div class="mt-8 flex flex-wrap gap-4">
-                        <a href="#services-it" class="px-6 py-3 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs shadow-md transition">
+                        <a href="#services-it" class="px-6 py-3 rounded-full bg-slate-900 hover:bg-black text-white font-bold text-xs shadow-xl transition">
                             Explore IT Services &rarr;
                         </a>
-                        <a href="#contact-it" class="px-6 py-3 rounded-full bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 font-semibold text-xs shadow-sm transition">
+                        <a href="#contact-it" class="px-6 py-3 rounded-full bg-white/20 hover:bg-white hover:text-slate-900 border border-white/40 text-white font-semibold text-xs shadow-md transition">
                             Consult With Us
                         </a>
                     </div>
                 </div>
 
                 <div>
-                    <div class="rounded-3xl overflow-hidden border border-slate-200 bg-gradient-to-tr from-slate-900 via-indigo-950 to-slate-900 relative shadow-xl p-6 sm:p-8 h-80 flex flex-col justify-between text-white">
-                        
-                        <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                    <div class="rounded-3xl overflow-hidden border border-white/30 bg-black/30 backdrop-blur-xl relative shadow-2xl p-6 sm:p-8 h-80 flex flex-col justify-between">
+                        <div class="flex items-center justify-between border-b border-white/20 pb-4">
                             <div class="flex items-center gap-2">
-                                <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
-                                <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
-                                <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+                                <span class="w-3 h-3 rounded-full bg-red-400"></span>
+                                <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                                <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
                             </div>
-                            <div class="flex items-center gap-3 text-xs font-semibold text-cyan-300">
-                                <span class="bg-cyan-500/10 px-2.5 py-1 rounded-md border border-cyan-500/20 flex items-center gap-1.5"><i data-lucide="smartphone" class="w-3.5 h-3.5"></i> iOS & Android</span>
-                                <span class="bg-indigo-500/10 px-2.5 py-1 rounded-md border border-indigo-500/20 flex items-center gap-1.5"><i data-lucide="cloud" class="w-3.5 h-3.5"></i> Cloud ERP</span>
+                            <div class="flex items-center gap-3 text-xs font-semibold">
+                                <span class="bg-white/20 px-2.5 py-1 rounded-md border border-white/30 flex items-center gap-1.5"><i data-lucide="smartphone" class="w-3.5 h-3.5"></i> iOS & Android</span>
+                                <span class="bg-white/20 px-2.5 py-1 rounded-md border border-white/30 flex items-center gap-1.5"><i data-lucide="cloud" class="w-3.5 h-3.5"></i> Cloud ERP</span>
                             </div>
                         </div>
 
                         <div class="grid grid-cols-3 gap-3 my-auto">
-                            <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-center">
-                                <i data-lucide="code-2" class="w-5 h-5 text-cyan-400 mx-auto mb-1"></i>
-                                <span class="text-[11px] font-bold text-slate-200">Flutter / Native</span>
+                            <div class="bg-white/10 border border-white/20 rounded-xl p-3 text-center">
+                                <i data-lucide="code-2" class="w-5 h-5 text-amber-300 mx-auto mb-1"></i>
+                                <span class="text-[11px] font-bold">Flutter / Native</span>
                             </div>
-                            <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-center">
-                                <i data-lucide="database" class="w-5 h-5 text-indigo-400 mx-auto mb-1"></i>
-                                <span class="text-[11px] font-bold text-slate-200">REST & GraphQL</span>
+                            <div class="bg-white/10 border border-white/20 rounded-xl p-3 text-center">
+                                <i data-lucide="database" class="w-5 h-5 text-amber-300 mx-auto mb-1"></i>
+                                <span class="text-[11px] font-bold">REST APIs</span>
                             </div>
-                            <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-center">
-                                <i data-lucide="shield-check" class="w-5 h-5 text-emerald-400 mx-auto mb-1"></i>
-                                <span class="text-[11px] font-bold text-slate-200">Secured Cloud</span>
+                            <div class="bg-white/10 border border-white/20 rounded-xl p-3 text-center">
+                                <i data-lucide="shield-check" class="w-5 h-5 text-emerald-300 mx-auto mb-1"></i>
+                                <span class="text-[11px] font-bold">Secured Cloud</span>
                             </div>
                         </div>
 
-                        <div class="p-3.5 rounded-2xl apple-glass shadow-lg">
-                            <div class="text-xs font-bold text-cyan-900">Full-Stack Application Development</div>
+                        <div class="p-3.5 rounded-2xl bg-white text-slate-900 shadow-lg">
+                            <div class="text-xs font-bold text-orange-600">Full-Stack Application Development</div>
                             <div class="text-xs text-slate-700 mt-0.5">Custom Software, Mobile Apps (iOS / Android) & Cloud ERP</div>
                         </div>
                     </div>
@@ -477,69 +446,68 @@
 
         <section id="services-it" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-xl mx-auto mb-14">
-                <span class="text-xs font-bold text-cyan-800 uppercase tracking-widest bg-cyan-50 px-3 py-1 rounded-full border border-cyan-200">WHAT WE DO</span>
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Comprehensive IT Services</h3>
+                <span class="text-xs font-bold uppercase tracking-widest bg-white/20 px-3 py-1 rounded-full border border-white/30">WHAT WE DO</span>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Comprehensive IT Services</h3>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="apple-glass-card p-7 rounded-3xl">
-                    <div class="w-12 h-12 rounded-2xl bg-cyan-50 text-cyan-700 flex items-center justify-center mb-5 border border-cyan-100">
+                <div class="bg-white/10 border border-white/20 p-7 rounded-3xl backdrop-blur-md hover:bg-white/20 transition">
+                    <div class="w-12 h-12 rounded-2xl bg-white text-orange-600 flex items-center justify-center mb-5 shadow">
                         <i data-lucide="smartphone" class="w-6 h-6"></i>
                     </div>
-                    <h4 class="text-base font-bold text-slate-900 mb-2">iOS & Android App Engineering</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed">High-performance mobile applications engineered with Flutter, Kotlin, and Swift for consumer and enterprise use.</p>
+                    <h4 class="text-base font-bold text-white mb-2">iOS & Android App Engineering</h4>
+                    <p class="text-xs text-white/80 leading-relaxed">High-performance mobile applications engineered with Flutter, Kotlin, and Swift for consumer and enterprise use.</p>
                 </div>
-                <div class="apple-glass-card p-7 rounded-3xl">
-                    <div class="w-12 h-12 rounded-2xl bg-cyan-50 text-cyan-700 flex items-center justify-center mb-5 border border-cyan-100">
+                <div class="bg-white/10 border border-white/20 p-7 rounded-3xl backdrop-blur-md hover:bg-white/20 transition">
+                    <div class="w-12 h-12 rounded-2xl bg-white text-orange-600 flex items-center justify-center mb-5 shadow">
                         <i data-lucide="cloud" class="w-6 h-6"></i>
                     </div>
-                    <h4 class="text-base font-bold text-slate-900 mb-2">Cloud Services & Email</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed">Zoho/Google Workspace business mail setups, DNS hardening (DKIM/SPF), and automated cloud backups.</p>
+                    <h4 class="text-base font-bold text-white mb-2">Cloud Services & Email</h4>
+                    <p class="text-xs text-white/80 leading-relaxed">Zoho/Google Workspace business mail setups, DNS hardening (DKIM/SPF), and automated cloud backups.</p>
                 </div>
-                <div class="apple-glass-card p-7 rounded-3xl">
-                    <div class="w-12 h-12 rounded-2xl bg-cyan-50 text-cyan-700 flex items-center justify-center mb-5 border border-cyan-100">
+                <div class="bg-white/10 border border-white/20 p-7 rounded-3xl backdrop-blur-md hover:bg-white/20 transition">
+                    <div class="w-12 h-12 rounded-2xl bg-white text-orange-600 flex items-center justify-center mb-5 shadow">
                         <i data-lucide="shield-check" class="w-6 h-6"></i>
                     </div>
-                    <h4 class="text-base font-bold text-slate-900 mb-2">Cyber Security & VPN</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed">Enterprise firewall setup, hardware VPN tunnels, endpoint security policies, and vulnerability audits.</p>
+                    <h4 class="text-base font-bold text-white mb-2">Cyber Security & VPN</h4>
+                    <p class="text-xs text-white/80 leading-relaxed">Enterprise firewall setup, hardware VPN tunnels, endpoint security policies, and vulnerability audits.</p>
                 </div>
-                <div class="apple-glass-card p-7 rounded-3xl">
-                    <div class="w-12 h-12 rounded-2xl bg-cyan-50 text-cyan-700 flex items-center justify-center mb-5 border border-cyan-100">
+                <div class="bg-white/10 border border-white/20 p-7 rounded-3xl backdrop-blur-md hover:bg-white/20 transition">
+                    <div class="w-12 h-12 rounded-2xl bg-white text-orange-600 flex items-center justify-center mb-5 shadow">
                         <i data-lucide="code" class="w-6 h-6"></i>
                     </div>
-                    <h4 class="text-base font-bold text-slate-900 mb-2">Custom ERP & Web Portals</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed">Custom ERP/CRM web applications, internal tools, operational dashboards, and REST API integrations.</p>
+                    <h4 class="text-base font-bold text-white mb-2">Custom ERP & Web Portals</h4>
+                    <p class="text-xs text-white/80 leading-relaxed">Custom ERP/CRM web applications, internal tools, operational dashboards, and REST API integrations.</p>
                 </div>
-                <div class="apple-glass-card p-7 rounded-3xl">
-                    <div class="w-12 h-12 rounded-2xl bg-cyan-50 text-cyan-700 flex items-center justify-center mb-5 border border-cyan-100">
+                <div class="bg-white/10 border border-white/20 p-7 rounded-3xl backdrop-blur-md hover:bg-white/20 transition">
+                    <div class="w-12 h-12 rounded-2xl bg-white text-orange-600 flex items-center justify-center mb-5 shadow">
                         <i data-lucide="monitor" class="w-6 h-6"></i>
                     </div>
-                    <h4 class="text-base font-bold text-slate-900 mb-2">IT Infrastructure & AMC</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed">Dedicated workplace workstation deployment, preventative hardware maintenance, and 24/7 SLA helpdesk.</p>
+                    <h4 class="text-base font-bold text-white mb-2">IT Infrastructure & AMC</h4>
+                    <p class="text-xs text-white/80 leading-relaxed">Dedicated workplace workstation deployment, preventative hardware maintenance, and 24/7 SLA helpdesk.</p>
                 </div>
-                <div class="apple-glass-card p-7 rounded-3xl">
-                    <div class="w-12 h-12 rounded-2xl bg-cyan-50 text-cyan-700 flex items-center justify-center mb-5 border border-cyan-100">
+                <div class="bg-white/10 border border-white/20 p-7 rounded-3xl backdrop-blur-md hover:bg-white/20 transition">
+                    <div class="w-12 h-12 rounded-2xl bg-white text-orange-600 flex items-center justify-center mb-5 shadow">
                         <i data-lucide="bar-chart-2" class="w-6 h-6"></i>
                     </div>
-                    <h4 class="text-base font-bold text-slate-900 mb-2">Digital Solutions</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed">Process digitization, paperless workflow transformations, and database modernization.</p>
+                    <h4 class="text-base font-bold text-white mb-2">Digital Solutions</h4>
+                    <p class="text-xs text-white/80 leading-relaxed">Process digitization, paperless workflow transformations, and database modernization.</p>
                 </div>
             </div>
         </section>
 
-        <section id="contact-it" class="py-16 bg-slate-50 border-t border-slate-200">
+        <section id="contact-it" class="py-16 bg-black/20 border-t border-white/20">
             <div class="max-w-4xl mx-auto px-4 text-center">
-                <h3 class="text-2xl font-bold text-slate-900">Partner with Avant IT Services</h3>
-                <p class="text-sm text-slate-600 mt-2">Connect with our technology consulting team at <a href="mailto:support@avanttelecom.in" class="text-cyan-800 font-semibold underline">support@avanttelecom.in</a></p>
+                <h3 class="text-2xl font-bold text-white">Partner with Avant IT Services</h3>
+                <p class="text-sm text-white/90 mt-2">Connect with our technology consulting team at <a href="mailto:support@avanttelecom.in" class="text-amber-200 font-semibold underline">support@avanttelecom.in</a></p>
             </div>
         </section>
 
     </div>
 
     <script>
-        // Dual Slider Mechanics
         const container = document.getElementById('portal-hub');
-        const itPane = document.getElementById('it-pane');
+        const itLayer = document.getElementById('it-layer');
         const sliderBar = document.getElementById('slider-bar');
 
         let isDragging = false;
@@ -548,14 +516,14 @@
             const rect = container.getBoundingClientRect();
             let percentage = ((x - rect.left) / rect.width) * 100;
             
-            // Constrain between 15% and 85%
-            percentage = Math.max(15, Math.min(85, percentage));
+            // Constrain between 5% and 95% for full unveil visibility
+            percentage = Math.max(5, Math.min(95, percentage));
 
-            itPane.style.clipPath = `polygon(${percentage}% 0, 100% 0, 100% 100%, ${percentage}% 100%)`;
+            itLayer.style.clipPath = `polygon(${percentage}% 0, 100% 0, 100% 100%, ${percentage}% 100%)`;
             sliderBar.style.left = `${percentage}%`;
         }
 
-        // Mouse Events for Slider
+        // Mouse Events
         sliderBar.addEventListener('mousedown', () => { isDragging = true; });
         window.addEventListener('mouseup', () => { isDragging = false; });
         window.addEventListener('mousemove', (e) => {
@@ -563,7 +531,7 @@
             setSliderPosition(e.clientX);
         });
 
-        // Touch Events for Mobile
+        // Touch Events for Mobile / Tablet
         sliderBar.addEventListener('touchstart', () => { isDragging = true; });
         window.addEventListener('touchend', () => { isDragging = false; });
         window.addEventListener('touchmove', (e) => {
@@ -571,7 +539,7 @@
             setSliderPosition(e.touches[0].clientX);
         });
 
-        // Portal Switcher
+        // Portal Switcher Logic
         function openPortal(portal) {
             const hub = document.getElementById('portal-hub');
             const telecomView = document.getElementById('view-telecom');
