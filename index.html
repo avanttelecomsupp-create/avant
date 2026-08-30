@@ -89,7 +89,7 @@
 
         /* CREAMS Style Big Typography */
         .brand-text-left {
-            color: #ff3b4e;
+            color: #ff3b4e; /* Bright Avant Red */
             font-weight: 300;
             letter-spacing: 0.22em;
             text-shadow: 0 4px 24px rgba(255, 59, 78, 0.15);
@@ -102,18 +102,6 @@
         }
 
         /* Independent Pop-out Buttons */
-        .split-btn-container {
-            position: absolute;
-            top: 60%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 60;
-            gap: 4px;
-        }
-
         .btn-telecom-indep {
             background: linear-gradient(90deg, #ff5e3a 0%, #ff3b4e 100%);
             color: #ffffff;
@@ -127,16 +115,13 @@
             letter-spacing: 0.15em;
             text-transform: uppercase;
             cursor: pointer;
-            border-radius: 9999px 8px 8px 9999px;
+            border-radius: 9999px;
             box-shadow: 0 6px 16px rgba(255, 59, 78, 0.3);
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .btn-telecom-indep:hover {
-            transform: translateY(-2px) scale(1.08);
-            border-radius: 9999px;
-            z-index: 10;
+            transform: translateY(-3px) scale(1.08);
             box-shadow: 0 12px 24px rgba(255, 59, 78, 0.45);
-            background: linear-gradient(90deg, #f94c25 0%, #ea263a 100%);
         }
 
         .btn-it-indep {
@@ -152,16 +137,13 @@
             letter-spacing: 0.15em;
             text-transform: uppercase;
             cursor: pointer;
-            border-radius: 8px 9999px 9999px 8px;
+            border-radius: 9999px;
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .btn-it-indep:hover {
-            transform: translateY(-2px) scale(1.08);
-            border-radius: 9999px;
-            z-index: 10;
+            transform: translateY(-3px) scale(1.08);
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
-            background: #f8fafc;
         }
 
         /* Abstract decorative shapes */
@@ -191,65 +173,47 @@
 </head>
 <body class="bg-[#f1f5f9] text-slate-800 antialiased min-h-screen">
 
-    <!-- ========================================================================= -->
-    <!-- ====== INTERACTIVE DUAL CONFIGURATOR (CREAMS STYLE EXACT REPLICA) ======= -->
-    <!-- ========================================================================= -->
     <section id="portal-hub" class="configurator-wrap">
 
-        <!-- Minimalist Header -->
         <header class="absolute top-0 left-0 right-0 z-40 flex items-center justify-center sm:justify-start px-8 sm:px-14 h-24 pointer-events-none">
             <div class="flex items-center gap-2">
                 <span class="text-xl font-extrabold tracking-widest text-slate-900 uppercase">avant<span class="text-[#ff3b4e]">.</span></span>
             </div>
         </header>
 
-        <!-- ================= LEFT SIDE: AVANT TELECOM ================= -->
-        <div class="split-side side-telecom relative">
+        <div class="split-side side-telecom">
             
-            <!-- Reliable Image Tag for Telecom Workers -->
-            <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1600&q=80" 
-                 alt="Telecom Workers" 
-                 class="absolute inset-0 w-full h-full object-cover object-center opacity-40 mix-blend-multiply grayscale-[30%] pointer-events-none">
+            <div class="absolute inset-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center opacity-25 grayscale"></div>
 
-            <!-- Dynamic Telecom Tagline -->
-            <div class="absolute inset-x-0 top-[56%] w-full flex justify-center text-center pointer-events-none pr-[10%] z-10">
-                <p class="text-[10px] sm:text-[11px] font-bold uppercase text-slate-600 tracking-[0.3em] drop-shadow-sm">
+            <div class="absolute inset-x-0 top-[56%] w-full flex justify-center text-center pointer-events-none pr-10">
+                <p class="text-[10px] sm:text-[11px] font-bold uppercase text-slate-500 tracking-[0.3em]">
                     Build Reliable Telecom Infrastructure
                 </p>
             </div>
 
-            <!-- Abstract decorative geometric shapes -->
-            <div class="absolute left-16 top-32 w-14 h-14 border-2 border-slate-300 rounded-xl transform -rotate-12 pointer-events-none opacity-50 z-10"></div>
-            <div class="absolute left-1/4 bottom-40 w-4 h-4 bg-slate-400 rounded-full pointer-events-none opacity-40 z-10"></div>
+            <div class="absolute left-16 top-32 w-14 h-14 border-2 border-slate-300 rounded-xl transform -rotate-12 pointer-events-none opacity-50"></div>
+            <div class="absolute left-1/4 bottom-40 w-4 h-4 bg-slate-400 rounded-full pointer-events-none opacity-40"></div>
         </div>
 
-        <!-- ================= RIGHT SIDE: AVANT IT SERVICES ================= -->
-        <div id="it-layer" class="split-side side-it relative">
+        <div id="it-layer" class="split-side side-it">
             
-            <!-- Reliable Image Tag for IT Professional -->
-            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1600&q=80" 
-                 alt="IT Developer Coding" 
-                 class="absolute inset-0 w-full h-full object-cover object-center opacity-35 mix-blend-overlay pointer-events-none">
+            <div class="absolute inset-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center opacity-30 mix-blend-overlay"></div>
 
-            <!-- Dynamic IT Tagline -->
-            <div class="absolute inset-x-0 top-[56%] w-full flex justify-center text-center pointer-events-none pl-[10%] z-10">
+            <div class="absolute inset-x-0 top-[56%] w-full flex justify-center text-center pointer-events-none pl-10">
                 <p class="text-[10px] sm:text-[11px] font-bold uppercase text-white tracking-[0.3em] drop-shadow-md">
                     Engineer Next-Gen Software Solutions
                 </p>
             </div>
 
-            <!-- Abstract decorative geometric elements -->
-            <div class="absolute right-20 top-24 w-12 h-12 border-2 border-white/80 rounded-lg transform rotate-45 pointer-events-none z-10"></div>
-            <div class="absolute right-36 top-36 w-14 h-14 rounded-full deco-stripes pointer-events-none z-10"></div>
-            <div class="absolute right-28 top-52 w-3 h-3 bg-cyan-300 rounded-full pointer-events-none drop-shadow-lg z-10"></div>
-            <div class="absolute right-48 bottom-48 w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-b-[18px] border-b-black pointer-events-none opacity-80 z-10"></div>
-            <div class="absolute right-32 bottom-36 w-4 h-4 bg-black rounded-full pointer-events-none opacity-80 z-10"></div>
+            <div class="absolute right-20 top-24 w-12 h-12 border-2 border-white/80 rounded-lg transform rotate-45 pointer-events-none"></div>
+            <div class="absolute right-36 top-36 w-14 h-14 rounded-full deco-stripes pointer-events-none"></div>
+            <div class="absolute right-28 top-52 w-3 h-3 bg-cyan-300 rounded-full pointer-events-none drop-shadow-lg"></div>
+            <div class="absolute right-48 bottom-48 w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-b-[18px] border-b-black pointer-events-none opacity-80"></div>
+            <div class="absolute right-32 bottom-36 w-4 h-4 bg-black rounded-full pointer-events-none opacity-80"></div>
         </div>
 
-        <!-- ================= CENTER OVERLAY: AVANT TEXT & INDEPENDENT BUTTONS ================= -->
         <div class="absolute inset-x-0 top-[48%] -translate-y-1/2 z-30 flex flex-col items-center justify-center text-center pointer-events-none px-4">
             
-            <!-- Big Centered "AVANT" (Exact CREAMS Dual-Tone Split) -->
             <div class="relative leading-none select-none mb-12">
                 <h1 class="text-7xl sm:text-9xl lg:text-[160px] tracking-wider uppercase flex items-center justify-center">
                     <span class="brand-text-left">AV</span><span class="brand-text-right">ANT</span>
@@ -258,8 +222,7 @@
 
         </div>
 
-        <!-- Independent Buttons Row -->
-        <div class="split-btn-container pointer-events-auto">
+        <div class="absolute top-[63%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-40 flex items-center gap-4 pointer-events-auto">
             <button onclick="openPortal('telecom')" class="btn-telecom-indep">
                 TELECOM
             </button>
@@ -273,7 +236,6 @@
             &larr; DRAG TO EXPLORE &rarr;
         </div>
 
-        <!-- ================= DRAGGABLE SLIDER DIVIDER ================= -->
         <div id="slider-bar" class="configurator-divider">
             <div class="slider-handle">
                 <i data-lucide="chevrons-left-right" class="w-5 h-5"></i>
@@ -282,12 +244,8 @@
 
     </section>
 
-    <!-- ========================================================================= -->
-    <!-- ==================== VIEW 1: AVANT TELECOM PORTAL ======================= -->
-    <!-- ========================================================================= -->
     <div id="view-telecom" class="hidden min-h-screen bg-[#fcfcfd]">
         
-        <!-- Navigation -->
         <header class="sticky top-0 z-40 apple-glass">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
                 <div class="flex items-center gap-3">
@@ -305,7 +263,6 @@
             </div>
         </header>
 
-        <!-- Hero Section -->
         <section class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
@@ -326,14 +283,13 @@
                     </div>
                 </div>
                 
-                <!-- Telecom Hero Graphic -->
                 <div>
                     <div class="rounded-3xl overflow-hidden border border-slate-200 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 relative shadow-xl p-8 h-80 flex items-center justify-center text-white">
                         <svg class="w-full h-full max-h-60 text-[#ff5e3a]" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M50 250 L350 250 M50 200 L350 200 M50 150 L350 150 M50 100 L350 100" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-                            <circle cx="200" cy="60" r="30" stroke="rgba(245,158,11,0.25)" stroke-width="2" stroke-dasharray="4 4"/>
-                            <circle cx="200" cy="60" r="60" stroke="rgba(245,158,11,0.2)" stroke-width="2" stroke-dasharray="6 6"/>
-                            <circle cx="200" cy="60" r="90" stroke="rgba(245,158,11,0.12)" stroke-width="2" stroke-dasharray="8 8"/>
+                            <circle cx="200" cy="60" r="30" stroke="rgba(255,94,58,0.25)" stroke-width="2" stroke-dasharray="4 4"/>
+                            <circle cx="200" cy="60" r="60" stroke="rgba(255,94,58,0.2)" stroke-width="2" stroke-dasharray="6 6"/>
+                            <circle cx="200" cy="60" r="90" stroke="rgba(255,94,58,0.12)" stroke-width="2" stroke-dasharray="8 8"/>
                             <path d="M200 60 L140 270 M200 60 L260 270 M160 140 L240 140 M150 190 L250 190 M140 240 L260 240 M160 140 L250 190 M240 140 L150 190 M150 190 L260 240 M250 190 L140 240" stroke="#f8fafc" stroke-width="2.5" stroke-linecap="round"/>
                             <circle cx="200" cy="55" r="7" fill="#ff5e3a"/>
                             <path d="M185 75 L215 75 M180 90 L220 90" stroke="#ff5e3a" stroke-width="3" stroke-linecap="round"/>
@@ -348,7 +304,6 @@
             </div>
         </section>
 
-        <!-- Stats Bar -->
         <section class="py-10 bg-white border-y border-slate-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
@@ -372,7 +327,6 @@
             </div>
         </section>
 
-        <!-- 6-Card Services Grid -->
         <section id="services-telecom" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-xl mx-auto mb-14">
                 <span class="text-xs font-bold text-[#ff3b4e] uppercase tracking-widest bg-red-50 px-3 py-1 rounded-full border border-red-200">CAPABILITIES</span>
@@ -425,7 +379,6 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact-telecom" class="py-16 bg-slate-50 border-t border-slate-200">
             <div class="max-w-4xl mx-auto px-4 text-center">
                 <h3 class="text-2xl font-bold text-slate-900">Connect with Avant Telecom</h3>
@@ -435,12 +388,8 @@
 
     </div>
 
-    <!-- ========================================================================= -->
-    <!-- ==================== VIEW 2: AVANT IT SERVICES PORTAL =================== -->
-    <!-- ========================================================================= -->
     <div id="view-it" class="hidden min-h-screen bg-gradient-to-b from-[#ff2a54] via-[#ff4b4b] to-[#ff5e3a] text-white">
         
-        <!-- Navigation -->
         <header class="sticky top-0 z-40 bg-black/10 backdrop-blur-lg border-b border-white/20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
                 <div class="flex items-center gap-3">
@@ -458,7 +407,6 @@
             </div>
         </header>
 
-        <!-- Hero Section -->
         <section class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
@@ -479,7 +427,6 @@
                     </div>
                 </div>
 
-                <!-- Software Development UI Card -->
                 <div>
                     <div class="rounded-3xl border border-white/30 bg-black/30 backdrop-blur-xl shadow-2xl p-6 sm:p-8 h-80 flex flex-col justify-between">
                         <div class="flex items-center justify-between border-b border-white/20 pb-4">
@@ -518,7 +465,6 @@
             </div>
         </section>
 
-        <!-- 6-Card Services Grid -->
         <section id="services-it" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-xl mx-auto mb-14">
                 <span class="text-xs font-bold uppercase tracking-widest bg-white/20 px-3 py-1 rounded-full border border-white/30">WHAT WE DO</span>
@@ -571,7 +517,6 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact-it" class="py-16 bg-black/10 border-t border-white/20">
             <div class="max-w-4xl mx-auto px-4 text-center">
                 <h3 class="text-2xl font-bold text-white">Partner with Avant IT Services</h3>
@@ -581,9 +526,6 @@
 
     </div>
 
-    <!-- ========================================================================= -->
-    <!-- ==== DUAL-SPLIT SLIDER INTERACTIVITY & PORTAL SWITCHING SCRIPT =========== -->
-    <!-- ========================================================================= -->
     <script>
         const container = document.getElementById('portal-hub');
         const itLayer = document.getElementById('it-layer');
