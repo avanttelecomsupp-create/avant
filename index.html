@@ -5,30 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avant Telecom | Telecom Infrastructure, 5G Rollout & IT Solutions</title>
     <meta name="description" content="Avant Telecom delivers turnkey telecom infrastructure, 5G network rollout, BTS/Microwave installation, optical fiber solutions, IT services, and managed services.">
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="logo.png">
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
         body { font-family: 'Inter', sans-serif; }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Interactive Split Panel Transitions */
+        .split-panel {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Custom scrollbar for inner containers */
+        .custom-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scroll::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 4px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+        }
+        .dark-custom-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        .dark-custom-scroll::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+        }
+        .dark-custom-scroll::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased">
 
-    <!-- TOP ANNOUNCEMENT / UTILITY BAR -->
     <div class="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
             <div class="flex items-center gap-4">
                 <span class="flex items-center gap-1"><i data-lucide="mail" class="w-3.5 h-3.5 text-red-500"></i> support@avanttelecom.in</span>
-                <span class="hidden md:flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-red-500"></i> Telecom Infrastructure & IT Services</span>
+                <span class="hidden md:flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-red-500"></i> Telecom Infrastructure & IT Solutions</span>
             </div>
             <div class="flex items-center gap-4">
-                <!-- Direct Zoho Webmail Sign-In Link -->
                 <a href="https://accounts.zoho.in/signin?servicename=VirtualOffice" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 text-red-400 hover:text-red-300 font-semibold transition">
                     <i data-lucide="lock" class="w-3.5 h-3.5"></i> Employee Webmail Login &rarr;
                 </a>
@@ -36,14 +58,12 @@
         </div>
     </div>
 
-    <!-- MAIN NAVIGATION -->
     <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <a href="#home" class="flex items-center">
                 <img src="logo.png" alt="Avant Telecom Logo" class="h-12 w-auto object-contain transition hover:opacity-95">
             </a>
 
-            <!-- Desktop Menu -->
             <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-700">
                 <a href="#home" class="hover:text-red-500 transition">Home</a>
                 <a href="#about" class="hover:text-red-500 transition">About Us</a>
@@ -62,7 +82,6 @@
         </div>
     </header>
 
-    <!-- HERO SECTION -->
     <section id="home" class="relative bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-white py-24 lg:py-32 overflow-hidden">
         <div class="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-40"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
@@ -77,7 +96,7 @@
             </p>
             <div class="mt-10 flex flex-wrap justify-center gap-4">
                 <a href="#services" class="px-7 py-3.5 text-base font-semibold text-white bg-red-500 hover:bg-red-600 rounded-xl shadow-lg transition flex items-center gap-2">
-                    Explore Services <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    Explore Services <i data-lucide="arrow-down" class="w-4 h-4"></i>
                 </a>
                 <a href="https://accounts.zoho.in/signin?servicename=VirtualOffice" target="_blank" class="px-7 py-3.5 text-base font-semibold text-slate-200 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-xl transition flex items-center gap-2">
                     <i data-lucide="user-check" class="w-4 h-4 text-red-400"></i> Employee Portal
@@ -86,7 +105,6 @@
         </div>
     </section>
 
-    <!-- KEY STATS -->
     <section class="py-12 bg-white border-b border-slate-200 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
@@ -110,7 +128,214 @@
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
+    <section id="services" class="py-16 bg-slate-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 text-center">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-semibold mb-3">
+                Interactive Division Browser
+            </div>
+            <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
+                Move Mouse Left or Right to Explore
+            </h2>
+            <p class="mt-3 text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
+                Hover left for Telecom Infrastructure or right for Enterprise IT Solutions. Scroll down inside either side to review all services.
+            </p>
+            
+            <div class="mt-6 flex justify-center gap-3 lg:hidden">
+                <button onclick="setFocus('telecom')" class="px-4 py-2 text-xs font-bold rounded-lg bg-red-500 text-white">View Telecom</button>
+                <button onclick="setFocus('it')" class="px-4 py-2 text-xs font-bold rounded-lg bg-blue-600 text-white">View IT Services</button>
+                <button onclick="setFocus('equal')" class="px-4 py-2 text-xs font-bold rounded-lg bg-slate-800 text-slate-300">Split Both</button>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="split-wrapper" class="flex flex-col lg:flex-row gap-6 h-[720px] transition-all duration-500">
+                
+                <div id="panel-telecom" 
+                     onmouseenter="setFocus('telecom')" 
+                     class="split-panel flex-1 bg-slate-800/90 border border-red-500/30 rounded-3xl p-6 sm:p-8 flex flex-col justify-between overflow-hidden relative shadow-2xl">
+                    
+                    <div class="flex items-center justify-between pb-4 border-b border-slate-700/60 shrink-0">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-2xl bg-red-500 text-white flex items-center justify-center shadow-lg shadow-red-500/30">
+                                <i data-lucide="radio" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold tracking-widest text-red-400 uppercase">Division 01</span>
+                                <h3 class="text-2xl font-extrabold text-white">Telecom Engineering</h3>
+                            </div>
+                        </div>
+                        <span class="text-xs font-semibold text-slate-400 hidden sm:inline-block bg-slate-900/60 px-3 py-1 rounded-full border border-slate-700">
+                            ← Hover Left
+                        </span>
+                    </div>
+
+                    <div class="dark-custom-scroll overflow-y-auto space-y-4 my-4 pr-2 flex-grow">
+                        
+                        <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-700/60 hover:border-red-500/50 transition">
+                            <div class="flex items-center gap-3 mb-2">
+                                <i data-lucide="tower-control" class="w-5 h-5 text-red-400"></i>
+                                <h4 class="font-bold text-white text-base">Installation & Commissioning (I&C)</h4>
+                            </div>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-3">
+                                End-to-end I&C for Microwave links, BTS (2G/4G/5G), Small Cells, UBR, and OLT systems. Antenna elevation increments and sector additions.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[11px] font-medium bg-red-500/20 text-red-300 px-2 py-0.5 rounded">Microwave Links</span>
+                                <span class="text-[11px] font-medium bg-red-500/20 text-red-300 px-2 py-0.5 rounded">GSM / LTE / 5G BTS</span>
+                                <span class="text-[11px] font-medium bg-red-500/20 text-red-300 px-2 py-0.5 rounded">RET Additions</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-700/60 hover:border-red-500/50 transition">
+                            <div class="flex items-center gap-3 mb-2">
+                                <i data-lucide="map" class="w-5 h-5 text-red-400"></i>
+                                <h4 class="font-bold text-white text-base">Surveys & RF Optimization</h4>
+                            </div>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-3">
+                                P2P and PMP Line-of-Sight (LOS) site surveys, RF drive tests, OSS config audits, and network benchmarking.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[11px] font-medium bg-red-500/20 text-red-300 px-2 py-0.5 rounded">LOS Surveys</span>
+                                <span class="text-[11px] font-medium bg-red-500/20 text-red-300 px-2 py-0.5 rounded">Pre/Post Drive Tests</span>
+                                <span class="text-[11px] font-medium bg-red-500/20 text-red-300 px-2 py-0.5 rounded">RF Benchmarking</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-700/60 hover:border-red-500/50 transition">
+                            <div class="flex items-center gap-3 mb-2">
+                                <i data-lucide="activity" class="w-5 h-5 text-red-400"></i>
+                                <h4 class="font-bold text-white text-base">CAMC & Managed Services</h4>
+                            </div>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-3">
+                                Comprehensive Annual Maintenance Contracts, preventive routine checks, 24/7 breakdown recovery, and active site maintenance.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[11px] font-medium bg-red-500/20 text-red-300 px-2 py-0.5 rounded">24/7 Breakdown</span>
+                                <span class="text-[11px] font-medium bg-red-500/20 text-red-300 px-2 py-0.5 rounded">Preventive Audits</span>
+                                <span class="text-[11px] font-medium bg-red-500/20 text-red-300 px-2 py-0.5 rounded">Site Relocation</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-700/60 hover:border-red-500/50 transition">
+                            <div class="flex items-center gap-3 mb-2">
+                                <i data-lucide="cable" class="w-5 h-5 text-red-400"></i>
+                                <h4 class="font-bold text-white text-base">Optical Fiber & Equipment Supply</h4>
+                            </div>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-3">
+                                High-grade single mode CPRI patch cords, RF jumper cables, DIN & 4.3-10 connectors, ACDB/DCDB boxes, and SMPS power units.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[11px] font-medium bg-red-500/20 text-red-300 px-2 py-0.5 rounded">CPRI Cords</span>
+                                <span class="text-[11px] font-medium bg-red-500/20 text-red-300 px-2 py-0.5 rounded">RF Jumpers</span>
+                                <span class="text-[11px] font-medium bg-red-500/20 text-red-300 px-2 py-0.5 rounded">SMPS Units</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-700/60 flex items-center justify-between shrink-0">
+                        <span class="text-xs text-slate-400">Scroll down for full telecom scope</span>
+                        <a href="#contact" class="px-4 py-2 rounded-xl text-xs font-semibold bg-red-500 hover:bg-red-600 text-white transition flex items-center gap-1.5">
+                            Telecom Inquiry <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="panel-it" 
+                     onmouseenter="setFocus('it')" 
+                     class="split-panel flex-1 bg-slate-800/90 border border-blue-500/30 rounded-3xl p-6 sm:p-8 flex flex-col justify-between overflow-hidden relative shadow-2xl">
+                    
+                    <div class="flex items-center justify-between pb-4 border-b border-slate-700/60 shrink-0">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-2xl bg-blue-600 text-white flex items-center justify-center shadow-lg shadow-blue-600/30">
+                                <i data-lucide="server" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold tracking-widest text-blue-400 uppercase">Division 02</span>
+                                <h3 class="text-2xl font-extrabold text-white">IT & Software Services</h3>
+                            </div>
+                        </div>
+                        <span class="text-xs font-semibold text-slate-400 hidden sm:inline-block bg-slate-900/60 px-3 py-1 rounded-full border border-slate-700">
+                            Hover Right →
+                        </span>
+                    </div>
+
+                    <div class="dark-custom-scroll overflow-y-auto space-y-4 my-4 pr-2 flex-grow">
+                        
+                        <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-700/60 hover:border-blue-500/50 transition">
+                            <div class="flex items-center gap-3 mb-2">
+                                <i data-lucide="layout-grid" class="w-5 h-5 text-blue-400"></i>
+                                <h4 class="font-bold text-white text-base">Custom Web Apps & Enterprise Portals</h4>
+                            </div>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-3">
+                                Bespoke software engineering, workflow automation dashboards, internal ERP systems, and responsive web platforms.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[11px] font-medium bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded">Custom ERP / CRM</span>
+                                <span class="text-[11px] font-medium bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded">REST APIs</span>
+                                <span class="text-[11px] font-medium bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded">Web Applications</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-700/60 hover:border-blue-500/50 transition">
+                            <div class="flex items-center gap-3 mb-2">
+                                <i data-lucide="network" class="w-5 h-5 text-blue-400"></i>
+                                <h4 class="font-bold text-white text-base">Enterprise Networking & LAN/WAN</h4>
+                            </div>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-3">
+                                Corporate office structured cabling, server room deployment, managed network switches, router configurations, and hardware VPNs.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[11px] font-medium bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded">LAN / WAN Cabling</span>
+                                <span class="text-[11px] font-medium bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded">Firewall / VPN</span>
+                                <span class="text-[11px] font-medium bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded">Switch Routing</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-700/60 hover:border-blue-500/50 transition">
+                            <div class="flex items-center gap-3 mb-2">
+                                <i data-lucide="cloud" class="w-5 h-5 text-blue-400"></i>
+                                <h4 class="font-bold text-white text-base">Cloud Infrastructure & Business Email</h4>
+                            </div>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-3">
+                                Seamless corporate email setups (Zoho / Google Workspace), DNS authentication (SPF, DKIM, DMARC), and cloud backup systems.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[11px] font-medium bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded">Zoho / Google Mail</span>
+                                <span class="text-[11px] font-medium bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded">DNS Security</span>
+                                <span class="text-[11px] font-medium bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded">Cloud Backups</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-700/60 hover:border-blue-500/50 transition">
+                            <div class="flex items-center gap-3 mb-2">
+                                <i data-lucide="shield-alert" class="w-5 h-5 text-blue-400"></i>
+                                <h4 class="font-bold text-white text-base">IT Hardware Support & Maintenance</h4>
+                            </div>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-3">
+                                Scheduled desktop/server maintenance, workstation deployment, software licensing audits, and dedicated IT technical helpdesk.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[11px] font-medium bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded">Workstation Setup</span>
+                                <span class="text-[11px] font-medium bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded">Hardware AMC</span>
+                                <span class="text-[11px] font-medium bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded">Helpdesk Support</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-700/60 flex items-center justify-between shrink-0">
+                        <span class="text-xs text-slate-400">Scroll down for full IT scope</span>
+                        <a href="#contact" class="px-4 py-2 rounded-xl text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white transition flex items-center gap-1.5">
+                            IT Inquiry <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <section id="about" class="py-20 lg:py-28 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -119,7 +344,7 @@
                         About Avant Telecom
                     </div>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                        Specialized Engineering, Supply & Infrastructure Project Management
+                        Specialized Engineering, Supply & Telecom Project Management
                     </h2>
                     <p class="mt-5 text-slate-600 leading-relaxed">
                         Avant Telecom is an engineering and services provider catering to the expanding telecommunications and digital enterprise ecosystem in India. We assist operators, infrastructure providers, and enterprises in planning, deploying, and maintaining high-performance networks.
@@ -162,191 +387,6 @@
         </div>
     </section>
 
-    <!-- SERVICES SECTION WITH TWO TABS & HORIZONTAL SCROLL -->
-    <section id="services" class="py-20 lg:py-28 bg-white border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="text-center max-w-3xl mx-auto">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-100 text-red-700 text-xs font-semibold mb-3">
-                    Our Capabilities
-                </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-                    Comprehensive Business Solutions
-                </h2>
-                <p class="mt-4 text-slate-600">
-                    Switch between our specialized divisions and scroll horizontally to explore our offerings.
-                </p>
-
-                <!-- TAB SWITCHER -->
-                <div class="mt-8 inline-flex p-1.5 bg-slate-100 rounded-2xl border border-slate-200 shadow-inner">
-                    <button id="tab-telecom-btn" onclick="switchDivision('telecom')" class="flex items-center gap-2 px-6 py-2.5 rounded-xl font-semibold text-sm transition bg-white text-slate-900 shadow-sm border border-slate-200/60">
-                        <i data-lucide="radio" class="w-4 h-4 text-red-500"></i> Telecom Division
-                    </button>
-                    <button id="tab-it-btn" onclick="switchDivision('it')" class="flex items-center gap-2 px-6 py-2.5 rounded-xl font-semibold text-sm transition text-slate-500 hover:text-slate-900">
-                        <i data-lucide="server" class="w-4 h-4 text-slate-400"></i> IT & Software Services
-                    </button>
-                </div>
-            </div>
-
-            <!-- SCROLL CONTROLS -->
-            <div class="flex justify-between items-center mt-10 mb-4 px-2">
-                <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
-                    <i data-lucide="move-horizontal" class="w-3.5 h-3.5"></i> Scroll or Drag Horizontally
-                </span>
-                <div class="flex items-center gap-2">
-                    <button onclick="scrollContainer(-350)" aria-label="Scroll Left" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
-                        <i data-lucide="chevron-left" class="w-5 h-5"></i>
-                    </button>
-                    <button onclick="scrollContainer(350)" aria-label="Scroll Right" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
-                        <i data-lucide="chevron-right" class="w-5 h-5"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- HORIZONTAL SCROLL CONTAINER -->
-            <div id="services-scroll-container" class="flex gap-6 overflow-x-auto pb-6 pt-2 scroll-smooth cursor-grab active:cursor-grabbing select-none no-scrollbar">
-                
-                <!-- ================= TAB 1: TELECOM DIVISION ================= -->
-                <div id="telecom-cards" class="flex gap-6 shrink-0">
-                    
-                    <!-- Telecom Card 1 -->
-                    <div class="w-80 sm:w-96 p-8 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-red-400 hover:shadow-lg transition shrink-0 flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 rounded-xl bg-red-500 text-white flex items-center justify-center mb-6">
-                                <i data-lucide="tower-control" class="w-6 h-6"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-slate-900 mb-2">Installation & Commissioning</h3>
-                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                                I&C of Microwave, BTS (2G/4G/5G), Small Cells, UBR, and Optical Line Terminals (OLT).
-                            </p>
-                        </div>
-                        <ul class="text-xs text-slate-500 space-y-1.5 list-disc list-inside border-t border-slate-200/60 pt-4">
-                            <li>Microwave Link Installation</li>
-                            <li>GSM & LTE BTS Setup</li>
-                            <li>Sector Additions</li>
-                        </ul>
-                    </div>
-
-                    <!-- Telecom Card 2 -->
-                    <div class="w-80 sm:w-96 p-8 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-red-400 hover:shadow-lg transition shrink-0 flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 rounded-xl bg-red-500 text-white flex items-center justify-center mb-6">
-                                <i data-lucide="map" class="w-6 h-6"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-slate-900 mb-2">Surveys & RF Optimization</h3>
-                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                                P2P/PMP LOS site surveys, RF cluster drive tests, and KPI benchmarking for telecom operators.
-                            </p>
-                        </div>
-                        <ul class="text-xs text-slate-500 space-y-1.5 list-disc list-inside border-t border-slate-200/60 pt-4">
-                            <li>LOS & P2P Surveys</li>
-                            <li>Pre & Post Drive Testing</li>
-                            <li>RF Optimization</li>
-                        </ul>
-                    </div>
-
-                    <!-- Telecom Card 3 -->
-                    <div class="w-80 sm:w-96 p-8 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-red-400 hover:shadow-lg transition shrink-0 flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 rounded-xl bg-red-500 text-white flex items-center justify-center mb-6">
-                                <i data-lucide="activity" class="w-6 h-6"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-slate-900 mb-2">CAMC & Operations</h3>
-                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                                Comprehensive Annual Maintenance Contracts, preventive servicing, and breakdown maintenance.
-                            </p>
-                        </div>
-                        <ul class="text-xs text-slate-500 space-y-1.5 list-disc list-inside border-t border-slate-200/60 pt-4">
-                            <li>24/7 Breakdown Support</li>
-                            <li>Passive Site Audits</li>
-                            <li>Relocation Services</li>
-                        </ul>
-                    </div>
-
-                    <!-- Telecom Card 4 -->
-                    <div class="w-80 sm:w-96 p-8 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-red-400 hover:shadow-lg transition shrink-0 flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 rounded-xl bg-red-500 text-white flex items-center justify-center mb-6">
-                                <i data-lucide="cable" class="w-6 h-6"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-slate-900 mb-2">Optical Fiber & Consumables</h3>
-                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                                Single-mode CPRI cables, RF jumper cables, DIN connectors, and SMPS power module supplies.
-                            </p>
-                        </div>
-                        <ul class="text-xs text-slate-500 space-y-1.5 list-disc list-inside border-t border-slate-200/60 pt-4">
-                            <li>CPRI & Fiber Cables</li>
-                            <li>RF Jumpers & Connectors</li>
-                            <li>SMPS Power Modules</li>
-                        </ul>
-                    </div>
-
-                </div>
-
-                <!-- ================= TAB 2: IT & SOFTWARE SERVICES ================= -->
-                <div id="it-cards" class="hidden gap-6 shrink-0">
-                    
-                    <!-- IT Card 1 -->
-                    <div class="w-80 sm:w-96 p-8 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-red-400 hover:shadow-lg transition shrink-0 flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 rounded-xl bg-slate-900 text-white flex items-center justify-center mb-6">
-                                <i data-lucide="layout-grid" class="w-6 h-6"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-slate-900 mb-2">Custom Software & Web Apps</h3>
-                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                                Enterprise portals, customized inventory tools, operational workflows, and responsive web platforms.
-                            </p>
-                        </div>
-                        <ul class="text-xs text-slate-500 space-y-1.5 list-disc list-inside border-t border-slate-200/60 pt-4">
-                            <li>Web Portals & Dashboards</li>
-                            <li>Enterprise Operational Tools</li>
-                            <li>REST API & Database Systems</li>
-                        </ul>
-                    </div>
-
-                    <!-- IT Card 2 -->
-                    <div class="w-80 sm:w-96 p-8 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-red-400 hover:shadow-lg transition shrink-0 flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 rounded-xl bg-slate-900 text-white flex items-center justify-center mb-6">
-                                <i data-lucide="network" class="w-6 h-6"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-slate-900 mb-2">Enterprise IT Infrastructure</h3>
-                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                                Corporate LAN/WAN configuration, switch/router deployments, firewall setup, and workplace network cabling.
-                            </p>
-                        </div>
-                        <ul class="text-xs text-slate-500 space-y-1.5 list-disc list-inside border-t border-slate-200/60 pt-4">
-                            <li>Structured Cabling & Racks</li>
-                            <li>Hardware VPN & Firewall Setup</li>
-                            <li>Network Switch Configuration</li>
-                        </ul>
-                    </div>
-
-                    <!-- IT Card 3 -->
-                    <div class="w-80 sm:w-96 p-8 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-red-400 hover:shadow-lg transition shrink-0 flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 rounded-xl bg-slate-900 text-white flex items-center justify-center mb-6">
-                                <i data-lucide="cloud" class="w-6 h-6"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-slate-900 mb-2">Cloud & Business Email</h3>
-                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                                Domain management, Zoho & Google Workspace corporate mail configuration, and automated backups.
-                            </p>
-                        </div>
-                        <ul class="text-xs text-slate-500 space-y-1.5 list-disc list-inside border-t border-slate-200/60 pt-4">
-                            <li>Enterprise Email Migration</li>
-                            <li>DNS, DKIM & SPF Hardening</li>
-                            <li>Cloud Storage & Backup Plans</li>
-                        </ul>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT & QUOTE FORM -->
     <section id="contact" class="py-20 lg:py-28 bg-slate-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -394,7 +434,6 @@
                     </div>
                 </div>
 
-                <!-- Contact Form -->
                 <div class="bg-slate-800/80 border border-slate-700 p-8 rounded-2xl shadow-xl">
                     <form action="mailto:support@avanttelecom.in" method="POST" enctype="text/plain" class="space-y-4">
                         <div>
@@ -425,6 +464,7 @@
                                 <option>IT: Custom Web Applications & Portals</option>
                                 <option>IT: Enterprise Network & LAN/WAN Setup</option>
                                 <option>IT: Cloud & Business Email Management</option>
+                                <option>IT: Hardware AMC & Desktop Support</option>
                             </select>
                         </div>
                         <div>
@@ -440,7 +480,6 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="bg-slate-950 text-slate-400 py-10 border-t border-slate-800 text-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-3">
@@ -455,71 +494,35 @@
         </div>
     </footer>
 
-    <!-- INTERACTIVE SCRIPTS -->
     <script>
-        // Division Tab Switcher
-        function switchDivision(tab) {
-            const telecomCards = document.getElementById('telecom-cards');
-            const itCards = document.getElementById('it-cards');
-            const telecomBtn = document.getElementById('tab-telecom-btn');
-            const itBtn = document.getElementById('tab-it-btn');
-            const container = document.getElementById('services-scroll-container');
-
-            if (tab === 'telecom') {
-                telecomCards.classList.remove('hidden');
-                telecomCards.classList.add('flex');
-                itCards.classList.add('hidden');
-                itCards.classList.remove('flex');
-
-                telecomBtn.className = "flex items-center gap-2 px-6 py-2.5 rounded-xl font-semibold text-sm transition bg-white text-slate-900 shadow-sm border border-slate-200/60";
-                itBtn.className = "flex items-center gap-2 px-6 py-2.5 rounded-xl font-semibold text-sm transition text-slate-500 hover:text-slate-900";
-            } else {
-                itCards.classList.remove('hidden');
-                itCards.classList.add('flex');
-                telecomCards.classList.add('hidden');
-                telecomCards.classList.remove('flex');
-
-                itBtn.className = "flex items-center gap-2 px-6 py-2.5 rounded-xl font-semibold text-sm transition bg-white text-slate-900 shadow-sm border border-slate-200/60";
-                telecomBtn.className = "flex items-center gap-2 px-6 py-2.5 rounded-xl font-semibold text-sm transition text-slate-500 hover:text-slate-900";
+        function setFocus(side) {
+            const telecomPanel = document.getElementById('panel-telecom');
+            const itPanel = document.getElementById('panel-it');
+            
+            // Only apply expanded flex ratio on larger desktop screens
+            if (window.innerWidth >= 1024) {
+                if (side === 'telecom') {
+                    telecomPanel.style.flex = "2";
+                    itPanel.style.flex = "1";
+                    telecomPanel.style.opacity = "1";
+                    itPanel.style.opacity = "0.65";
+                } else if (side === 'it') {
+                    telecomPanel.style.flex = "1";
+                    itPanel.style.flex = "2";
+                    telecomPanel.style.opacity = "0.65";
+                    itPanel.style.opacity = "1";
+                } else {
+                    telecomPanel.style.flex = "1";
+                    itPanel.style.flex = "1";
+                    telecomPanel.style.opacity = "1";
+                    itPanel.style.opacity = "1";
+                }
             }
-            container.scrollLeft = 0;
-            lucide.createIcons();
         }
 
-        // Button Click Scroll
-        function scrollContainer(distance) {
-            const container = document.getElementById('services-scroll-container');
-            container.scrollBy({ left: distance, behavior: 'smooth' });
-        }
-
-        // Mouse Wheel & Drag-to-Scroll Configuration
-        const scrollBox = document.getElementById('services-scroll-container');
-        
-        // Mouse Wheel (Converts vertical mouse scroll to horizontal scroll over cards)
-        scrollBox.addEventListener('wheel', (e) => {
-            if (e.deltaY !== 0) {
-                e.preventDefault();
-                scrollBox.scrollLeft += e.deltaY;
-            }
-        }, { passive: false });
-
-        // Mouse Drag to Scroll
-        let isDown = false;
-        let startX, scrollLeftPos;
-
-        scrollBox.addEventListener('mousedown', (e) => {
-            isDown = true;
-            startX = e.pageX - scrollBox.offsetLeft;
-            scrollLeftPos = scrollBox.scrollLeft;
-        });
-        scrollBox.addEventListener('mouseleave', () => { isDown = false; });
-        scrollBox.addEventListener('mouseup', () => { isDown = false; });
-        scrollBox.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - scrollBox.offsetLeft;
-            const walk = (x - startX) * 1.5;
-            scrollBox.scrollLeft = scrollLeftPos - walk;
+        // Reset to equal split when mouse leaves the section container
+        document.getElementById('split-wrapper').addEventListener('mouseleave', () => {
+            setFocus('equal');
         });
 
         // Initialize Lucide Icons
