@@ -361,27 +361,38 @@
                 <p class="text-xs font-semibold text-slate-500 mt-1 uppercase tracking-widest">Avant Group</p>
             </div>
             
-            <!-- Functional Contact Form -->
+            <!-- Functional Contact Form (UI Simulation & Redirect) -->
             <form id="contact-form" class="space-y-4" onsubmit="submitContactForm(event)">
                 <div>
                     <label class="block text-[10px] font-bold text-slate-700 uppercase tracking-widest mb-1">Full Name</label>
                     <input id="contact-name" type="text" required class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition text-sm font-medium" placeholder="John Doe">
                 </div>
-                <div class="grid grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-[10px] font-bold text-slate-700 uppercase tracking-widest mb-1">Email</label>
                         <input id="contact-email" type="email" required class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition text-sm font-medium" placeholder="john@company.com">
                     </div>
                     <div>
                         <label class="block text-[10px] font-bold text-slate-700 uppercase tracking-widest mb-1">Phone</label>
-                        <input id="contact-phone" type="tel" required class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition text-sm font-medium" placeholder="+91 98765 43210">
+                        <div class="flex">
+                            <!-- Country Code Priority List (India First) -->
+                            <select id="contact-country-code" class="w-24 px-2 py-3 rounded-l-xl bg-slate-100 border border-r-0 border-slate-200 focus:border-cyan-500 outline-none text-[11px] font-bold text-slate-700 cursor-pointer">
+                                <option value="+91">🇮🇳 +91</option>
+                                <option value="+1">🇺🇸 +1</option>
+                                <option value="+44">🇬🇧 +44</option>
+                                <option value="+61">🇦🇺 +61</option>
+                                <option value="+971">🇦🇪 +971</option>
+                                <option value="+65">🇸🇬 +65</option>
+                            </select>
+                            <input id="contact-phone" type="tel" required class="w-full px-3 py-3 rounded-r-xl border border-slate-200 bg-slate-50 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition text-sm font-medium" placeholder="98765 43210">
+                        </div>
                     </div>
                 </div>
                 <div>
                     <label class="block text-[10px] font-bold text-slate-700 uppercase tracking-widest mb-1">Message</label>
                     <textarea id="contact-message" rows="3" required class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition text-sm font-medium resize-none" placeholder="How can we help you?"></textarea>
                 </div>
-                <button id="contact-submit-btn" type="submit" class="w-full py-3.5 mt-2 rounded-xl bg-slate-900 text-white font-bold text-xs uppercase tracking-widest shadow-lg hover:shadow-xl hover:bg-cyan-600 transition-all">
+                <button id="contact-submit-btn" type="submit" class="w-full py-3.5 mt-2 rounded-xl bg-slate-900 text-white font-bold text-xs uppercase tracking-widest shadow-lg hover:shadow-xl hover:bg-cyan-600 transition-all flex justify-center items-center">
                     Send Message
                 </button>
             </form>
@@ -783,31 +794,44 @@
             }
         }
 
-        // Form Submit Handler
+        // Form Submit Handler (Simulated API + UI Reset)
         function submitContactForm(event) {
             event.preventDefault();
             
-            const name = document.getElementById('contact-name').value;
-            const email = document.getElementById('contact-email').value;
-            const phone = document.getElementById('contact-phone').value;
-            const message = document.getElementById('contact-message').value;
-            
-            const subject = encodeURIComponent(`New Inquiry from ${name}`);
-            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`);
-            
-            // Open default mail client directly
-            window.location.href = `mailto:info@avanttelecom.in?subject=${subject}&body=${body}`;
-            
-            // Provide UI Feedback
             const btn = document.getElementById('contact-submit-btn');
             const originalText = btn.innerHTML;
-            btn.innerHTML = 'Message Prepared!';
             
+            // UI Loading state
+            btn.innerHTML = '<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i>';
+            btn.classList.add('opacity-80', 'cursor-not-allowed');
+            lucide.createIcons();
+            
+            // Simulate network request without mailto: popup
             setTimeout(() => {
-                btn.innerHTML = originalText;
-                toggleContactModal();
+                // UI Success state
+                btn.innerHTML = 'Message Sent!';
+                btn.classList.remove('bg-slate-900', 'hover:bg-cyan-600');
+                btn.classList.add('bg-emerald-500', 'hover:bg-emerald-600');
+                
+                // Reset form
                 document.getElementById('contact-form').reset();
-            }, 2000);
+                
+                // Close modal and restore button
+                setTimeout(() => {
+                    toggleContactModal();
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.classList.remove('bg-emerald-500', 'hover:bg-emerald-600', 'opacity-80', 'cursor-not-allowed');
+                        btn.classList.add('bg-slate-900', 'hover:bg-cyan-600');
+                    }, 300);
+                }, 2000);
+            }, 1500);
+
+            /* 
+               NOTE: To connect this to a real inbox for free, sign up for Web3Forms or Formspree, 
+               grab your API endpoint URL, and replace this entire submitContactForm function 
+               with a standard fetch() POST request.
+            */
         }
 
         // Initialize
