@@ -26,7 +26,7 @@
             min-height: 700px;
             overflow: hidden;
             user-select: none;
-            background: #ffffff;
+            background: #ffffff; /* Crisp white for max visibility */
         }
 
         .split-side {
@@ -39,7 +39,7 @@
 
         /* Left Side: Soft Off-White Background */
         .side-telecom {
-            background: #f1f5f9;
+            background: #ffffff;
             z-index: 1;
         }
 
@@ -87,12 +87,24 @@
             transform: translate(-50%, -50%) scale(1.15);
         }
 
+        /* Elegant Feathered Image Masks (Removes background harsh edges) */
+        .masked-image {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            -webkit-mask-image: radial-gradient(circle at center, black 25%, transparent 70%);
+            mask-image: radial-gradient(circle at center, black 25%, transparent 70%);
+        }
+
         /* CREAMS Style Big Typography */
         .brand-text-left {
             color: #ff3b4e; /* Bright Avant Red */
             font-weight: 300;
             letter-spacing: 0.22em;
-            text-shadow: 0 4px 24px rgba(255, 59, 78, 0.15);
+            text-shadow: 0 4px 24px rgba(255, 59, 78, 0.2);
         }
         .brand-text-right {
             color: #ffffff;
@@ -102,6 +114,18 @@
         }
 
         /* Independent Pop-out Buttons */
+        .split-btn-container {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 60;
+            gap: 4px;
+        }
+
         .btn-telecom-indep {
             background: linear-gradient(90deg, #ff5e3a 0%, #ff3b4e 100%);
             color: #ffffff;
@@ -115,13 +139,16 @@
             letter-spacing: 0.15em;
             text-transform: uppercase;
             cursor: pointer;
-            border-radius: 9999px;
+            border-radius: 9999px 8px 8px 9999px;
             box-shadow: 0 6px 16px rgba(255, 59, 78, 0.3);
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .btn-telecom-indep:hover {
-            transform: translateY(-3px) scale(1.08);
+            transform: translateY(-2px) scale(1.08);
+            border-radius: 9999px;
+            z-index: 10;
             box-shadow: 0 12px 24px rgba(255, 59, 78, 0.45);
+            background: linear-gradient(90deg, #f94c25 0%, #ea263a 100%);
         }
 
         .btn-it-indep {
@@ -137,13 +164,16 @@
             letter-spacing: 0.15em;
             text-transform: uppercase;
             cursor: pointer;
-            border-radius: 9999px;
+            border-radius: 8px 9999px 9999px 8px;
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .btn-it-indep:hover {
-            transform: translateY(-3px) scale(1.08);
+            transform: translateY(-2px) scale(1.08);
+            border-radius: 9999px;
+            z-index: 10;
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+            background: #f8fafc;
         }
 
         /* Abstract decorative shapes */
@@ -183,9 +213,12 @@
 
         <div class="split-side side-telecom">
             
-            <div class="absolute inset-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center opacity-25 grayscale"></div>
+            <img src="https://images.unsplash.com/photo-1508873535684-275a50bb5519?auto=format&fit=crop&w=1200&q=80" 
+                 class="masked-image opacity-70 mix-blend-multiply grayscale-[30%]" 
+                 style="left: -15%;" 
+                 alt="Telecom Engineer">
 
-            <div class="absolute inset-x-0 top-[56%] w-full flex justify-center text-center pointer-events-none pr-10">
+            <div class="absolute inset-x-0 top-[55%] w-full flex justify-center text-center pointer-events-none pr-[10%]">
                 <p class="text-[10px] sm:text-[11px] font-bold uppercase text-slate-500 tracking-[0.3em]">
                     Build Reliable Telecom Infrastructure
                 </p>
@@ -197,9 +230,12 @@
 
         <div id="it-layer" class="split-side side-it">
             
-            <div class="absolute inset-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center opacity-30 mix-blend-overlay"></div>
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80" 
+                 class="masked-image opacity-60 mix-blend-overlay" 
+                 style="right: -15%; left: auto;" 
+                 alt="IT Software Engineer">
 
-            <div class="absolute inset-x-0 top-[56%] w-full flex justify-center text-center pointer-events-none pl-10">
+            <div class="absolute inset-x-0 top-[55%] w-full flex justify-center text-center pointer-events-none pl-[10%]">
                 <p class="text-[10px] sm:text-[11px] font-bold uppercase text-white tracking-[0.3em] drop-shadow-md">
                     Engineer Next-Gen Software Solutions
                 </p>
@@ -212,9 +248,9 @@
             <div class="absolute right-32 bottom-36 w-4 h-4 bg-black rounded-full pointer-events-none opacity-80"></div>
         </div>
 
-        <div class="absolute inset-x-0 top-[48%] -translate-y-1/2 z-30 flex flex-col items-center justify-center text-center pointer-events-none px-4">
+        <div class="absolute inset-x-0 top-[48%] -translate-y-1/2 z-[50] flex flex-col items-center justify-center text-center pointer-events-none px-4">
             
-            <div class="relative leading-none select-none mb-12">
+            <div class="relative leading-none select-none mb-4">
                 <h1 class="text-7xl sm:text-9xl lg:text-[160px] tracking-wider uppercase flex items-center justify-center">
                     <span class="brand-text-left">AV</span><span class="brand-text-right">ANT</span>
                 </h1>
@@ -222,7 +258,7 @@
 
         </div>
 
-        <div class="absolute top-[63%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-40 flex items-center gap-4 pointer-events-auto">
+        <div class="split-btn-container pointer-events-auto">
             <button onclick="openPortal('telecom')" class="btn-telecom-indep">
                 TELECOM
             </button>
@@ -232,7 +268,7 @@
             </button>
         </div>
 
-        <div class="absolute bottom-16 left-1/2 -translate-x-1/2 text-[9px] font-bold text-slate-500 tracking-[0.25em] uppercase pointer-events-none z-30 bg-white/60 px-4 py-1 rounded-full backdrop-blur-sm shadow-sm">
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 text-[9px] font-bold text-slate-500 tracking-[0.25em] uppercase pointer-events-none z-30 bg-white/60 px-4 py-1 rounded-full backdrop-blur-sm shadow-sm">
             &larr; DRAG TO EXPLORE &rarr;
         </div>
 
