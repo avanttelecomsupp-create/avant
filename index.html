@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avant | Avant Telecom & Avant IT Services</title>
+    <title>Avant | Telecom Infrastructure & IT Solutions</title>
     <meta name="description" content="Avant — Turnkey telecom infrastructure, 5G rollouts, cloud engineering, iOS & Android software development.">
     <link rel="icon" type="image/png" href="logo.png">
     
@@ -11,18 +11,172 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
         
         * {
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             -webkit-tap-highlight-color: transparent;
         }
 
-        .font-display {
-            font-family: 'Space Grotesk', sans-serif;
+        /* Fullscreen Interactive Split Container */
+        .configurator-wrap {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            min-height: 700px;
+            overflow: hidden;
+            user-select: none;
         }
 
-        /* Glassmorphism Classes */
+        .split-side {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* Left Side: Soft Off-White Background */
+        .side-telecom {
+            background: #ededed;
+            z-index: 1;
+        }
+
+        /* Right Side: Exact Vibrant Coral-Red Gradient Background */
+        .side-it {
+            background: linear-gradient(135deg, #ff2a54 0%, #ff4b4b 50%, #ff5e3a 100%);
+            z-index: 2;
+            clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+            will-change: clip-path;
+        }
+
+        /* Center Slider Divider & Handle */
+        .configurator-divider {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            background: rgba(255, 255, 255, 0.95);
+            z-index: 30;
+            transform: translateX(-50%);
+            cursor: ew-resize;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+        }
+
+        .slider-handle {
+            position: absolute;
+            top: 48%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff3b4e;
+            cursor: ew-resize;
+            z-index: 31;
+            transition: transform 0.15s ease;
+        }
+        .slider-handle:hover {
+            transform: translate(-50%, -50%) scale(1.12);
+        }
+
+        /* Perfect Center Placement for Male Subjects */
+        .subject-container {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 82vh;
+            max-height: 720px;
+            width: 500px;
+            pointer-events: none;
+        }
+
+        /* CREAMS Style Big Typography */
+        .brand-text-left {
+            color: #ff334b;
+            font-weight: 300;
+            letter-spacing: 0.22em;
+        }
+        .brand-text-right {
+            color: #ffffff;
+            font-weight: 800;
+            letter-spacing: 0.16em;
+        }
+
+        /* Subtitle Text */
+        .sub-left {
+            color: #71717a;
+            letter-spacing: 0.25em;
+        }
+        .sub-right {
+            color: rgba(255, 255, 255, 0.9);
+            letter-spacing: 0.25em;
+        }
+
+        /* Exact SHOW ME MORE Split Capsule Button */
+        .btn-split-capsule {
+            display: inline-flex;
+            align-items: center;
+            height: 48px;
+            border-radius: 9999px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(255, 65, 84, 0.35);
+            background: #ffffff;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .btn-split-capsule:hover {
+            transform: scale(1.04);
+            box-shadow: 0 12px 32px rgba(255, 65, 84, 0.45);
+        }
+
+        .btn-half-telecom {
+            background: linear-gradient(90deg, #ff5e3a 0%, #ff3b4e 100%);
+            color: #ffffff;
+            padding: 0 28px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-half-telecom:hover {
+            background: linear-gradient(90deg, #f94c25 0%, #ea263a 100%);
+        }
+
+        .btn-half-it {
+            background: #ffffff;
+            color: #ff3b4e;
+            padding: 0 28px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-half-it:hover {
+            background: #f8fafc;
+        }
+
+        /* Abstract decorative shapes from image */
+        .deco-stripes {
+            background: repeating-linear-gradient(45deg, rgba(255,255,255,0.4), rgba(255,255,255,0.4) 3px, transparent 3px, transparent 9px);
+        }
+
         .apple-glass {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(20px);
@@ -41,213 +195,140 @@
             box-shadow: 0 14px 32px -4px rgba(0, 0, 0, 0.08);
             border-color: #cbd5e1;
         }
-
-        /* Dual Split Slider Mechanics */
-        .split-container {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            min-height: 680px;
-            overflow: hidden;
-            user-select: none;
-        }
-
-        .split-pane {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-
-        .pane-telecom {
-            left: 0;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
-            z-index: 1;
-        }
-
-        .pane-it {
-            right: 0;
-            background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 60%, #f97316 100%);
-            z-index: 2;
-            clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
-            transition: clip-path 0.08s ease-out;
-        }
-
-        /* Center Slider Handle Divider */
-        .slider-divider {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            width: 4px;
-            background: #ffffff;
-            z-index: 20;
-            transform: translateX(-50%);
-            cursor: ew-resize;
-            box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
-        }
-
-        .slider-handle-btn {
-            position: absolute;
-            top: 48%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: #ffffff;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #0f172a;
-            cursor: ew-resize;
-            z-index: 21;
-        }
     </style>
 </head>
-<body class="bg-[#f8fafc] text-slate-800 antialiased selection:bg-slate-200 selection:text-slate-900 min-h-screen">
+<body class="bg-[#ededed] text-slate-800 antialiased min-h-screen">
 
-    <section id="portal-hub" class="split-container relative">
+    <section id="portal-hub" class="configurator-wrap">
 
-        <header class="absolute top-0 left-0 right-0 z-30 flex items-center justify-between px-6 sm:px-12 h-20 pointer-events-auto">
+        <header class="absolute top-0 left-0 right-0 z-40 flex items-center justify-between px-8 sm:px-14 h-20 pointer-events-auto">
             <div class="flex items-center gap-2">
-                <span class="text-xl font-black tracking-tight text-slate-900 drop-shadow-sm">AVANT<span class="text-red-500 font-extrabold">.</span></span>
+                <span class="text-xl font-extrabold tracking-tight text-slate-900">avant<span class="text-[#ff3b4e]">.</span></span>
             </div>
-            <div class="flex items-center gap-6 text-xs font-bold tracking-widest uppercase">
+            <div class="flex items-center gap-8 text-[11px] font-bold tracking-[0.2em] uppercase">
                 <span class="hidden sm:inline-block text-slate-500">Telecom Infrastructure</span>
-                <span class="hidden sm:inline-block text-white/80">Software Engineering</span>
-                <a href="https://accounts.zoho.in/signin?servicename=VirtualOffice" target="_blank" class="px-4 py-2 rounded-full bg-white/90 backdrop-blur-md text-slate-900 border border-slate-200 shadow-sm hover:bg-white transition">
+                <span class="hidden sm:inline-block text-white/90">Software Engineering</span>
+                <a href="https://accounts.zoho.in/signin?servicename=VirtualOffice" target="_blank" class="px-5 py-2 rounded-full bg-white text-slate-900 shadow-sm hover:shadow-md transition">
                     Zoho Webmail
                 </a>
             </div>
         </header>
 
-        <div class="split-pane pane-telecom flex items-center justify-center">
+        <div class="split-side side-telecom">
             
-            <div class="absolute inset-0 pointer-events-none flex items-center justify-center opacity-40">
-                <svg class="w-[700px] h-[700px] text-slate-400/40" viewBox="0 0 100 100" fill="none" stroke="currentColor">
-                    <circle cx="50" cy="50" r="40" stroke-width="0.3" stroke-dasharray="2 2" />
-                    <circle cx="50" cy="50" r="28" stroke-width="0.4" />
-                    <line x1="50" y1="10" x2="50" y2="90" stroke-width="0.3" />
-                    <line x1="10" y1="50" x2="90" y2="50" stroke-width="0.3" />
+            <div class="absolute left-16 top-32 w-14 h-14 border border-slate-300 rounded-xl transform -rotate-12 pointer-events-none opacity-40"></div>
+            <div class="absolute left-1/4 bottom-40 w-4 h-4 bg-slate-400 rounded-full pointer-events-none opacity-30"></div>
+
+            <div class="subject-container">
+                <svg class="w-full h-full drop-shadow-2xl" viewBox="0 0 500 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M250 60 L140 660 M250 60 L360 660 M180 220 L320 220 M160 360 L340 360 M150 500 L350 500" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M180 220 L340 360 M320 220 L160 360 M160 360 L350 500 M340 360 L150 500" stroke="#cbd5e1" stroke-width="2"/>
+                    <circle cx="250" cy="55" r="6" fill="#ea580c"/>
+                    <path d="M265 45 A 18 18 0 0 1 285 65 M275 35 A 30 30 0 0 1 305 65" stroke="#f97316" stroke-width="2.5" stroke-linecap="round"/>
+
+                    <path d="M165 400 C165 330 335 330 335 400 L350 700 L150 700 Z" fill="#1e293b"/>
+
+                    <path d="M180 390 L320 390 L330 580 L170 580 Z" fill="#f59e0b"/>
+                    <path d="M205 390 L205 580 M295 390 L295 580" stroke="#ffffff" stroke-width="8"/>
+                    <path d="M175 480 L325 480" stroke="#ffffff" stroke-width="7"/>
+                    
+                    <rect x="165" y="580" width="170" height="22" rx="4" fill="#0f172a"/>
+                    <rect x="180" y="585" width="22" height="34" rx="3" fill="#334155"/>
+                    <rect x="295" y="585" width="28" height="38" rx="4" fill="#475569"/>
+                    <line x1="310" y1="585" x2="310" y2="560" stroke="#1e293b" stroke-width="3" stroke-linecap="round"/> <rect x="232" y="325" width="36" height="30" fill="#d97706" opacity="0.3"/>
+                    <circle cx="250" cy="275" r="32" fill="#d97706" opacity="0.25"/>
+                    <circle cx="250" cy="270" r="30" fill="#fed7aa"/>
+                    
+                    <rect x="230" y="260" width="40" height="12" rx="4" fill="#0284c7" opacity="0.85" stroke="#ffffff" stroke-width="1.5"/>
+                    
+                    <path d="M205 255 C205 210 295 210 295 255 L302 265 L198 265 Z" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+                    <path d="M190 262 C190 258 310 258 310 262 L302 268 L198 268 Z" fill="#e2e8f0"/>
+
+                    <path d="M190 410 L130 380 L115 290" stroke="#1e293b" stroke-width="16" stroke-linecap="round"/>
+                    <ellipse cx="105" cy="270" rx="55" ry="55" fill="#334155" stroke="#ffffff" stroke-width="4"/>
+                    <ellipse cx="105" cy="270" rx="40" ry="40" fill="#0f172a" stroke="#38bdf8" stroke-width="2.5"/>
+                    <path d="M105 270 L75 250" stroke="#f97316" stroke-width="6" stroke-linecap="round"/>
+                    <circle cx="72" cy="248" r="6" fill="#38bdf8"/>
                 </svg>
-            </div>
-
-            <div class="relative z-10 w-full max-w-6xl px-8 flex flex-col items-center text-center">
-                
-                <div class="relative mb-4 h-64 sm:h-80 w-full flex items-center justify-center">
-                    <svg class="h-full w-auto max-h-72 drop-shadow-2xl" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M160 30 L110 290 M160 30 L210 290 M130 120 L190 120 M120 180 L200 180 M115 240 L205 240" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round"/>
-                        <circle cx="160" cy="25" r="5" fill="#ea580c"/>
-                        <path d="M175 20 A 15 15 0 0 1 190 35 M185 10 A 25 25 0 0 1 205 35" stroke="#f97316" stroke-width="2" stroke-linecap="round"/>
-                        
-                        <path d="M130 190 C130 160 190 160 190 190 L195 290 L125 290 Z" fill="#1e293b"/>
-                        <path d="M140 180 L180 180 L185 240 L135 240 Z" fill="#f59e0b"/> <path d="M150 180 L150 240 M170 180 L170 240" stroke="#ffffff" stroke-width="3"/> <circle cx="160" cy="145" r="16" fill="#fcd34d"/>
-                        <path d="M142 142 C142 130 178 130 178 142 Z" fill="#ffffff"/> <path d="M135 190 L105 180 L95 150" stroke="#1e293b" stroke-width="8" stroke-linecap="round"/>
-                        <ellipse cx="90" cy="140" rx="38" ry="38" fill="#334155" stroke="#e2e8f0" stroke-width="3"/>
-                        <ellipse cx="90" cy="140" rx="26" ry="26" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-                        <path d="M90 140 L70 130" stroke="#f97316" stroke-width="4" stroke-linecap="round"/>
-                        <circle cx="68" cy="128" r="4" fill="#38bdf8"/>
-                    </svg>
-
-                    <div class="absolute left-6 sm:left-24 top-8 p-3 rounded-2xl bg-white/90 border border-slate-200 shadow-xl backdrop-blur-md text-left hidden md:block">
-                        <div class="flex items-center gap-2 text-xs font-bold text-slate-900">
-                            <i data-lucide="radio" class="w-4 h-4 text-orange-600"></i> Telecom Division
-                        </div>
-                        <div class="text-[11px] text-slate-500 mt-0.5">5G I&C, Microwave & UBR Links</div>
-                    </div>
-                </div>
-
             </div>
         </div>
 
-        <div id="it-pane" class="split-pane pane-it flex items-center justify-center">
+        <div id="it-pane" class="split-side side-it">
             
-            <div class="absolute inset-0 pointer-events-none flex items-center justify-center opacity-30">
-                <svg class="w-[700px] h-[700px] text-white" viewBox="0 0 100 100" fill="none" stroke="currentColor">
-                    <rect x="20" y="20" width="60" height="60" rx="8" stroke-width="0.4" stroke-dasharray="3 3"/>
-                    <circle cx="50" cy="50" r="35" stroke-width="0.3" />
-                    <path d="M20 50 L80 50 M50 20 L50 80" stroke-width="0.3"/>
-                </svg>
-            </div>
+            <div class="absolute right-20 top-24 w-12 h-12 border-2 border-white/80 rounded-lg transform rotate-45 pointer-events-none"></div>
+            <div class="absolute right-36 top-36 w-14 h-14 rounded-full deco-stripes pointer-events-none"></div>
+            <div class="absolute right-28 top-52 w-3 h-3 bg-cyan-300 rounded-full pointer-events-none"></div>
+            <div class="absolute right-48 bottom-48 w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-b-[18px] border-b-black pointer-events-none"></div>
+            <div class="absolute right-32 bottom-36 w-4 h-4 bg-black rounded-full pointer-events-none"></div>
 
-            <div class="relative z-10 w-full max-w-6xl px-8 flex flex-col items-center text-center">
-                
-                <div class="relative mb-4 h-64 sm:h-80 w-full flex items-center justify-center">
-                    <svg class="h-full w-auto max-h-72 drop-shadow-2xl" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g opacity="0.85">
-                            <rect x="50" y="60" width="60" height="24" rx="6" fill="rgba(255,255,255,0.2)"/>
-                            <text x="58" y="76" fill="#ffffff" font-size="10" font-family="monospace">&lt;Flutter/&gt;</text>
-                            
-                            <rect x="210" y="80" width="55" height="24" rx="6" fill="rgba(255,255,255,0.2)"/>
-                            <text x="218" y="96" fill="#ffffff" font-size="10" font-family="monospace">iOS.dev</text>
-                            
-                            <rect x="220" y="140" width="60" height="24" rx="6" fill="rgba(255,255,255,0.2)"/>
-                            <text x="228" y="156" fill="#ffffff" font-size="10" font-family="monospace">CloudAPI</text>
-                        </g>
-
-                        <path d="M125 200 C125 170 195 170 195 200 L200 290 L120 290 Z" fill="#0f172a"/>
-                        <circle cx="160" cy="150" r="16" fill="#fed7aa"/>
-                        <path d="M144 146 C144 134 176 134 176 146 Z" fill="#1e293b"/> <rect x="150" y="146" width="20" height="6" rx="2" fill="#38bdf8"/> <polygon points="120,235 200,235 210,200 130,200" fill="#38bdf8" opacity="0.4"/>
-                        <path d="M125 235 L195 235 L190 205 L130 205 Z" fill="#ffffff"/> <rect x="135" y="210" width="50" height="20" fill="#0284c7" rx="2"/>
-                        <polygon points="115,245 205,245 195,235 125,235" fill="#cbd5e1"/>
+            <div class="subject-container">
+                <svg class="w-full h-full drop-shadow-2xl" viewBox="0 0 500 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g opacity="0.95">
+                        <rect x="80" y="140" width="85" height="32" rx="8" fill="rgba(255,255,255,0.2)"/>
+                        <text x="92" y="161" fill="#ffffff" font-size="12" font-weight="bold" font-family="monospace">&lt;Flutter/&gt;</text>
                         
-                        <line x1="140" y1="216" x2="165" y2="216" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
-                        <line x1="140" y1="222" x2="175" y2="222" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
+                        <rect x="340" y="180" width="80" height="32" rx="8" fill="rgba(255,255,255,0.2)"/>
+                        <text x="352" y="201" fill="#ffffff" font-size="12" font-weight="bold" font-family="monospace">iOS.dev</text>
+                        
+                        <rect x="350" y="270" width="90" height="32" rx="8" fill="rgba(255,255,255,0.2)"/>
+                        <text x="362" y="291" fill="#ffffff" font-size="12" font-weight="bold" font-family="monospace">CloudAPI</text>
+                    </g>
 
-                    <div class="absolute right-6 sm:right-24 top-8 p-3 rounded-2xl bg-white/20 border border-white/30 shadow-xl backdrop-blur-md text-left hidden md:block">
-                        <div class="flex items-center gap-2 text-xs font-bold text-white">
-                            <i data-lucide="server" class="w-4 h-4 text-cyan-200"></i> IT Division
-                        </div>
-                        <div class="text-[11px] text-white/80 mt-0.5">iOS/Android, Cloud & Custom ERP</div>
-                    </div>
-                </div>
+                    <path d="M165 400 C165 330 335 330 335 400 L350 700 L150 700 Z" fill="#090d16"/>
+                    <path d="M215 390 L250 470 L285 390 Z" fill="#ffffff"/>
+                    <path d="M190 390 L235 590 L265 590 L310 390 Z" fill="#1e293b"/> <rect x="232" y="325" width="36" height="30" fill="#fed7aa" opacity="0.6"/>
+                    <circle cx="250" cy="270" r="30" fill="#fed7aa"/>
+                    
+                    <path d="M218 260 C218 215 282 215 282 260 L280 245 C280 230 220 230 220 245 Z" fill="#1e293b"/>
+                    
+                    <rect x="228" y="260" width="44" height="12" rx="3" fill="#38bdf8" stroke="#ffffff" stroke-width="1.5"/>
 
+                    <path d="M185 410 L210 490 L290 490 L315 410" stroke="#090d16" stroke-width="16" stroke-linecap="round"/>
+                    
+                    <polygon points="180,500 320,500 340,430 160,430" fill="#38bdf8" opacity="0.35"/>
+                    <path d="M185,500 L315,500 L305,435 L195,435 Z" fill="#ffffff"/>
+                    <rect x="205" y="442" width="90" height="46" fill="#0284c7" rx="3"/>
+                    
+                    <line x1="215" y1="454" x2="260" y2="454" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+                    <line x1="215" y1="465" x2="285" y2="465" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round"/>
+                    <line x1="215" y1="476" x2="250" y2="476" stroke="#fcd34d" stroke-width="2.5" stroke-linecap="round"/>
+                    
+                    <polygon points="170,516 330,516 315,500 185,500" fill="#cbd5e1"/>
+                </svg>
             </div>
         </div>
 
-        <div class="absolute inset-x-0 bottom-12 sm:bottom-16 z-30 flex flex-col items-center justify-center text-center pointer-events-none px-4">
+        <div class="absolute inset-x-0 bottom-12 sm:bottom-14 z-30 flex flex-col items-center justify-center text-center pointer-events-none px-4">
             
-            <div class="relative mb-6">
-                <h1 class="text-6xl sm:text-8xl lg:text-9xl font-black font-display tracking-tight leading-none drop-shadow-xl flex items-center justify-center">
-                    <span class="text-slate-900 drop-shadow-sm">AV</span><span class="text-white drop-shadow-md">ANT</span>
+            <div class="relative leading-none select-none mb-3">
+                <h1 class="text-7xl sm:text-9xl lg:text-[140px] tracking-wider uppercase flex items-center justify-center">
+                    <span class="brand-text-left">AV</span><span class="brand-text-right">ANT</span>
                 </h1>
-                <p class="text-xs sm:text-sm font-bold tracking-[0.3em] uppercase mt-2 text-slate-700 bg-white/70 px-4 py-1 rounded-full backdrop-blur-md mx-auto inline-block border border-slate-200/80 shadow-sm">
-                    Empowering Telecom Infrastructure & Digital Software Solutions
-                </p>
             </div>
 
-            <div class="pointer-events-auto flex items-center p-1.5 rounded-full bg-white/95 border border-slate-200 shadow-2xl backdrop-blur-xl transition hover:scale-105">
-                
-                <button onclick="openPortal('telecom')" class="group flex items-center gap-2 px-6 sm:px-8 py-3.5 rounded-full text-xs sm:text-sm font-extrabold text-slate-900 bg-slate-100 hover:bg-slate-900 hover:text-white transition shadow-sm cursor-pointer">
-                    <i data-lucide="radio" class="w-4 h-4 text-orange-600 group-hover:text-orange-400"></i>
-                    <span>AVANT TELECOM</span>
+            <p class="text-[10px] sm:text-[11px] font-bold uppercase mb-6 select-none">
+                <span class="sub-left">CONFIGURE YOUR TELECOM &bull; </span>
+                <span class="sub-right">BUILD NEXT-GEN SOFTWARE</span>
+            </p>
+
+            <div class="pointer-events-auto btn-split-capsule">
+                <button onclick="openPortal('telecom')" class="btn-half-telecom">
+                    AVANT TELECOM
                 </button>
-
-                <div class="px-3 text-[10px] font-black tracking-widest text-slate-400 uppercase hidden sm:block">
-                    CHOOSE BUSINESS
-                </div>
-
-                <button onclick="openPortal('it')" class="group flex items-center gap-2 px-6 sm:px-8 py-3.5 rounded-full text-xs sm:text-sm font-extrabold text-white bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600 transition shadow-md cursor-pointer">
-                    <i data-lucide="server" class="w-4 h-4 text-cyan-200"></i>
-                    <span>AVANT IT SERVICES</span>
+                <button onclick="openPortal('it')" class="btn-half-it">
+                    AVANT IT SERVICES
                 </button>
-
             </div>
 
-            <div class="mt-4 text-[10px] font-bold text-slate-500 tracking-wider uppercase bg-white/60 px-3 py-0.5 rounded-full backdrop-blur-sm">
-                &larr; Drag Slider or Click to Enter &rarr;
+            <div class="mt-4 text-[9px] font-bold text-slate-500 tracking-[0.2em] uppercase">
+                &larr; DRAG TO EXPLORE &rarr;
             </div>
 
         </div>
 
-        <div id="slider-bar" class="slider-divider">
-            <div class="slider-handle-btn">
-                <i data-lucide="chevrons-left-right" class="w-5 h-5"></i>
+        <div id="slider-bar" class="configurator-divider">
+            <div class="slider-handle">
+                <i data-lucide="chevrons-left-right" class="w-4 h-4"></i>
             </div>
         </div>
 
@@ -537,7 +618,6 @@
     </div>
 
     <script>
-        // Dual Slider Mechanics
         const container = document.getElementById('portal-hub');
         const itPane = document.getElementById('it-pane');
         const sliderBar = document.getElementById('slider-bar');
@@ -548,14 +628,14 @@
             const rect = container.getBoundingClientRect();
             let percentage = ((x - rect.left) / rect.width) * 100;
             
-            // Constrain between 15% and 85%
-            percentage = Math.max(15, Math.min(85, percentage));
+            // Constrain between 5% and 95% for full visibility sweep
+            percentage = Math.max(5, Math.min(95, percentage));
 
             itPane.style.clipPath = `polygon(${percentage}% 0, 100% 0, 100% 100%, ${percentage}% 100%)`;
             sliderBar.style.left = `${percentage}%`;
         }
 
-        // Mouse Events for Slider
+        // Mouse Drag Events
         sliderBar.addEventListener('mousedown', () => { isDragging = true; });
         window.addEventListener('mouseup', () => { isDragging = false; });
         window.addEventListener('mousemove', (e) => {
@@ -563,7 +643,7 @@
             setSliderPosition(e.clientX);
         });
 
-        // Touch Events for Mobile
+        // Touch Drag Events for Mobile
         sliderBar.addEventListener('touchstart', () => { isDragging = true; });
         window.addEventListener('touchend', () => { isDragging = false; });
         window.addEventListener('touchmove', (e) => {
@@ -571,7 +651,7 @@
             setSliderPosition(e.touches[0].clientX);
         });
 
-        // Portal Switcher
+        // Portal Switcher Logic
         function openPortal(portal) {
             const hub = document.getElementById('portal-hub');
             const telecomView = document.getElementById('view-telecom');
