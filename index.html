@@ -360,8 +360,11 @@
                 <h3 class="text-2xl font-black text-slate-900 tracking-tight">Connect With Us</h3>
                 <p class="text-xs font-semibold text-slate-500 mt-1 uppercase tracking-widest">Avant Group</p>
             </div>
+
+            <!-- Inline status banner for errors -->
+            <div id="contact-status" class="hidden mb-4 text-xs font-semibold text-center px-4 py-2.5 rounded-xl"></div>
             
-            <!-- Functional Contact Form (UI Simulation & Redirect) -->
+            <!-- Functional Contact Form (Real submission via Google Apps Script) -->
             <form id="contact-form" class="space-y-4" onsubmit="submitContactForm(event)">
                 <div>
                     <label class="block text-[10px] font-bold text-slate-700 uppercase tracking-widest mb-1">Full Name</label>
@@ -794,44 +797,75 @@
             }
         }
 
-        // Form Submit Handler (Simulated API + UI Reset)
+        // ==========================================================
+        // 6. REAL FORM SUBMISSION -> GOOGLE SHEETS + EMAIL NOTIFICATION
+        // ==========================================================
+        // Paste the "Web app URL" you get after deploying the
+        // Code.gs Apps Script (see setup instructions in that file).
+        const CONTACT_SCRIPT_URL = https://script.google.com/macros/s/AKfycbzLAoQ6cHDTgHTelCu0uYpGni3sayHsL_3ljOF_CbNKqMQuNXlmz-NUgIqrWBnZ_p-M/exec;
+
+        function showContactStatus(message, isError) {
+            const status = document.getElementById('contact-status');
+            status.textContent = message;
+            status.classList.remove('hidden', 'bg-red-50', 'text-red-600', 'bg-emerald-50', 'text-emerald-600');
+            status.classList.add(isError ? 'bg-red-50' : 'bg-emerald-50', isError ? 'text-red-600' : 'text-emerald-600');
+        }
+
         function submitContactForm(event) {
             event.preventDefault();
-            
+
             const btn = document.getElementById('contact-submit-btn');
             const originalText = btn.innerHTML;
-            
+
+            if (!CONTACT_SCRIPT_URL || CONTACT_SCRIPT_URL.indexOf('PASTE_YOUR') !== -1) {
+                showContactStatus('Form is not connected yet — add the Apps Script URL in the code.', true);
+                return;
+            }
+
             // UI Loading state
             btn.innerHTML = '<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i>';
             btn.classList.add('opacity-80', 'cursor-not-allowed');
             lucide.createIcons();
-            
-            // Simulate network request without mailto: popup
-            setTimeout(() => {
+
+            const formData = new FormData();
+            formData.append('name', document.getElementById('contact-name').value);
+            formData.append('email', document.getElementById('contact-email').value);
+            formData.append('phone', document.getElementById('contact-country-code').value + ' ' + document.getElementById('contact-phone').value);
+            formData.append('message', document.getElementById('contact-message').value);
+
+            fetch(CONTACT_SCRIPT_URL, {
+                method: 'POST',
+                body: formData
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.result !== 'success') {
+                    throw new Error(data.message || 'Unknown error');
+                }
+
                 // UI Success state
                 btn.innerHTML = 'Message Sent!';
                 btn.classList.remove('bg-slate-900', 'hover:bg-cyan-600');
                 btn.classList.add('bg-emerald-500', 'hover:bg-emerald-600');
-                
-                // Reset form
+
                 document.getElementById('contact-form').reset();
-                
-                // Close modal and restore button
+
                 setTimeout(() => {
                     toggleContactModal();
                     setTimeout(() => {
                         btn.innerHTML = originalText;
                         btn.classList.remove('bg-emerald-500', 'hover:bg-emerald-600', 'opacity-80', 'cursor-not-allowed');
                         btn.classList.add('bg-slate-900', 'hover:bg-cyan-600');
+                        document.getElementById('contact-status').classList.add('hidden');
                     }, 300);
-                }, 2000);
-            }, 1500);
-
-            /* 
-               NOTE: To connect this to a real inbox for free, sign up for Web3Forms or Formspree, 
-               grab your API endpoint URL, and replace this entire submitContactForm function 
-               with a standard fetch() POST request.
-            */
+                }, 1600);
+            })
+            .catch((error) => {
+                console.error('Contact form error:', error);
+                showContactStatus('Something went wrong sending your message. Please try again or email us directly.', true);
+                btn.innerHTML = originalText;
+                btn.classList.remove('opacity-80', 'cursor-not-allowed');
+            });
         }
 
         // Initialize
