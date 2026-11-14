@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avant Telecom - Empowering Connectivity | A Venture of Avant Groups</title>
+    <title>Avant Telecom — Empowering Connectivity | Avant Groups</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -11,61 +11,71 @@
             theme: {
                 extend: {
                     colors: {
-                        avantRed: '#F93822',      /* Exact Coral-Red from AT Logo */
-                        avantRedDark: '#D92B16',  /* Hover state Red */
-                        avantCharcoal: '#363435', /* Exact Charcoal from Avant Telecom text */
-                        avantDarkBg: '#181718',   /* Deep Charcoal section background */
+                        avantRed: '#F93822',       /* Logo Coral-Red */
+                        avantRedLight: '#FFF1EF',  /* Soft Coral Tint */
+                        avantRedDark: '#E02D19',   /* Hover Coral-Red */
+                        avantCharcoal: '#363435',  /* Logo Charcoal */
+                        avantSlate: '#575355',     /* Gentle Muted Text */
                     }
                 }
             }
         }
     </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
         
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FAFAFC;
             color: #363435;
             scroll-behavior: smooth;
         }
 
-        /* Vertical Auto-Scrolling News Ticker */
-        .news-scroll-viewport {
-            height: 390px;
+        /* Gentle Ambient Mesh Background */
+        .ambient-hero {
+            background: radial-gradient(circle at 15% 20%, rgba(249, 56, 34, 0.08) 0%, transparent 45%),
+                        radial-gradient(circle at 85% 80%, rgba(54, 52, 53, 0.06) 0%, transparent 50%),
+                        linear-gradient(180deg, #FFFFFF 0%, #F4F5F8 100%);
+        }
+
+        /* Soft Frosted Glass Cards */
+        .gentle-card {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            box-shadow: 0 10px 30px -10px rgba(54, 52, 53, 0.06);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .gentle-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -12px rgba(249, 56, 34, 0.12);
+            border-color: rgba(249, 56, 34, 0.35);
+        }
+
+        /* News Viewport with Soft Top/Bottom Fade Masks */
+        .news-viewport {
+            height: 410px;
             overflow: hidden;
             position: relative;
+            mask-image: linear-gradient(to bottom, transparent 0%, black 6%, black 94%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 6%, black 94%, transparent 100%);
         }
 
-        .news-scroll-track {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            animation: autoScrollVertical 24s linear infinite;
-        }
-
-        .news-scroll-track:hover {
-            animation-play-state: paused;
-        }
-
-        @keyframes autoScrollVertical {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-50%); }
-        }
-
-        /* Top Horizontal Breaking Ticker */
-        .top-ticker-wrap {
+        /* Smooth Horizontal Top Ticker */
+        .marquee-container {
             overflow: hidden;
             white-space: nowrap;
+            width: 100%;
         }
-        .top-ticker-move {
+        .marquee-content {
             display: inline-block;
-            animation: tickerHorizontal 28s linear infinite;
+            animation: marqueeHoriz 32s linear infinite;
         }
-        .top-ticker-move:hover {
+        .marquee-content:hover {
             animation-play-state: paused;
         }
-        @keyframes tickerHorizontal {
+        @keyframes marqueeHoriz {
             0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
         }
@@ -73,139 +83,163 @@
 </head>
 <body class="antialiased selection:bg-avantRed selection:text-white">
 
-    <!-- Top Live Breaking Telecom News Bar (Charcoal & Coral-Red Theme) -->
-    <div class="bg-avantDarkBg border-b border-neutral-800 text-xs py-2 px-4 flex items-center text-white">
-        <span class="bg-avantRed text-white font-bold px-2.5 py-0.5 rounded uppercase tracking-wider mr-3 shrink-0 flex items-center shadow-sm">
-            <span class="w-1.5 h-1.5 bg-white rounded-full animate-ping mr-1.5"></span> Telecom Flash
-        </span>
-        <div class="top-ticker-wrap w-full text-neutral-300">
-            <div class="top-ticker-move" id="horizontalTickerText">
-                • [Sep 18, 2026] Avant Telecom Expands 5G & UBR Deployments Across North East (86 Sites under Reliance Jio timeline, completion by Dec 2026) &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 
-                • 100% Statutory EPF & ESIC Compliant Field Engineering Operations across North East Circles &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 
-                • Corporate Office: Sukhdev Apartment, Nayanpur, Guwahati - 781005, Assam
+    <!-- Top Live Breaking News Bar (Warm Charcoal & Soft Coral) -->
+    <div class="bg-avantCharcoal text-white text-xs py-2.5 px-4 border-b border-neutral-700/60">
+        <div class="max-w-7xl mx-auto flex items-center">
+            <span class="bg-avantRed text-white font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider mr-3 shrink-0 flex items-center text-[10px] shadow-sm">
+                <span class="w-1.5 h-1.5 bg-white rounded-full animate-ping mr-1.5"></span> Live Updates
+            </span>
+            <div class="marquee-container text-neutral-200 font-medium">
+                <div class="marquee-content" id="topBreakingTicker">
+                    <!-- Dynamically synced with the News Feed via JS -->
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Header Navigation (Crisp White so the Charcoal & Red Logo pops cleanly) -->
-    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-neutral-200 shadow-sm">
+    <!-- Sticky Header with Exact Brand Logo -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
         <div class="max-w-7xl mx-auto px-6 py-3.5 flex justify-between items-center">
-            <a href="#home" class="flex items-center space-x-3">
-                <!-- Uses your uploaded PNG logo; falls back to an exact SVG recreation if file path differs -->
+            <a href="#home" class="flex items-center space-x-3 group">
+                <!-- Tries loading your PNG file first; automatically displays exact vector replica if PNG isn't in folder -->
                 <img src="avant-telecom-high-resolution-logo-removebg-preview.png" 
-                     alt="Avant Telecom Logo" 
+                     alt="Avant Telecom" 
                      class="h-11 md:h-12 w-auto object-contain"
-                     onerror="this.style.display='none'; document.getElementById('fallbackLogo').style.display='flex';">
+                     onerror="this.style.display='none'; document.getElementById('svgBrandLogo').style.display='flex';">
                 
-                <!-- Fallback Vector Logo matching your exact AT red circle & charcoal text -->
-                <div id="fallbackLogo" class="hidden items-center space-x-3">
-                    <div class="w-11 h-11 rounded-full bg-avantRed flex items-center justify-center text-white font-bold text-xl tracking-tighter shadow-md">
-                        A<span class="text-[10px] -ml-2.5 mt-1.5">•</span><span class="ml-1">T</span>
+                <!-- Exact Vector Recreation of your uploaded AT Logo -->
+                <div id="svgBrandLogo" class="hidden items-center space-x-3">
+                    <svg class="w-11 h-11 shadow-md rounded-full shrink-0" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="50" fill="#F93822"/>
+                        <!-- Rounded 'A' with inner dot -->
+                        <path d="M22 72L34.5 31C35.8 27 40.2 27 41.5 31L54 72" stroke="white" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="38" cy="57" r="4.2" fill="white"/>
+                        <!-- Rounded 'T' -->
+                        <path d="M57 30H82M69.5 30V72" stroke="white" stroke-width="6.5" stroke-linecap="round"/>
+                    </svg>
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-extrabold tracking-tight text-avantCharcoal leading-none">Avant Telecom</span>
+                        <span class="text-[10px] font-semibold uppercase tracking-widest text-avantRed mt-1">A Venture of Avant Groups</span>
                     </div>
-                    <span class="text-2xl font-bold tracking-tight text-avantCharcoal">Avant Telecom</span>
                 </div>
             </a>
 
             <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-avantCharcoal">
                 <a href="#home" class="hover:text-avantRed transition">Home</a>
-                <a href="#about-telecom" class="hover:text-avantRed transition">Telecom Operations</a>
-                <a href="#telecom-news" class="text-avantRed flex items-center">
-                    <i class="fa-solid fa-bolt mr-1.5 text-xs"></i> Telecom News
+                <a href="#services" class="hover:text-avantRed transition">Telecom Operations</a>
+                <a href="#telecom-news" class="text-avantRed flex items-center bg-avantRedLight px-3 py-1.5 rounded-full">
+                    <span class="w-2 h-2 rounded-full bg-avantRed animate-pulse mr-2"></span> Telecom News
                 </a>
                 <a href="https://avantgroups.in/our-group.html" target="_blank" class="hover:text-avantRed transition">Our Group</a>
                 <a href="https://avantgroups.in/free-apps.html" target="_blank" class="hover:text-avantRed transition">Free Apps</a>
             </nav>
 
             <div class="flex items-center space-x-3">
-                <button onclick="openModal('contactModal')" class="bg-avantRed hover:bg-avantRedDark text-white text-sm font-semibold px-5 py-2.5 rounded-lg shadow-md shadow-red-500/20 transition">
+                <button onclick="openModal('contactModal')" class="bg-avantRed hover:bg-avantRedDark text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-md shadow-avantRed/20 hover:shadow-lg hover:shadow-avantRed/30 transition-all">
                     Connect With Us
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- Hero + Auto-Scrolling News Split Section -->
-    <section id="home" class="relative py-16 md:py-20 px-6 bg-gradient-to-br from-avantDarkBg via-[#252324] to-avantCharcoal text-white overflow-hidden">
-        <!-- Subtle Red Glow Accent in Background -->
-        <div class="absolute -top-24 -left-24 w-96 h-96 bg-avantRed/15 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+    <!-- Gentle Eye-Catching Hero + Live Auto-Scrolling News Section -->
+    <section id="home" class="ambient-hero py-14 md:py-20 px-6 border-b border-slate-200/70">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            <!-- Left Column: Avant Telecom Core Identity -->
+            <!-- Left Column: Telecom Identity -->
             <div class="lg:col-span-7 space-y-6">
-                <div class="inline-flex items-center space-x-2 bg-avantRed/15 border border-avantRed/40 text-red-400 text-xs font-semibold px-3.5 py-1.5 rounded-full uppercase tracking-wider">
-                    <i class="fa-solid fa-tower-cell"></i>
-                    <span>Next-Gen Digital & Telecom Infrastructure</span>
+                <div class="inline-flex items-center space-x-2.5 bg-white border border-slate-200 shadow-sm text-avantCharcoal text-xs font-bold px-4 py-2 rounded-full">
+                    <span class="w-2 h-2 rounded-full bg-avantRed"></span>
+                    <span>NEXT-GEN DIGITAL & TELECOM INFRASTRUCTURE</span>
                 </div>
                 
-                <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight">
-                    Empowering Connectivity Across <span class="text-avantRed">North East India</span>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-avantCharcoal leading-[1.15] tracking-tight">
+                    Empowering Seamless Connectivity Across <span class="text-avantRed underline decoration-avantRed/20 decoration-wavy underline-offset-8">North East India</span>
                 </h1>
                 
-                <p class="text-neutral-300 text-lg leading-relaxed">
-                    Avant Telecom operates at the forefront of telecommunications engineering, 5G & UBR microwave link deployments, optical fiber network execution, and dedicated technical workforce management across emerging markets.
+                <p class="text-avantSlate text-lg leading-relaxed max-w-2xl">
+                    Avant Telecom delivers precision 5G & UBR microwave deployments, optical fiber network execution, and 100% statutory-compliant field engineering teams across regional telecom circles.
                 </p>
 
-                <div class="grid grid-cols-3 gap-4 pt-2">
-                    <div class="bg-white/5 backdrop-blur-sm p-4 rounded-xl border border-white/10 border-l-4 border-l-avantRed">
-                        <div class="text-2xl font-extrabold text-white">86+ Sites</div>
-                        <div class="text-xs text-neutral-400 mt-1">Active 5G & UBR Upgrades</div>
+                <!-- Soft Metric Highlights -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                    <div class="gentle-card p-5 rounded-2xl border-l-4 border-l-avantRed">
+                        <div class="text-2xl font-extrabold text-avantCharcoal">86+ Sites</div>
+                        <div class="text-xs font-medium text-avantSlate mt-1">Active 5G & UBR Upgrades</div>
                     </div>
-                    <div class="bg-white/5 backdrop-blur-sm p-4 rounded-xl border border-white/10 border-l-4 border-l-white">
-                        <div class="text-2xl font-extrabold text-white">Reliance Jio</div>
-                        <div class="text-xs text-neutral-400 mt-1">Key Project Execution</div>
+                    <div class="gentle-card p-5 rounded-2xl border-l-4 border-l-avantCharcoal">
+                        <div class="text-2xl font-extrabold text-avantCharcoal">Reliance Jio</div>
+                        <div class="text-xs font-medium text-avantSlate mt-1">Primary Project Partner</div>
                     </div>
-                    <div class="bg-white/5 backdrop-blur-sm p-4 rounded-xl border border-white/10 border-l-4 border-l-avantRed">
-                        <div class="text-2xl font-extrabold text-white">100%</div>
-                        <div class="text-xs text-neutral-400 mt-1">EPF & ESIC Compliant</div>
+                    <div class="gentle-card p-5 rounded-2xl border-l-4 border-l-emerald-500">
+                        <div class="text-2xl font-extrabold text-avantCharcoal">100%</div>
+                        <div class="text-xs font-medium text-avantSlate mt-1">EPF & ESIC Compliant</div>
                     </div>
                 </div>
 
-                <div class="flex flex-wrap gap-4 pt-4">
-                    <a href="#about-telecom" class="bg-avantRed hover:bg-avantRedDark text-white font-semibold px-6 py-3 rounded-lg shadow-lg shadow-red-600/30 transition">
-                        Explore Capabilities
+                <div class="flex flex-wrap gap-4 pt-3">
+                    <a href="#services" class="bg-avantCharcoal hover:bg-black text-white font-semibold px-6 py-3.5 rounded-xl shadow-md transition flex items-center">
+                        <span>Explore Capabilities</span>
+                        <i class="fa-solid fa-arrow-right ml-2 text-xs text-avantRed"></i>
                     </a>
-                    <button onclick="openModal('contactModal')" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-6 py-3 rounded-lg transition">
+                    <button onclick="openModal('contactModal')" class="bg-white hover:bg-avantRedLight text-avantCharcoal hover:text-avantRed border border-slate-300 hover:border-avantRed/40 font-semibold px-6 py-3.5 rounded-xl shadow-sm transition">
                         Request Field Support
                     </button>
                 </div>
             </div>
 
-            <!-- Right Column: Auto-Scrolling Telecom News Feed -->
+            <!-- Right Column: Fixed, Buttery-Smooth Auto-Scrolling Telecom News Feed -->
             <div id="telecom-news" class="lg:col-span-5">
-                <div class="bg-white text-avantCharcoal rounded-2xl p-6 shadow-2xl border-t-4 border-t-avantRed">
-                    <!-- News Box Header -->
-                    <div class="flex items-center justify-between border-b border-neutral-200 pb-4 mb-4">
+                <div class="bg-white rounded-3xl p-6 shadow-xl shadow-slate-200/80 border border-slate-200/90 relative overflow-hidden">
+                    <!-- Top Accent Bar -->
+                    <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-avantRed via-orange-400 to-avantCharcoal"></div>
+
+                    <!-- News Feed Header -->
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-4 pt-1">
                         <div>
-                            <span class="text-[11px] font-bold uppercase tracking-widest text-avantRed block">Project Updates & News</span>
-                            <h2 class="text-xl font-extrabold text-avantCharcoal flex items-center mt-0.5">
-                                Telecom Live Feed
-                                <span class="ml-2.5 flex h-2.5 w-2.5 relative">
-                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-avantRed opacity-75"></span>
-                                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-avantRed"></span>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-[11px] font-bold uppercase tracking-widest text-avantRed">Telecom Newsroom</span>
+                                <span id="syncBadge" class="text-[10px] bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded-full font-semibold">
+                                    ● Live Synced
                                 </span>
-                            </h2>
+                            </div>
+                            <h2 class="text-xl font-extrabold text-avantCharcoal mt-0.5">Project & Field Updates</h2>
                         </div>
+
+                        <!-- Controls: Pause/Play & Author Post -->
                         <div class="flex items-center space-x-2">
-                            <button onclick="openModal('adminLoginModal')" id="authorLoginBtn" class="text-xs bg-neutral-100 hover:bg-neutral-200 text-avantCharcoal font-medium px-3 py-1.5 rounded-lg border border-neutral-300 transition">
-                                <i class="fa-solid fa-lock mr-1 text-avantRed"></i> Author Login
+                            <button onclick="toggleScrollPause()" id="pausePlayBtn" title="Pause/Resume Auto-Scroll" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-avantRedLight text-avantCharcoal hover:text-avantRed flex items-center justify-center transition">
+                                <i class="fa-solid fa-pause text-xs" id="pausePlayIcon"></i>
                             </button>
-                            <button onclick="openModal('postNewsModal')" id="postNewsBtn" class="hidden text-xs bg-avantRed hover:bg-avantRedDark text-white px-3 py-1.5 rounded-lg font-semibold transition">
-                                <i class="fa-solid fa-plus mr-1"></i> Post News
+                            <button onclick="openModal('adminLoginModal')" id="authorLoginBtn" class="text-xs bg-slate-100 hover:bg-slate-200 text-avantCharcoal font-semibold px-3 py-2 rounded-lg transition">
+                                <i class="fa-solid fa-pen-to-square mr-1 text-avantRed"></i> Post Update
+                            </button>
+                            <button onclick="openModal('postNewsModal')" id="postNewsBtn" class="hidden text-xs bg-avantRed hover:bg-avantRedDark text-white font-semibold px-3 py-2 rounded-lg shadow-sm transition">
+                                <i class="fa-solid fa-plus mr-1"></i> Add News
                             </button>
                         </div>
                     </div>
 
-                    <!-- Auto-Scrolling Viewport -->
-                    <div class="news-scroll-viewport" id="newsViewport">
-                        <div class="news-scroll-track" id="newsTrack">
-                            <!-- Populated by JS -->
+                    <!-- JS-Powered 60fps Auto-Scrolling Viewport -->
+                    <div class="news-viewport" id="newsViewport">
+                        <div id="newsTrack" class="space-y-3.5 pb-4">
+                            <!-- Dynamically populated by JavaScript -->
                         </div>
                     </div>
 
-                    <div class="mt-4 pt-3 border-t border-neutral-200 flex justify-between items-center text-[11px] text-neutral-500">
-                        <span><i class="fa-solid fa-hand-pointer mr-1 text-avantRed"></i> Hover over news to pause scrolling</span>
-                        <a href="https://avantgroups.in/news.html" target="_blank" class="text-avantRed font-semibold hover:underline">View All Group News →</a>
+                    <!-- Footer Controls inside News Card -->
+                    <div class="mt-3 pt-3 border-t border-slate-100 flex justify-between items-center text-xs text-avantSlate">
+                        <span class="flex items-center">
+                            <i class="fa-solid fa-mouse text-avantRed mr-1.5"></i> Hover to pause • Scroll wheel supported
+                        </span>
+                        <div class="flex items-center space-x-3">
+                            <button onclick="resetDefaultNews()" title="Reset to default official news" class="text-slate-400 hover:text-avantRed transition">
+                                <i class="fa-solid fa-rotate-right"></i> Sync
+                            </button>
+                            <a href="https://avantgroups.in/news.html" target="_blank" class="text-avantRed font-bold hover:underline">
+                                All Group News →
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -213,111 +247,389 @@
         </div>
     </section>
 
-    <!-- Telecom Services & Field Execution Section -->
-    <section id="about-telecom" class="py-20 px-6 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-avantRed text-xs font-bold uppercase tracking-widest">Core Infrastructure Division</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold text-avantCharcoal mt-2">Telecom Engineering & Field Execution</h2>
-                <p class="text-neutral-600 mt-3 text-base">
-                    Delivering end-to-end network rollout, microwave ODU link alignment, and round-the-clock site maintenance across Assam and the North East region.
+    <!-- Core Telecom Services Section (Matches avantgroups.in/telecom.html) -->
+    <section id="services" class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-14">
+            <span class="bg-avantRedLight text-avantRed text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider">Engineering Excellence</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-avantCharcoal mt-4">Telecom Infrastructure & Field Execution</h2>
+            <p class="text-avantSlate mt-3 text-base">
+                Reliable network deployment, microwave ODU alignment, and round-the-clock site operations engineered for zero downtime across the North East region.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Capability 1 -->
+            <div class="gentle-card p-8 rounded-3xl group">
+                <div class="w-14 h-14 rounded-2xl bg-avantRedLight text-avantRed flex items-center justify-center text-2xl mb-6 group-hover:bg-avantRed group-hover:text-white transition-colors duration-300 shadow-sm">
+                    <i class="fa-solid fa-satellite-dish"></i>
+                </div>
+                <h3 class="text-xl font-bold text-avantCharcoal mb-3">5G & UBR Microwave Rollout</h3>
+                <p class="text-avantSlate text-sm leading-relaxed">
+                    End-to-end site upgrades, Unlicensed Band Radio (UBR) installations, and outdoor unit (ODU) link alignment completed strictly within operator milestones.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="bg-slate-50 p-7 rounded-2xl border border-neutral-200 hover:border-avantRed hover:shadow-xl transition group">
-                    <div class="w-12 h-12 rounded-xl bg-avantRed/10 border border-avantRed/20 flex items-center justify-center text-avantRed text-xl mb-5 group-hover:bg-avantRed group-hover:text-white transition">
-                        <i class="fa-solid fa-satellite-dish"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-avantCharcoal mb-2.5">5G & UBR Microwave Deployment</h3>
-                    <p class="text-neutral-600 text-sm leading-relaxed">
-                        Full-scale site upgrades, Unlicensed Band Radio (UBR) installations, and outdoor unit (ODU) microwave link commissioning with strict adherence to operator timelines.
-                    </p>
+            <!-- Capability 2 -->
+            <div class="gentle-card p-8 rounded-3xl group">
+                <div class="w-14 h-14 rounded-2xl bg-avantRedLight text-avantRed flex items-center justify-center text-2xl mb-6 group-hover:bg-avantRed group-hover:text-white transition-colors duration-300 shadow-sm">
+                    <i class="fa-solid fa-network-wired"></i>
                 </div>
+                <h3 class="text-xl font-bold text-avantCharcoal mb-3">Optical Fiber & Network Maintenance</h3>
+                <p class="text-avantSlate text-sm leading-relaxed">
+                    Preventive and corrective maintenance for active telecom sites, L2/L3 routing diagnostics, IP configuration, and rapid fault restoration.
+                </p>
+            </div>
 
-                <!-- Service 2 -->
-                <div class="bg-slate-50 p-7 rounded-2xl border border-neutral-200 hover:border-avantRed hover:shadow-xl transition group">
-                    <div class="w-12 h-12 rounded-xl bg-avantRed/10 border border-avantRed/20 flex items-center justify-center text-avantRed text-xl mb-5 group-hover:bg-avantRed group-hover:text-white transition">
-                        <i class="fa-solid fa-network-wired"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-avantCharcoal mb-2.5">Optical Fiber & Site Maintenance</h3>
-                    <p class="text-neutral-600 text-sm leading-relaxed">
-                        Preventive and corrective maintenance for active telecom towers, L2/L3 network troubleshooting, IP routing configuration, and rapid fault restoration.
-                    </p>
+            <!-- Capability 3 -->
+            <div class="gentle-card p-8 rounded-3xl group">
+                <div class="w-14 h-14 rounded-2xl bg-avantRedLight text-avantRed flex items-center justify-center text-2xl mb-6 group-hover:bg-avantRed group-hover:text-white transition-colors duration-300 shadow-sm">
+                    <i class="fa-solid fa-helmet-safety"></i>
                 </div>
-
-                <!-- Service 3 -->
-                <div class="bg-slate-50 p-7 rounded-2xl border border-neutral-200 hover:border-avantRed hover:shadow-xl transition group">
-                    <div class="w-12 h-12 rounded-xl bg-avantRed/10 border border-avantRed/20 flex items-center justify-center text-avantRed text-xl mb-5 group-hover:bg-avantRed group-hover:text-white transition">
-                        <i class="fa-solid fa-user-helmet-safety"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-avantCharcoal mb-2.5">Field Workforce & Compliance</h3>
-                    <p class="text-neutral-600 text-sm leading-relaxed">
-                        Deployment of trained Field Support Engineers (FSEs) and riggers backed by automated wage registers and 100% statutory EPF and ESIC compliance.
-                    </p>
-                </div>
+                <h3 class="text-xl font-bold text-avantCharcoal mb-3">Compliant Field Workforce</h3>
+                <p class="text-avantSlate text-sm leading-relaxed">
+                    Skilled Field Support Engineers (FSEs) and technical crews backed by digital wage registers and 100% statutory EPF and ESIC coverage.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Diversified Group Portfolio Bar -->
-    <section class="py-12 px-6 bg-slate-100 border-t border-neutral-200">
-        <div class="max-w-7xl mx-auto bg-avantCharcoal text-white rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg">
-            <div>
-                <h3 class="text-xl font-bold">Part of the Avant Groups Ecosystem</h3>
-                <p class="text-neutral-300 text-sm mt-1">Empowering growth across Telecom, IT Services, Logistics, Agro, and Energy sectors.</p>
+    <!-- Avant Groups Ecosystem Banner -->
+    <section class="py-10 px-6 max-w-7xl mx-auto">
+        <div class="bg-gradient-to-r from-avantCharcoal to-[#252324] text-white rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+            <div class="space-y-2 text-center md:text-left">
+                <span class="text-xs font-bold uppercase tracking-widest text-avantRed">Avant Groups Portfolio</span>
+                <h3 class="text-2xl font-extrabold">Explore Our Multi-Sector Operations</h3>
+                <p class="text-neutral-300 text-sm max-w-xl">Delivering excellence across Telecommunications, IT Services, Logistics, Agro Products, and Energy in North East India.</p>
             </div>
-            <div class="flex flex-wrap gap-3 text-xs font-semibold">
-                <a href="https://avantgroups.in/" target="_blank" class="px-4 py-2.5 rounded-lg bg-white/10 hover:bg-white/20 text-white transition">Avant Groups Home</a>
-                <a href="https://avantgroups.in/free-apps.html" target="_blank" class="px-4 py-2.5 rounded-lg bg-avantRed hover:bg-avantRedDark text-white transition">Avant IT Services</a>
-                <a href="https://avantgroups.in/logistics.html" target="_blank" class="px-4 py-2.5 rounded-lg bg-white/10 hover:bg-white/20 text-white transition">Avant Logistics</a>
+            <div class="flex flex-wrap justify-center gap-3 text-xs font-semibold">
+                <a href="https://avantgroups.in/" target="_blank" class="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white transition">Avant Groups Home</a>
+                <a href="https://avantgroups.in/free-apps.html" target="_blank" class="px-5 py-3 rounded-xl bg-avantRed hover:bg-avantRedDark text-white shadow-md transition">Avant IT & Free Apps</a>
+                <a href="https://avantgroups.in/news.html" target="_blank" class="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white transition">Group News Portal</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-avantDarkBg py-10 px-6 text-sm text-neutral-400 border-t border-neutral-800">
+    <!-- Clean Footer -->
+    <footer class="bg-white border-t border-slate-200 py-10 px-6 text-sm text-avantSlate mt-12">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center space-x-3">
-                <span class="w-7 h-7 rounded-full bg-avantRed text-white font-bold text-xs flex items-center justify-center">AT</span>
-                <span><strong class="text-white">Avant Telecom</strong> — Sukhdev Apartment, H.N.-305, Nayanpur, Guwahati, 781005, Assam</span>
+                <div class="w-8 h-8 rounded-full bg-avantRed text-white font-extrabold text-xs flex items-center justify-center shadow-sm">AT</div>
+                <span><strong class="text-avantCharcoal">Avant Telecom</strong> — Corporate Office: Sukhdev Apartment, H.N.-305, Nayanpur, Guwahati, 781005, Assam</span>
             </div>
-            <div>
+            <div class="text-xs text-slate-400">
                 © 2026 Avant Groups. All rights reserved.
             </div>
         </div>
     </footer>
 
     <!-- MODAL 1: Connect With Us -->
-    <div id="contactModal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white max-w-md w-full rounded-2xl p-6 border-t-4 border-t-avantRed shadow-2xl text-avantCharcoal">
-            <div class="flex justify-between items-center border-b border-neutral-200 pb-3 mb-4">
+    <div id="contactModal" class="fixed inset-0 z-50 hidden bg-avantCharcoal/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white max-w-md w-full rounded-3xl p-7 shadow-2xl border border-slate-100">
+            <div class="flex justify-between items-center border-b border-slate-100 pb-4 mb-5">
                 <div>
                     <span class="text-[10px] font-bold uppercase tracking-widest text-avantRed">AVANT TELECOM</span>
-                    <h3 class="text-lg font-extrabold text-avantCharcoal">Connect With Us</h3>
+                    <h3 class="text-xl font-extrabold text-avantCharcoal">Connect With Us</h3>
                 </div>
-                <button onclick="closeModal('contactModal')" class="text-neutral-400 hover:text-avantRed text-xl font-bold">&times;</button>
+                <button onclick="closeModal('contactModal')" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-avantRedLight text-avantCharcoal hover:text-avantRed flex items-center justify-center font-bold">&times;</button>
             </div>
             <form onsubmit="submitContactForm(event)" class="space-y-4 text-sm">
                 <div>
-                    <label class="block text-xs font-bold uppercase text-neutral-500 mb-1">Service Required</label>
-                    <select class="w-full bg-slate-50 border border-neutral-300 rounded-lg px-3 py-2.5 text-avantCharcoal focus:border-avantRed outline-none">
+                    <label class="block text-xs font-bold uppercase text-avantSlate mb-1">Service Division</label>
+                    <select class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-avantCharcoal font-medium focus:border-avantRed outline-none">
                         <option value="Avant Telecom" selected>Avant Telecom (5G / UBR / Field Support)</option>
                         <option value="Avant IT Services">Avant IT Services</option>
                         <option value="Avant Logistics">Avant Logistics</option>
                         <option value="Avant Agro">Avant Agro</option>
-                        <option value="Avant Energy">Avant Energy</option>
                     </select>
                 </div>
                 <div>
-                    <label class="block text-xs font-bold uppercase text-neutral-500 mb-1">Your Name / Organization</label>
-                    <input type="text" required placeholder="Enter name or company" class="w-full bg-slate-50 border border-neutral-300 rounded-lg px-3 py-2 text-avantCharcoal focus:border-avantRed outline-none">
+                    <label class="block text-xs font-bold uppercase text-avantSlate mb-1">Your Name / Company</label>
+                    <input type="text" required placeholder="Enter name or organization" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-avantCharcoal focus:border-avantRed outline-none">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold uppercase text-neutral-500 mb-1">Phone / Email</label>
-                    <input type="text" required placeholder="Contact details" class="w-full bg-slate-50 border border-neutral-300 rounded-lg px-3 py-2 text-avantCharcoal focus:border-avantRed outline-none">
+                    <label class="block text-xs font-bold uppercase text-avantSlate mb-1">Phone / Email</label>
+                    <input type="text" required placeholder="Enter contact details" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-avantCharcoal focus:border-avantRed outline-none">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold uppercase text-neutral-500 mb-1">Project / Inquiry Details</label>
-                    <textarea rows="3" required placeholder="Describe site requirements or inquiry..." class="w-full bg-slate-50 border border-neutral-300 rounded-lg px-3 py-2 text-avantCharcoal focus:border-avantRed outline-none
+                    <label class="block text-xs font-bold uppercase text-avantSlate mb-1">Project Requirement</label>
+                    <textarea rows="3" required placeholder="How can our team assist you?" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-avantCharcoal focus:border-avantRed outline-none"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-avantRed hover:bg-avantRedDark text-white font-bold py-3 rounded-xl shadow-md transition">
+                    Send Inquiry
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL 2: Author Login -->
+    <div id="adminLoginModal" class="fixed inset-0 z-50 hidden bg-avantCharcoal/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white max-w-sm w-full rounded-3xl p-7 shadow-2xl border border-slate-100">
+            <div class="flex justify-between items-center border-b border-slate-100 pb-3 mb-4">
+                <h3 class="text-lg font-extrabold text-avantCharcoal">Author Authentication</h3>
+                <button onclick="closeModal('adminLoginModal')" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-avantRedLight text-avantCharcoal hover:text-avantRed flex items-center justify-center font-bold">&times;</button>
+            </div>
+            <p class="text-xs text-avantSlate mb-4">Sign in to publish or delete live Telecom News updates.</p>
+            <form onsubmit="handleAdminLogin(event)" class="space-y-4 text-sm">
+                <div>
+                    <label class="block text-xs font-bold text-avantSlate mb-1">AUTHOR ID</label>
+                    <input type="text" id="adminUser" required placeholder="Enter Author ID" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-avantCharcoal focus:border-avantRed outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-avantSlate mb-1">PASSWORD</label>
+                    <input type="password" id="adminPass" required placeholder="••••••••" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-avantCharcoal focus:border-avantRed outline-none">
+                </div>
+                <button type="submit" class="w-full bg-avantCharcoal hover:bg-black text-white font-bold py-3 rounded-xl transition">
+                    Unlock News Publisher
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL 3: Post New Telecom Update -->
+    <div id="postNewsModal" class="fixed inset-0 z-50 hidden bg-avantCharcoal/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white max-w-md w-full rounded-3xl p-7 shadow-2xl border border-slate-100">
+            <div class="flex justify-between items-center border-b border-slate-100 pb-3 mb-4">
+                <div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-avantRed">LIVE PUBLISHER</span>
+                    <h3 class="text-lg font-extrabold text-avantCharcoal">Publish Telecom News</h3>
+                </div>
+                <button onclick="closeModal('postNewsModal')" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-avantRedLight text-avantCharcoal hover:text-avantRed flex items-center justify-center font-bold">&times;</button>
+            </div>
+            <form onsubmit="handlePostNews(event)" class="space-y-4 text-sm">
+                <div>
+                    <label class="block text-xs font-bold text-avantSlate mb-1">DATE OF UPDATE</label>
+                    <input type="date" id="newsDate" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-avantCharcoal">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-avantSlate mb-1">HEADLINE TITLE</label>
+                    <input type="text" id="newsTitle" required placeholder="e.g., 25 New UBR Sites Commissioned in NE" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-avantCharcoal focus:border-avantRed outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-avantSlate mb-1">FULL UPDATE DETAILS</label>
+                    <textarea rows="3" id="newsBody" required placeholder="Write the project milestone or announcement..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-avantCharcoal focus:border-avantRed outline-none"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-avantRed hover:bg-avantRedDark text-white font-bold py-3 rounded-xl shadow-md transition">
+                    Publish to Live Feed Now
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Storage versioning key so stale cache never blocks new updates
+        const STORAGE_KEY = 'avant_telecom_news_v2';
+        let isAuthorLoggedIn = false;
+
+        // Official Telecom News Items (Pre-loaded from avantgroups.in/news.html)
+        const defaultTelecomNews = [
+            {
+                id: "news-1",
+                date: "September 18, 2026",
+                division: "Avant Telecom",
+                tag: "5G & UBR Rollout",
+                title: "Avant Telecom Expands 5G & UBR Deployments Across North East",
+                content: "Avant Telecom expands 5G & UBR deployments across North East excluding Assam from this month onwards. Total 86 sites will be upgraded by Avant Telecom within the timeline provided by Jio. Expected to be completed by Dec-2026."
+            },
+            {
+                id: "news-2",
+                date: "October 14, 2026",
+                division: "Avant Telecom",
+                tag: "Field Operations",
+                title: "Reliance Jio Project Milestone & Zero-Outage Link Alignment",
+                content: "Dedicated Field Support Engineers (FSE) deployed across regional circles have achieved rapid ODU microwave link commissioning and preventive maintenance targets."
+            },
+            {
+                id: "news-3",
+                date: "November 05, 2026",
+                division: "Avant Telecom",
+                tag: "Statutory Compliance",
+                title: "100% EPF & ESIC Digital Wage Register Compliance Active",
+                content: "Avant Telecom's automated payroll systems ensure timely statutory EPF and ESIC contributions for all field engineers and technical support personnel."
+            }
+        ];
+
+        // 1. Load News Safely
+        function getNewsList() {
+            try {
+                const raw = localStorage.getItem(STORAGE_KEY);
+                if (!raw) {
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultTelecomNews));
+                    return [...defaultTelecomNews];
+                }
+                const parsed = JSON.parse(raw);
+                return Array.isArray(parsed) && parsed.length > 0 ? parsed : [...defaultTelecomNews];
+            } catch (err) {
+                return [...defaultTelecomNews];
+            }
+        }
+
+        // 2. Render Both the Vertical Auto-Scroller and Top Breaking Bar
+        function renderNewsFeed() {
+            const newsList = getNewsList();
+            const track = document.getElementById('newsTrack');
+            const topTicker = document.getElementById('topBreakingTicker');
+
+            // Update Top Horizontal Breaking Bar dynamically
+            topTicker.innerHTML = newsList.map(item => 
+                `<span class="mx-6">• <strong class="text-avantRed">[${item.date}]</strong> ${item.title}</span>`
+            ).join('');
+
+            // Build Card HTML
+            const buildCards = (items) => items.map(item => `
+                <div class="p-4 rounded-2xl bg-slate-50/90 hover:bg-avantRedLight/40 border border-slate-200/90 hover:border-avantRed/40 transition-all shadow-sm relative group">
+                    <div class="flex items-center justify-between text-[11px] mb-1.5">
+                        <span class="text-avantSlate font-semibold flex items-center">
+                            <i class="fa-regular fa-calendar-check mr-1.5 text-avantRed"></i>${item.date}
+                        </span>
+                        <div class="flex items-center space-x-2">
+                            <span class="bg-avantRed/10 text-avantRed px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide">
+                                ${item.tag || item.division}
+                            </span>
+                            ${isAuthorLoggedIn ? `
+                                <button onclick="deleteNewsItem('${item.id}')" title="Delete Update" class="text-slate-400 hover:text-avantRed px-1">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                            ` : ''}
+                        </div>
+                    </div>
+                    <h4 class="font-extrabold text-avantCharcoal text-sm leading-snug mb-1.5 group-hover:text-avantRed transition-colors">
+                        ${item.title}
+                    </h4>
+                    <p class="text-xs text-avantSlate leading-relaxed">
+                        ${item.content}
+                    </p>
+                </div>
+            `).join('');
+
+            // Duplicate content inside track for seamless infinite vertical loop
+            track.innerHTML = `<div id="primaryNewsSet" class="space-y-3.5">${buildCards(newsList)}</div>` +
+                              `<div id="clonedNewsSet" class="space-y-3.5 pt-3.5">${buildCards(newsList)}</div>`;
+
+            // Reset scroll position smoothly when feed updates
+            scrollOffset = 0;
+        }
+
+        // 3. Buttery-Smooth 60fps JS Auto-Scroll Engine (Never gets stuck on DOM updates)
+        let scrollOffset = 0;
+        let isHovered = false;
+        let isManuallyPaused = false;
+        const scrollSpeed = 0.45; // Gentle, readable speed
+
+        function stepAutoScroll() {
+            if (!isHovered && !isManuallyPaused) {
+                const primarySet = document.getElementById('primaryNewsSet');
+                const track = document.getElementById('newsTrack');
+                if (primarySet && track) {
+                    const resetHeight = primarySet.offsetHeight + 14; // +14px for gap
+                    scrollOffset += scrollSpeed;
+                    if (scrollOffset >= resetHeight) {
+                        scrollOffset = 0;
+                    }
+                    track.style.transform = `translateY(-${scrollOffset}px)`;
+                }
+            }
+            requestAnimationFrame(stepAutoScroll);
+        }
+
+        // Pause on Hover & Allow Manual Mouse-Wheel Scrolling
+        const viewport = document.getElementById('newsViewport');
+        viewport.addEventListener('mouseenter', () => { isHovered = true; });
+        viewport.addEventListener('mouseleave', () => { isHovered = false; });
+        viewport.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            const primarySet = document.getElementById('primaryNewsSet');
+            const track = document.getElementById('newsTrack');
+            if (!primarySet || !track) return;
+            const resetHeight = primarySet.offsetHeight + 14;
+            scrollOffset += e.deltaY * 0.4;
+            if (scrollOffset < 0) scrollOffset = resetHeight + scrollOffset;
+            if (scrollOffset >= resetHeight) scrollOffset %= resetHeight;
+            track.style.transform = `translateY(-${scrollOffset}px)`;
+        }, { passive: false });
+
+        function toggleScrollPause() {
+            isManuallyPaused = !isManuallyPaused;
+            const icon = document.getElementById('pausePlayIcon');
+            icon.className = isManuallyPaused ? 'fa-solid fa-play text-xs text-avantRed' : 'fa-solid fa-pause text-xs';
+        }
+
+        // 4. Publishing, Deleting & Syncing News
+        function handlePostNews(e) {
+            e.preventDefault();
+            const rawDate = document.getElementById('newsDate').value;
+            const dateObj = rawDate ? new Date(rawDate + 'T00:00:00') : new Date();
+            const formattedDate = dateObj.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+
+            const newItem = {
+                id: 'news-' + Date.now(),
+                date: formattedDate,
+                division: "Avant Telecom",
+                tag: "Latest Update",
+                title: document.getElementById('newsTitle').value.trim(),
+                content: document.getElementById('newsBody').value.trim()
+            };
+
+            const list = getNewsList();
+            list.unshift(newItem);
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+
+            renderNewsFeed();
+            closeModal('postNewsModal');
+            e.target.reset();
+        }
+
+        function deleteNewsItem(id) {
+            const list = getNewsList().filter(item => item.id !== id);
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+            renderNewsFeed();
+        }
+
+        function resetDefaultNews() {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultTelecomNews));
+            renderNewsFeed();
+            const badge = document.getElementById('syncBadge');
+            badge.textContent = "✓ Feed Refreshed";
+            setTimeout(() => { badge.textContent = "● Live Synced"; }, 2000);
+        }
+
+        // 5. Modal & Admin Helpers
+        function openModal(id) {
+            if (id === 'postNewsModal') {
+                document.getElementById('newsDate').valueAsDate = new Date();
+            }
+            document.getElementById(id).classList.remove('hidden');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        function handleAdminLogin(e) {
+            e.preventDefault();
+            const u = document.getElementById('adminUser').value.trim();
+            const p = document.getElementById('adminPass').value.trim();
+            if (u && p) {
+                isAuthorLoggedIn = true;
+                closeModal('adminLoginModal');
+                document.getElementById('authorLoginBtn').classList.add('hidden');
+                document.getElementById('postNewsBtn').classList.remove('hidden');
+                renderNewsFeed(); // Shows delete buttons on cards for author
+                openModal('postNewsModal');
+            }
+        }
+
+        function submitContactForm(e) {
+            e.preventDefault();
+            alert('Thank you! Your inquiry has been received by Avant Telecom.');
+            closeModal('contactModal');
+            e.target.reset();
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', () => {
+            renderNewsFeed();
+            requestAnimationFrame(stepAutoScroll);
+        });
+    </script>
+</body>
+</html>
