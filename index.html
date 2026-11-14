@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avant Telecom — Empowering Connectivity | Avant Groups</title>
+    <title>M/S Avant Telecom — Empowering Connectivity | Avant Groups</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- html2pdf.js for 1-Click PDF Company Profile Download -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <!-- Native jsPDF Vector Library (100% immune to blank-page rendering bugs) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -36,14 +36,12 @@
             scroll-behavior: smooth;
         }
 
-        /* Gentle Ambient Mesh Background */
         .ambient-hero {
             background: radial-gradient(circle at 12% 18%, rgba(249, 56, 34, 0.08) 0%, transparent 45%),
                         radial-gradient(circle at 88% 82%, rgba(15, 60, 201, 0.05) 0%, transparent 50%),
                         linear-gradient(180deg, #FFFFFF 0%, #F4F5F8 100%);
         }
 
-        /* Soft Frosted Glass Cards */
         .gentle-card {
             background: rgba(255, 255, 255, 0.94);
             backdrop-filter: blur(16px);
@@ -58,7 +56,6 @@
             border-color: rgba(249, 56, 34, 0.35);
         }
 
-        /* News Viewport with Soft Top/Bottom Fade Masks */
         .news-viewport {
             height: 430px;
             overflow: hidden;
@@ -67,7 +64,6 @@
             -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%);
         }
 
-        /* Smooth Horizontal Top Ticker */
         .marquee-container {
             overflow: hidden;
             white-space: nowrap;
@@ -85,7 +81,6 @@
             100% { transform: translateX(-100%); }
         }
 
-        /* Map Node Pulse Effect */
         .radar-pulse {
             animation: pulseRing 2.2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
             transform-origin: center;
@@ -97,7 +92,6 @@
             100% { transform: scale(2.3); opacity: 0; }
         }
 
-        /* Active Map Filter Button */
         .circle-tab.active {
             background-color: #F93822;
             color: #FFFFFF;
@@ -107,16 +101,20 @@
 </head>
 <body class="antialiased selection:bg-avantRed selection:text-white">
 
-    <!-- Top Live Breaking News Bar -->
+    <!-- Top Live Breaking News & Contact Bar -->
     <div class="bg-avantCharcoal text-white text-xs py-2.5 px-4 border-b border-neutral-700/60">
-        <div class="max-w-7xl mx-auto flex items-center">
-            <span class="bg-avantRed text-white font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider mr-3 shrink-0 flex items-center text-[10px] shadow-sm">
-                <span class="w-1.5 h-1.5 bg-white rounded-full animate-ping mr-1.5"></span> Live Updates
-            </span>
-            <div class="marquee-container text-neutral-200 font-medium">
-                <div class="marquee-content" id="topBreakingTicker">
-                    <!-- Dynamically synced with the News Feed via JS -->
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+            <div class="flex items-center overflow-hidden flex-1">
+                <span class="bg-avantRed text-white font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider mr-3 shrink-0 flex items-center text-[10px] shadow-sm">
+                    <span class="w-1.5 h-1.5 bg-white rounded-full animate-ping mr-1.5"></span> Live Updates
+                </span>
+                <div class="marquee-container text-neutral-200 font-medium">
+                    <div class="marquee-content" id="topBreakingTicker"></div>
                 </div>
+            </div>
+            <div class="hidden md:flex items-center space-x-4 shrink-0 text-[11px] text-neutral-300 border-l border-neutral-700 pl-4">
+                <span><i class="fa-solid fa-phone text-avantRed mr-1"></i> +91 6001590452</span>
+                <span><i class="fa-solid fa-envelope text-avantRed mr-1"></i> support@avanttelecom.in</span>
             </div>
         </div>
     </div>
@@ -140,7 +138,7 @@
                     </svg>
                     <div class="flex flex-col">
                         <span class="text-2xl font-extrabold tracking-tight text-avantCharcoal leading-none">Avant Telecom</span>
-                        <span class="text-[10px] font-semibold uppercase tracking-widest text-avantRed mt-1">A Venture of Avant Groups</span>
+                        <span class="text-[10px] font-semibold uppercase tracking-widest text-avantRed mt-1">M/S Avant Telecom • Est. 2024</span>
                     </div>
                 </div>
             </a>
@@ -148,16 +146,16 @@
             <nav class="hidden lg:flex items-center space-x-6 text-sm font-semibold text-avantCharcoal">
                 <a href="#home" class="hover:text-avantRed transition">Home</a>
                 <a href="#partners" class="hover:text-avantRed transition">Partners</a>
-                <a href="#coverage-map" class="hover:text-avantRed transition">NE Coverage Map</a>
-                <a href="#services" class="hover:text-avantRed transition">Operations</a>
+                <a href="#coverage-map" class="hover:text-avantRed transition">Work Region</a>
+                <a href="#services" class="hover:text-avantRed transition">Core Services</a>
+                <a href="#leadership" class="hover:text-avantRed transition">Leadership</a>
                 <a href="#telecom-news" class="text-avantRed flex items-center bg-avantRedLight px-3 py-1.5 rounded-full">
-                    <span class="w-2 h-2 rounded-full bg-avantRed animate-pulse mr-2"></span> Telecom News
+                    <span class="w-2 h-2 rounded-full bg-avantRed animate-pulse mr-2"></span> News
                 </a>
-                <a href="https://avantgroups.in/our-group.html" target="_blank" class="hover:text-avantRed transition">Our Group</a>
             </nav>
 
             <div class="flex items-center space-x-2.5">
-                <button onclick="downloadCompanyProfilePDF()" id="headerPdfBtn" class="hidden sm:inline-flex items-center bg-slate-100 hover:bg-avantRedLight text-avantCharcoal hover:text-avantRed text-xs font-bold px-4 py-2.5 rounded-xl border border-slate-200 transition">
+                <button onclick="downloadCompanyProfilePDF()" class="hidden sm:inline-flex items-center bg-slate-100 hover:bg-avantRedLight text-avantCharcoal hover:text-avantRed text-xs font-bold px-4 py-2.5 rounded-xl border border-slate-200 transition">
                     <i class="fa-solid fa-file-pdf text-avantRed mr-2"></i> Company Profile PDF
                 </button>
                 <button onclick="openModal('contactModal')" class="bg-avantRed hover:bg-avantRedDark text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-md shadow-avantRed/20 hover:shadow-lg transition-all">
@@ -175,20 +173,19 @@
             <div class="lg:col-span-7 space-y-6">
                 <div class="inline-flex items-center space-x-2.5 bg-white border border-slate-200 shadow-sm text-avantCharcoal text-xs font-bold px-4 py-2 rounded-full">
                     <span class="w-2 h-2 rounded-full bg-avantRed"></span>
-                    <span>MSME CERTIFIED: UDYAM-AS-01-0008134 • TELECOM ROLLOUT LEADER</span>
+                    <span>M/S AVANT TELECOM (EST. 2024) • MSME: UDYAM-AS-01-0008134</span>
                 </div>
                 
                 <h1 class="text-4xl md:text-5xl font-extrabold text-avantCharcoal leading-[1.15] tracking-tight">
-                    Empowering Seamless Connectivity Across <span class="text-avantRed underline decoration-avantRed/20 decoration-wavy underline-offset-8">North East India</span>
+                    Empowering Seamless Connectivity Across <span class="text-avantRed underline decoration-avantRed/20 decoration-wavy underline-offset-8">Northeast India</span>
                 </h1>
                 
                 <p class="text-avantSlate text-base md:text-lg leading-relaxed max-w-2xl">
-                    Delivering high-capacity UBR & Microwave (MW) link deployments, 5G upgrades, and 100% statutory-compliant field engineering operations for premier telecom carriers and equipment OEMs since August 2025.
+                    Delivering reliable, innovative, and cost-effective 5G/4G, Microwave & UBR installations, equipment logistics, and telecom civil infrastructure across all states in Northeast India (excluding Sikkim).
                 </p>
 
                 <!-- Updated Deployment Milestone Cards -->
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-1">
-                    <!-- 150+ Reliance Jio Card -->
                     <div class="gentle-card p-4 rounded-2xl border-l-4 border-l-jioBlue">
                         <div class="flex items-center justify-between">
                             <span class="text-2xl font-extrabold text-avantCharcoal">150+ Sites</span>
@@ -198,24 +195,22 @@
                         <div class="text-[11px] text-avantSlate mt-0.5">UBR & MW Deployment</div>
                     </div>
 
-                    <!-- 70+ Aviat Networks / Airtel Card -->
                     <div class="gentle-card p-4 rounded-2xl border-l-4 border-l-aviatBlue">
                         <div class="flex items-center justify-between">
                             <span class="text-2xl font-extrabold text-avantCharcoal">70+ Sites</span>
                             <span class="text-[10px] font-bold bg-red-50 text-airtelRed px-2 py-0.5 rounded-md border border-red-200">For Airtel</span>
                         </div>
-                        <div class="text-xs font-bold text-aviatBlue mt-1">Aviat Networks</div>
+                        <div class="text-xs font-bold text-aviatBlue mt-1">Aviat Networks India</div>
                         <div class="text-[11px] text-avantSlate mt-0.5">MW Equipment Rollout</div>
                     </div>
 
-                    <!-- 86+ Ongoing 5G Expansion Card -->
                     <div class="gentle-card p-4 rounded-2xl border-l-4 border-l-emerald-500">
                         <div class="flex items-center justify-between">
                             <span class="text-2xl font-extrabold text-avantCharcoal">86+ Sites</span>
                             <span class="text-[10px] font-bold bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-md border border-emerald-200">Ongoing</span>
                         </div>
                         <div class="text-xs font-bold text-emerald-700 mt-1">5G & UBR Expansion</div>
-                        <div class="text-[11px] text-avantSlate mt-0.5">100% EPF & ESIC Compliant</div>
+                        <div class="text-[11px] text-avantSlate mt-0.5">Target: Dec 2026</div>
                     </div>
                 </div>
 
@@ -226,7 +221,7 @@
                         <span class="text-[11px] font-bold text-avantRed">220+ Combined UBR & MW Sites Executed</span>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                        <!-- 1st Partner: Reliance Jio Logo Badge -->
+                        <!-- 1st Partner: Reliance Jio -->
                         <div class="flex items-center space-x-3.5 p-3 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-jioBlue/40 transition">
                             <svg class="w-12 h-12 shrink-0 shadow-sm rounded-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="50" cy="50" r="50" fill="#0F3CC9"/>
@@ -241,7 +236,7 @@
                             </div>
                         </div>
 
-                        <!-- 2nd Partner: Aviat Networks (for Airtel) Logo Badge -->
+                        <!-- 2nd Partner: Aviat Networks -->
                         <div class="flex items-center space-x-3.5 p-3 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-aviatBlue/40 transition">
                             <svg class="w-12 h-12 shrink-0 shadow-sm rounded-xl" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="100" height="100" rx="20" fill="#005EB8"/>
@@ -261,15 +256,15 @@
                     </div>
                 </div>
 
-                <!-- Hero CTA Buttons including Download Company Profile PDF -->
+                <!-- Hero CTA Buttons -->
                 <div class="flex flex-wrap gap-3.5 pt-1">
-                    <button onclick="downloadCompanyProfilePDF()" id="heroPdfBtn" class="bg-avantRed hover:bg-avantRedDark text-white font-bold px-6 py-3.5 rounded-xl shadow-md shadow-avantRed/20 transition flex items-center">
+                    <button onclick="downloadCompanyProfilePDF()" class="bg-avantRed hover:bg-avantRedDark text-white font-bold px-6 py-3.5 rounded-xl shadow-md shadow-avantRed/20 transition flex items-center">
                         <i class="fa-solid fa-file-arrow-down mr-2.5"></i>
                         <span>Download Company Profile (PDF)</span>
                     </button>
-                    <a href="#coverage-map" class="bg-avantCharcoal hover:bg-black text-white font-semibold px-6 py-3.5 rounded-xl shadow-md transition flex items-center">
-                        <i class="fa-solid fa-map-location-dot mr-2 text-avantRed"></i>
-                        <span>Explore NE Coverage Map</span>
+                    <a href="tel:6001590452" class="bg-avantCharcoal hover:bg-black text-white font-semibold px-6 py-3.5 rounded-xl shadow-md transition flex items-center">
+                        <i class="fa-solid fa-phone mr-2 text-avantRed"></i>
+                        <span>Call: 6001590452</span>
                     </a>
                 </div>
             </div>
@@ -279,7 +274,6 @@
                 <div class="bg-white rounded-3xl p-6 shadow-xl shadow-slate-200/80 border border-slate-200/90 relative overflow-hidden">
                     <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-avantRed via-jioBlue to-aviatBlue"></div>
 
-                    <!-- News Feed Header -->
                     <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-4 pt-1">
                         <div>
                             <div class="flex items-center space-x-2">
@@ -304,11 +298,8 @@
                         </div>
                     </div>
 
-                    <!-- JS-Powered 60fps Auto-Scrolling Viewport -->
                     <div class="news-viewport" id="newsViewport">
-                        <div id="newsTrack" class="space-y-3.5 pb-4">
-                            <!-- Dynamically populated by JavaScript -->
-                        </div>
+                        <div id="newsTrack" class="space-y-3.5 pb-4"></div>
                     </div>
 
                     <div class="mt-3 pt-3 border-t border-slate-100 flex justify-between items-center text-xs text-avantSlate">
@@ -330,20 +321,94 @@
         </div>
     </section>
 
-    <!-- Dedicated Primary Project Partners Showcase + PDF Profile Card -->
-    <section id="partners" class="py-16 px-6 bg-white border-b border-slate-200/70">
+    <!-- Mission, Vision & Key Leadership Section (From Uploaded Company Profile PDF) -->
+    <section id="leadership" class="py-16 px-6 bg-white border-b border-slate-200/70">
+        <div class="max-w-7xl mx-auto space-y-12">
+            <!-- Mission & Vision Row -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="gentle-card rounded-3xl p-8 border-l-4 border-l-avantRed">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-avantRed">Our Purpose</span>
+                    <h3 class="text-2xl font-extrabold text-avantCharcoal mt-1 mb-3">Mission Statement</h3>
+                    <p class="text-avantSlate text-sm leading-relaxed">
+                        To empower communities by delivering reliable, innovative, and cost-effective telecom solutions that connect people, businesses, and opportunities across every corner of Assam.
+                    </p>
+                </div>
+                <div class="gentle-card rounded-3xl p-8 border-l-4 border-l-avantCharcoal">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-avantCharcoal">Our Future</span>
+                    <h3 class="text-2xl font-extrabold text-avantCharcoal mt-1 mb-3">Vision Statement</h3>
+                    <p class="text-avantSlate text-sm leading-relaxed">
+                        To become the most trusted telecom partner in Northeast India, driving digital transformation and bridging the digital divide in underserved regions.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Key Leadership & Company Information Cards -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Key Person 1: Managing Director -->
+                <div class="gentle-card rounded-3xl p-7 flex items-start space-x-4">
+                    <div class="w-14 h-14 rounded-2xl bg-avantRed text-white flex items-center justify-center text-xl font-extrabold shrink-0 shadow-md">
+                        MD
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-extrabold uppercase tracking-widest text-avantRed bg-avantRedLight px-2.5 py-1 rounded-full">Key Person</span>
+                        <h4 class="text-xl font-extrabold text-avantCharcoal mt-2">Madhusmita Deka</h4>
+                        <p class="text-xs font-bold text-avantSlate mt-0.5">Managing Director</p>
+                        <p class="text-xs text-avantSlate mt-2 leading-relaxed">
+                            Spearheading strategic direction, enterprise operations, and multi-state telecom partnerships at M/S Avant Telecom.
+                        </p>
+                        <div class="mt-3 pt-2 border-t border-slate-100 text-xs font-bold text-avantCharcoal">
+                            <i class="fa-solid fa-phone text-avantRed mr-1.5"></i> +91 6001590452
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Person 2: Project Manager -->
+                <div class="gentle-card rounded-3xl p-7 flex items-start space-x-4">
+                    <div class="w-14 h-14 rounded-2xl bg-avantCharcoal text-white flex items-center justify-center text-xl font-extrabold shrink-0 shadow-md">
+                        SK
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-extrabold uppercase tracking-widest text-avantCharcoal bg-slate-100 px-2.5 py-1 rounded-full">Key Team Member</span>
+                        <h4 class="text-xl font-extrabold text-avantCharcoal mt-2">Sandeep Kalita</h4>
+                        <p class="text-xs font-bold text-avantSlate mt-0.5">Project Manager</p>
+                        <p class="text-xs text-avantSlate mt-2 leading-relaxed">
+                            Leading field execution, 5G/UBR & Microwave site deployments, and technical engineering teams across Northeast circles.
+                        </p>
+                        <div class="mt-3 pt-2 border-t border-slate-100 text-xs font-bold text-avantCharcoal">
+                            <i class="fa-solid fa-phone text-avantRed mr-1.5"></i> +91 8453222754
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Registered & Corporate Office Details -->
+                <div class="gentle-card rounded-3xl p-7 bg-slate-50/80">
+                    <span class="text-[10px] font-extrabold uppercase tracking-widest text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full">Official Credentials</span>
+                    <h4 class="text-lg font-extrabold text-avantCharcoal mt-2 mb-3">M/S Avant Telecom (Est. 2024)</h4>
+                    <ul class="space-y-2 text-xs text-avantSlate">
+                        <li><strong class="text-avantCharcoal">MSME Reg:</strong> UDYAM-AS-01-0008134</li>
+                        <li><strong class="text-avantCharcoal">Registered Address:</strong> Baksha, Mushalpur - 781378, Assam</li>
+                        <li><strong class="text-avantCharcoal">Corporate Office:</strong> Sukhdev Apartment, H.N.-305, Nayanpur, Guwahati - 781005</li>
+                        <li><strong class="text-avantCharcoal">Phone:</strong> 6001590452 | <strong class="text-avantCharcoal">Email:</strong> support@avanttelecom.in</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Primary Project Partners & Key Clients Showcase -->
+    <section id="partners" class="py-16 px-6 bg-slate-50 border-b border-slate-200/70">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
                 <div>
-                    <span class="bg-avantRedLight text-avantRed text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider">Trusted Industry Collaborations</span>
-                    <h2 class="text-3xl font-extrabold text-avantCharcoal mt-3">Our Primary Project Partners</h2>
+                    <span class="bg-avantRedLight text-avantRed text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider">Key Clients & Collaborations</span>
+                    <h2 class="text-3xl font-extrabold text-avantCharcoal mt-3">Primary Project Partners</h2>
                     <p class="text-avantSlate mt-2 text-sm md:text-base max-w-2xl">
-                        Executing high-reliability microwave backhaul, UBR links, and 5G site rollouts across Assam and North East India.
+                        Trusted by India's leading telecom operators, global microwave OEMs, and regional civil infrastructure projects.
                     </p>
                 </div>
-                <button onclick="downloadCompanyProfilePDF()" class="inline-flex items-center bg-avantCharcoal hover:bg-black text-white text-xs font-bold px-5 py-3.5 rounded-xl shadow-md transition shrink-0">
-                    <i class="fa-solid fa-file-pdf text-avantRed text-base mr-2.5"></i>
-                    Download Official Credentials & Profile (PDF)
+                <button onclick="downloadCompanyProfilePDF()" class="inline-flex items-center bg-avantRed hover:bg-avantRedDark text-white text-xs font-bold px-5 py-3.5 rounded-xl shadow-md transition shrink-0">
+                    <i class="fa-solid fa-file-pdf text-white text-base mr-2.5"></i>
+                    Download Official Company Profile (PDF)
                 </button>
             </div>
 
@@ -368,7 +433,7 @@
                             </div>
                         </div>
                         <p class="text-avantSlate text-sm leading-relaxed mb-6">
-                            Since <strong>August 2025</strong>, Avant Telecom has deployed more than <strong>150+ UBR & Microwave (MW) sites</strong> for Reliance Jio across Assam and North East circles, alongside an active <strong>86-site 5G & UBR upgrade rollout</strong> scheduled through December 2026.
+                            Since <strong>August 2025</strong>, Avant Telecom has deployed more than <strong>150+ UBR & Microwave (MW) sites</strong> for Reliance Jio across Assam and Northeast circles, alongside an active <strong>86-site 5G & UBR upgrade rollout</strong> scheduled through December 2026.
                         </p>
                     </div>
                     <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2 text-xs font-semibold">
@@ -377,7 +442,7 @@
                     </div>
                 </div>
 
-                <!-- Partner 2 Card: Aviat Networks (for Airtel) -->
+                <!-- Partner 2 Card: Aviat Networks India (for Airtel) -->
                 <div class="gentle-card rounded-3xl p-8 border-t-4 border-t-aviatBlue flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between gap-4 mb-6">
@@ -394,7 +459,7 @@
                                         <span class="text-[11px] font-extrabold uppercase tracking-wider text-aviatBlue bg-sky-50 px-2.5 py-1 rounded-full border border-sky-200">2nd Primary Partner</span>
                                         <span class="text-[11px] font-extrabold uppercase tracking-wider text-airtelRed bg-red-50 px-2.5 py-1 rounded-full border border-red-200">Airtel Project</span>
                                     </div>
-                                    <h3 class="text-2xl font-extrabold text-avantCharcoal mt-1.5">Aviat Networks</h3>
+                                    <h3 class="text-2xl font-extrabold text-avantCharcoal mt-1.5">Aviat Networks India</h3>
                                 </div>
                             </div>
                             <div class="text-right">
@@ -403,7 +468,7 @@
                             </div>
                         </div>
                         <p class="text-avantSlate text-sm leading-relaxed mb-6">
-                            Executed installation, commissioning, and link alignment across more than <strong>70+ telecom sites on Aviat Networks microwave equipment for Bharti Airtel</strong>, delivering high-availability carrier backhaul across challenging North East terrain.
+                            Executed installation, deinstallation, commissioning, and link alignment across more than <strong>70+ telecom sites on Aviat Networks equipment for Bharti Airtel</strong>, alongside various local construction contracts across Northeast India.
                         </p>
                     </div>
                     <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2 text-xs font-semibold">
@@ -415,14 +480,14 @@
         </div>
     </section>
 
-    <!-- NEW SECTION: Interactive Regional Coverage Map Across North East India -->
-    <section id="coverage-map" class="py-20 px-6 bg-slate-50 border-b border-slate-200/80">
+    <!-- Interactive Regional Coverage Map (All States in Northeast India, Excluding Sikkim) -->
+    <section id="coverage-map" class="py-20 px-6 bg-white border-b border-slate-200/80">
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="bg-avantRedLight text-avantRed text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider">Regional Footprint • Assam & NE-I / NE-II Circles</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold text-avantCharcoal mt-3">North East Telecom Coverage Map</h2>
+                <span class="bg-avantRedLight text-avantRed text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider">Work Region • All States in Northeast India (Excluding Sikkim)</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-avantCharcoal mt-3">Northeast India Work Region Map</h2>
                 <p class="text-avantSlate mt-2 text-sm md:text-base">
-                    Centralized operations from our Guwahati Headquarters with active field engineering teams deployed across all 7 Sister States. Click any state node to inspect active partner rollouts.
+                    Our team is well-versed with the local terrain, regulations, and logistical requirements unique to the region across all 7 Sister States.
                 </p>
             </div>
 
@@ -431,17 +496,16 @@
                 <div class="lg:col-span-7 bg-avantCharcoal rounded-3xl p-6 md:p-8 shadow-xl relative overflow-hidden text-white border border-neutral-700">
                     <div class="flex flex-wrap items-center justify-between gap-2 pb-4 mb-4 border-b border-white/10">
                         <div>
-                            <span class="text-[10px] uppercase tracking-widest text-avantRed font-bold block">Live Telemetry Topology</span>
-                            <h3 class="text-lg font-extrabold">Assam & North East Backhaul Grid</h3>
+                            <span class="text-[10px] uppercase tracking-widest text-avantRed font-bold block">Active Work Region</span>
+                            <h3 class="text-lg font-extrabold">Assam & 7 Sister States Grid (Excl. Sikkim)</h3>
                         </div>
                         <div class="flex items-center space-x-4 text-xs">
-                            <span class="flex items-center"><span class="w-2.5 h-2.5 rounded-full bg-avantRed mr-1.5"></span>HQ Hub</span>
+                            <span class="flex items-center"><span class="w-2.5 h-2.5 rounded-full bg-avantRed mr-1.5"></span>Assam Hub</span>
                             <span class="flex items-center"><span class="w-2.5 h-2.5 rounded-full bg-blue-400 mr-1.5"></span>Jio UBR/5G</span>
                             <span class="flex items-center"><span class="w-2.5 h-2.5 rounded-full bg-cyan-300 mr-1.5"></span>Aviat (Airtel)</span>
                         </div>
                     </div>
 
-                    <!-- Interactive SVG Schematic of North East States & Microwave Backhaul Links -->
                     <svg viewBox="0 0 650 400" class="w-full h-auto select-none">
                         <defs>
                             <radialGradient id="hubGlow" cx="50%" cy="50%" r="50%">
@@ -450,7 +514,6 @@
                             </radialGradient>
                         </defs>
 
-                        <!-- Subtle Grid Lines -->
                         <g stroke="rgba(255,255,255,0.05)" stroke-width="1">
                             <line x1="0" y1="80" x2="650" y2="80"/>
                             <line x1="0" y1="160" x2="650" y2="160"/>
@@ -462,75 +525,57 @@
                             <line x1="520" y1="0" x2="520" y2="400"/>
                         </g>
 
-                        <!-- Stylized NE Region Perimeter Silhouette -->
                         <path d="M90,175 L190,120 L340,55 L545,45 L590,115 L525,215 L485,335 L415,365 L370,295 L265,335 L210,275 L125,245 Z" 
                               fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-dasharray="4 4"/>
 
-                        <!-- Microwave Link Backhaul Lines radiating from Guwahati HQ (250, 195) -->
                         <g stroke-width="2" stroke-dasharray="5 3">
-                            <!-- Guwahati to Itanagar / Arunachal -->
                             <line x1="250" y1="195" x2="430" y2="95" stroke="#38BDF8" opacity="0.7"/>
-                            <!-- Guwahati to Shillong / Meghalaya -->
                             <line x1="250" y1="195" x2="225" y2="248" stroke="#F93822" opacity="0.85"/>
-                            <!-- Guwahati to Kohima / Nagaland -->
                             <line x1="250" y1="195" x2="485" y2="185" stroke="#60A5FA" opacity="0.75"/>
-                            <!-- Guwahati to Imphal / Manipur -->
                             <line x1="250" y1="195" x2="465" y2="255" stroke="#38BDF8" opacity="0.75"/>
-                            <!-- Guwahati to Aizawl / Mizoram -->
                             <line x1="250" y1="195" x2="410" y2="325" stroke="#60A5FA" opacity="0.75"/>
-                            <!-- Guwahati to Agartala / Tripura -->
                             <line x1="250" y1="195" x2="255" y2="305" stroke="#38BDF8" opacity="0.75"/>
-                            <!-- Upper Assam Link (Dibrugarh / Jorhat) -->
                             <line x1="250" y1="195" x2="460" y2="140" stroke="#F93822" opacity="0.85"/>
                         </g>
 
-                        <!-- Glow around Guwahati HQ -->
                         <circle cx="250" cy="195" r="55" fill="url(#hubGlow)"/>
 
-                        <!-- NODE 1: ASSAM HQ (Guwahati) -->
                         <g class="cursor-pointer" onclick="selectStateCircle('assam')">
                             <circle cx="250" cy="195" r="14" fill="#F93822" class="radar-pulse"/>
                             <circle cx="250" cy="195" r="9" fill="#F93822" stroke="#FFFFFF" stroke-width="2.5"/>
-                            <text x="250" y="173" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle">ASSAM (Guwahati HQ)</text>
+                            <text x="250" y="173" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle">ASSAM (Guwahati & Baksa)</text>
                         </g>
 
-                        <!-- NODE 2: UPPER ASSAM (Jorhat / Dibrugarh Hub) -->
                         <g class="cursor-pointer" onclick="selectStateCircle('assam')">
                             <circle cx="460" cy="140" r="6" fill="#F93822" stroke="#FFFFFF" stroke-width="1.5"/>
                             <text x="460" y="126" fill="#E2E8F0" font-size="10" font-weight="600" text-anchor="middle">Upper Assam</text>
                         </g>
 
-                        <!-- NODE 3: MEGHALAYA (Shillong) -->
                         <g class="cursor-pointer" onclick="selectStateCircle('meghalaya')">
                             <circle cx="225" cy="248" r="7" fill="#38BDF8" stroke="#FFFFFF" stroke-width="2"/>
                             <text x="170" y="253" fill="#BAE6FD" font-size="11" font-weight="700" text-anchor="middle">Meghalaya</text>
                         </g>
 
-                        <!-- NODE 4: ARUNACHAL PRADESH -->
                         <g class="cursor-pointer" onclick="selectStateCircle('arunachal')">
                             <circle cx="430" cy="95" r="7" fill="#60A5FA" stroke="#FFFFFF" stroke-width="2"/>
                             <text x="430" y="78" fill="#BAE6FD" font-size="11" font-weight="700" text-anchor="middle">Arunachal Pradesh</text>
                         </g>
 
-                        <!-- NODE 5: NAGALAND (Kohima / Dimapur) -->
                         <g class="cursor-pointer" onclick="selectStateCircle('nagaland')">
                             <circle cx="485" cy="185" r="7" fill="#38BDF8" stroke="#FFFFFF" stroke-width="2"/>
                             <text x="542" y="189" fill="#BAE6FD" font-size="11" font-weight="700" text-anchor="middle">Nagaland</text>
                         </g>
 
-                        <!-- NODE 6: MANIPUR (Imphal) -->
                         <g class="cursor-pointer" onclick="selectStateCircle('manipur')">
                             <circle cx="465" cy="255" r="7" fill="#60A5FA" stroke="#FFFFFF" stroke-width="2"/>
                             <text x="520" y="259" fill="#BAE6FD" font-size="11" font-weight="700" text-anchor="middle">Manipur</text>
                         </g>
 
-                        <!-- NODE 7: MIZORAM (Aizawl) -->
                         <g class="cursor-pointer" onclick="selectStateCircle('mizoram')">
                             <circle cx="410" cy="325" r="7" fill="#38BDF8" stroke="#FFFFFF" stroke-width="2"/>
                             <text x="410" y="348" fill="#BAE6FD" font-size="11" font-weight="700" text-anchor="middle">Mizoram</text>
                         </g>
 
-                        <!-- NODE 8: TRIPURA (Agartala) -->
                         <g class="cursor-pointer" onclick="selectStateCircle('tripura')">
                             <circle cx="255" cy="305" r="7" fill="#60A5FA" stroke="#FFFFFF" stroke-width="2"/>
                             <text x="255" y="328" fill="#BAE6FD" font-size="11" font-weight="700" text-anchor="middle">Tripura</text>
@@ -538,17 +583,16 @@
                     </svg>
 
                     <div class="mt-3 pt-3 border-t border-white/10 flex flex-wrap justify-between items-center text-xs text-neutral-300">
-                        <span><i class="fa-solid fa-location-crosshairs text-avantRed mr-1.5"></i>Central Dispatch: Nayanpur, Guwahati - 781005</span>
-                        <span class="text-emerald-400 font-semibold">● All 7 Sister States Operational</span>
+                        <span><i class="fa-solid fa-location-crosshairs text-avantRed mr-1.5"></i>Regd: Baksha, Mushalpur - 781378 | Corp: Guwahati - 781005</span>
+                        <span class="text-emerald-400 font-semibold">● 7 Northeast States Active</span>
                     </div>
                 </div>
 
                 <!-- Right: Interactive State-by-State Deployment Inspector -->
                 <div class="lg:col-span-5 space-y-5">
-                    <!-- Quick State Selector Pills -->
-                    <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
-                        <span class="text-[11px] font-bold uppercase tracking-wider text-avantSlate block mb-2.5">Select Circle / State to Inspect</span>
-                        <div class="flex flex-wrap gap-2" id="stateButtonsContainer">
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 shadow-sm">
+                        <span class="text-[11px] font-bold uppercase tracking-wider text-avantSlate block mb-2.5">Select Northeast State to Inspect</span>
+                        <div class="flex flex-wrap gap-2">
                             <button onclick="selectStateCircle('assam')" id="btn-assam" class="circle-tab active text-xs font-bold px-3 py-1.5 rounded-lg border border-slate-200 transition">Assam (HQ)</button>
                             <button onclick="selectStateCircle('meghalaya')" id="btn-meghalaya" class="circle-tab text-xs font-bold px-3 py-1.5 rounded-lg border border-slate-200 hover:border-avantRed transition">Meghalaya</button>
                             <button onclick="selectStateCircle('arunachal')" id="btn-arunachal" class="circle-tab text-xs font-bold px-3 py-1.5 rounded-lg border border-slate-200 hover:border-avantRed transition">Arunachal</button>
@@ -559,64 +603,85 @@
                         </div>
                     </div>
 
-                    <!-- Dynamic State Telemetry Card -->
-                    <div id="stateDetailCard" class="gentle-card rounded-3xl p-7 border-l-4 border-l-avantRed">
-                        <!-- Populated dynamically via selectStateCircle() -->
-                    </div>
+                    <div id="stateDetailCard" class="gentle-card rounded-3xl p-7 border-l-4 border-l-avantRed"></div>
 
-                    <!-- Summary Rollout Box -->
-                    <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex items-center justify-between">
+                    <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 shadow-sm flex items-center justify-between">
                         <div>
-                            <span class="text-xs font-bold text-avantCharcoal block">Need Field Engineering Teams in NE?</span>
-                            <span class="text-xs text-avantSlate">Rapid mobilization across Assam, NE-I & NE-II circles.</span>
+                            <span class="text-xs font-bold text-avantCharcoal block">Project Manager: Sandeep Kalita</span>
+                            <span class="text-xs text-avantSlate">Direct Field Coordination: <strong>+91 8453222754</strong></span>
                         </div>
-                        <button onclick="openModal('contactModal')" class="bg-avantRed hover:bg-avantRedDark text-white text-xs font-bold px-4 py-2.5 rounded-xl shrink-0 transition">
-                            Deploy Team
-                        </button>
+                        <a href="tel:8453222754" class="bg-avantRed hover:bg-avantRedDark text-white text-xs font-bold px-4 py-2.5 rounded-xl shrink-0 transition">
+                            Call PM
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Core Telecom Services Section -->
+    <!-- Core Services Section (All 5 Core Services from Uploaded PDF) -->
     <section id="services" class="py-20 px-6 max-w-7xl mx-auto">
         <div class="text-center max-w-3xl mx-auto mb-14">
-            <span class="bg-avantRedLight text-avantRed text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider">Engineering Excellence</span>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-avantCharcoal mt-4">Telecom Infrastructure & Field Execution</h2>
+            <span class="bg-avantRedLight text-avantRed text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider">M/S Avant Telecom Capabilities</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-avantCharcoal mt-4">Core Telecom & Civil Services</h2>
             <p class="text-avantSlate mt-3 text-base">
-                End-to-end microwave ODU link alignment, UBR commissioning, and round-the-clock site maintenance engineered for zero downtime.
+                End-to-end active equipment installation, microwave link deployment, logistics, and telecom tower civil infrastructure.
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="gentle-card p-8 rounded-3xl group">
-                <div class="w-14 h-14 rounded-2xl bg-avantRedLight text-avantRed flex items-center justify-center text-2xl mb-6 group-hover:bg-avantRed group-hover:text-white transition-colors duration-300 shadow-sm">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+            <!-- Service 1 -->
+            <div class="gentle-card p-7 rounded-3xl group">
+                <div class="w-13 h-13 w-12 h-12 rounded-2xl bg-avantRedLight text-avantRed flex items-center justify-center text-xl mb-5 group-hover:bg-avantRed group-hover:text-white transition">
+                    <i class="fa-solid fa-tower-cell"></i>
+                </div>
+                <h3 class="text-lg font-extrabold text-avantCharcoal mb-2">5G & 4G Equipment Installation & Deinstallation</h3>
+                <p class="text-avantSlate text-sm leading-relaxed">
+                    Complete site upgrades, active baseband and RF equipment commissioning, and safe deinstallation across carrier networks.
+                </p>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="gentle-card p-7 rounded-3xl group">
+                <div class="w-12 h-12 rounded-2xl bg-avantRedLight text-avantRed flex items-center justify-center text-xl mb-5 group-hover:bg-avantRed group-hover:text-white transition">
                     <i class="fa-solid fa-satellite-dish"></i>
                 </div>
-                <h3 class="text-xl font-bold text-avantCharcoal mb-3">UBR & Microwave (MW) Rollout</h3>
+                <h3 class="text-lg font-extrabold text-avantCharcoal mb-2">Microwave & UBR Installation & Deinstallation</h3>
                 <p class="text-avantSlate text-sm leading-relaxed">
-                    Over 220+ combined UBR and Microwave links commissioned across Reliance Jio and Aviat Networks (Airtel) projects with precision LOS alignment.
+                    Over 150+ Jio UBR/MW links and 70+ Aviat Networks (Airtel) microwave hops deployed with precision LOS alignment.
                 </p>
             </div>
 
-            <div class="gentle-card p-8 rounded-3xl group">
-                <div class="w-14 h-14 rounded-2xl bg-avantRedLight text-avantRed flex items-center justify-center text-2xl mb-6 group-hover:bg-avantRed group-hover:text-white transition-colors duration-300 shadow-sm">
-                    <i class="fa-solid fa-network-wired"></i>
+            <!-- Service 3 -->
+            <div class="gentle-card p-7 rounded-3xl group">
+                <div class="w-12 h-12 rounded-2xl bg-avantRedLight text-avantRed flex items-center justify-center text-xl mb-5 group-hover:bg-avantRed group-hover:text-white transition">
+                    <i class="fa-solid fa-truck-fast"></i>
                 </div>
-                <h3 class="text-xl font-bold text-avantCharcoal mb-3">5G Upgrades & Fiber Maintenance</h3>
+                <h3 class="text-lg font-extrabold text-avantCharcoal mb-2">Equipment Packaging & Transportation</h3>
                 <p class="text-avantSlate text-sm leading-relaxed">
-                    Full-scale 5G site upgrades, L2/L3 routing diagnostics, IP configuration, and rapid fault restoration across Assam and North East circles.
+                    Secure handling, weather-proof packaging, and last-mile hill-terrain logistics for sensitive telecom hardware.
                 </p>
             </div>
 
-            <div class="gentle-card p-8 rounded-3xl group">
-                <div class="w-14 h-14 rounded-2xl bg-avantRedLight text-avantRed flex items-center justify-center text-2xl mb-6 group-hover:bg-avantRed group-hover:text-white transition-colors duration-300 shadow-sm">
+            <!-- Service 4 -->
+            <div class="gentle-card p-7 rounded-3xl group">
+                <div class="w-12 h-12 rounded-2xl bg-avantRedLight text-avantRed flex items-center justify-center text-xl mb-5 group-hover:bg-avantRed group-hover:text-white transition">
+                    <i class="fa-solid fa-trowel-bricks"></i>
+                </div>
+                <h3 class="text-lg font-extrabold text-avantCharcoal mb-2">Construction of Telecom Tower Bases</h3>
+                <p class="text-avantSlate text-sm leading-relaxed">
+                    Reinforced civil foundation engineering and structural base construction for ground-based and rooftop telecom towers.
+                </p>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="gentle-card p-7 rounded-3xl group md:col-span-2">
+                <div class="w-12 h-12 rounded-2xl bg-avantRedLight text-avantRed flex items-center justify-center text-xl mb-5 group-hover:bg-avantRed group-hover:text-white transition">
                     <i class="fa-solid fa-helmet-safety"></i>
                 </div>
-                <h3 class="text-xl font-bold text-avantCharcoal mb-3">Compliant Field Workforce</h3>
+                <h3 class="text-lg font-extrabold text-avantCharcoal mb-2">Execution of Small to Mid-Level Telecom Civil Projects</h3>
                 <p class="text-avantSlate text-sm leading-relaxed">
-                    Skilled Field Support Engineers (FSEs) and technical crews backed by digital wage registers and 100% statutory EPF and ESIC coverage.
+                    Turnkey civil engineering, boundary walls, equipment shelters, trenching, and local construction contracts executed on schedule with 100% statutory EPF & ESIC workforce compliance.
                 </p>
             </div>
         </div>
@@ -628,7 +693,7 @@
             <div class="space-y-2 text-center md:text-left">
                 <span class="text-xs font-bold uppercase tracking-widest text-avantRed">Avant Groups Portfolio</span>
                 <h3 class="text-2xl font-extrabold">Explore Our Multi-Sector Operations</h3>
-                <p class="text-neutral-300 text-sm max-w-xl">Delivering excellence across Telecommunications, IT Services, Logistics, Agro Products, and Energy in North East India.</p>
+                <p class="text-neutral-300 text-sm max-w-xl">Delivering excellence across Telecommunications, IT Services, Logistics, Agro Products, and Energy in Northeast India.</p>
             </div>
             <div class="flex flex-wrap justify-center gap-3 text-xs font-semibold">
                 <a href="https://avantgroups.in/" target="_blank" class="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white transition">Avant Groups Home</a>
@@ -643,118 +708,39 @@
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center space-x-3">
                 <div class="w-8 h-8 rounded-full bg-avantRed text-white font-extrabold text-xs flex items-center justify-center shadow-sm">AT</div>
-                <span><strong class="text-avantCharcoal">Avant Telecom</strong> — Corporate Office: Sukhdev Apartment, H.N.-305, Nayanpur, Guwahati, 781005, Assam</span>
+                <div>
+                    <strong class="text-avantCharcoal">M/S Avant Telecom</strong> — Regd: Baksha, Mushalpur - 781378 | Corp: Nayanpur, Guwahati - 781005
+                    <div class="text-xs text-slate-500 mt-0.5">MD: Madhusmita Deka (6001590452) • PM: Sandeep Kalita (8453222754) • Email: support@avanttelecom.in</div>
+                </div>
             </div>
             <div class="text-xs text-slate-400">
-                MSME Reg: UDYAM-AS-01-0008134 • © 2026 Avant Groups.
+                MSME: UDYAM-AS-01-0008134 • © 2026 Avant Telecom.
             </div>
         </div>
     </footer>
-
-    <!-- HIDDEN PRINTABLE TEMPLATE FOR 1-CLICK COMPANY PROFILE PDF GENERATION -->
-    <div id="pdfProfileWrapper" class="hidden">
-        <div id="pdfProfileContent" style="width: 790px; padding: 40px; font-family: 'Plus Jakarta Sans', sans-serif; color: #363435; background: #FFFFFF;">
-            <!-- PDF Header -->
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #F93822; padding-bottom: 20px; margin-bottom: 24px;">
-                <div style="display: flex; align-items: center; gap: 14px;">
-                    <div style="width: 52px; height: 52px; border-radius: 50%; background: #F93822; color: white; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 22px;">
-                        AT
-                    </div>
-                    <div>
-                        <h1 style="font-size: 26px; font-weight: 800; margin: 0; color: #363435;">AVANT TELECOM</h1>
-                        <p style="font-size: 11px; font-weight: 700; color: #F93822; margin: 2px 0 0 0; text-transform: uppercase; letter-spacing: 1px;">A Venture of Avant Groups • Corporate Profile 2026</p>
-                    </div>
-                </div>
-                <div style="text-align: right; font-size: 11px; color: #575355; line-height: 1.5;">
-                    <strong>MSME Reg:</strong> UDYAM-AS-01-0008134<br>
-                    <strong>HQ:</strong> Sukhdev Apartment, H.N.-305, Nayanpur<br>
-                    Guwahati - 781005, Assam, India<br>
-                    <strong>Web:</strong> avanttelecom.in | avantgroups.in
-                </div>
-            </div>
-
-            <!-- Executive Summary -->
-            <div style="background: #FFF1EF; border-left: 4px solid #F93822; padding: 16px 20px; border-radius: 8px; margin-bottom: 24px;">
-                <h2 style="font-size: 14px; font-weight: 800; text-transform: uppercase; color: #F93822; margin: 0 0 6px 0;">Executive Overview</h2>
-                <p style="font-size: 12.5px; line-height: 1.6; margin: 0; color: #363435;">
-                    Avant Telecom is a premier telecommunications engineering and field execution enterprise headquartered in Guwahati, Assam. Since August 2025, we have delivered high-capacity Unlicensed Band Radio (UBR), Microwave (MW) backhaul links, 5G site upgrades, and 100% statutory EPF/ESIC-compliant technical manpower across Assam and all North East telecom circles.
-                </p>
-            </div>
-
-            <!-- Key Project Milestones Grid -->
-            <h2 style="font-size: 15px; font-weight: 800; color: #363435; margin: 0 0 12px 0; text-transform: uppercase;">Primary Project Partners & Deployment Track Record</h2>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
-                <div style="border: 1px solid #CBD5E1; border-top: 4px solid #0F3CC9; border-radius: 10px; padding: 16px;">
-                    <div style="font-size: 11px; font-weight: 800; color: #0F3CC9; text-transform: uppercase;">1st Primary Project Partner</div>
-                    <div style="font-size: 20px; font-weight: 800; color: #363435; margin: 4px 0;">Reliance Jio</div>
-                    <div style="font-size: 24px; font-weight: 800; color: #0F3CC9; margin-bottom: 8px;">150+ UBR & MW Sites</div>
-                    <p style="font-size: 11.5px; color: #575355; margin: 0; line-height: 1.5;">
-                        • Completed 150+ UBR & Microwave deployments since August 2025.<br>
-                        • Ongoing 86-site 5G & UBR expansion across North East circles (Completion: Dec 2026).
-                    </p>
-                </div>
-                <div style="border: 1px solid #CBD5E1; border-top: 4px solid #005EB8; border-radius: 10px; padding: 16px;">
-                    <div style="font-size: 11px; font-weight: 800; color: #005EB8; text-transform: uppercase;">2nd Primary Project Partner (Airtel Project)</div>
-                    <div style="font-size: 20px; font-weight: 800; color: #363435; margin: 4px 0;">Aviat Networks</div>
-                    <div style="font-size: 24px; font-weight: 800; color: #005EB8; margin-bottom: 8px;">70+ Airtel MW Sites</div>
-                    <p style="font-size: 11.5px; color: #575355; margin: 0; line-height: 1.5;">
-                        • Commissioned 70+ Microwave backhaul sites on Aviat Networks equipment for Bharti Airtel.<br>
-                        • Precision LOS alignment, ODU installation, and link testing.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Core Technical Capabilities & Regional Coverage -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
-                <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 16px;">
-                    <h3 style="font-size: 13px; font-weight: 800; color: #363435; margin: 0 0 8px 0; text-transform: uppercase;">Core Engineering Capabilities</h3>
-                    <ul style="font-size: 11.5px; color: #575355; margin: 0; padding-left: 16px; line-height: 1.7;">
-                        <li>5G Site Rollout & UBR / Microwave Link Commissioning</li>
-                        <li>Outdoor Unit (ODU) & Antenna Alignment</li>
-                        <li>Optical Fiber Splicing & L2/L3 Fault Restoration</li>
-                        <li>100% EPF & ESIC Statutory Compliant Field Workforce</li>
-                    </ul>
-                </div>
-                <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 16px;">
-                    <h3 style="font-size: 13px; font-weight: 800; color: #363435; margin: 0 0 8px 0; text-transform: uppercase;">Regional Coverage Circles</h3>
-                    <p style="font-size: 11.5px; color: #575355; margin: 0; line-height: 1.7;">
-                        <strong>Central Hub:</strong> Guwahati, Assam<br>
-                        <strong>Active Circles:</strong> Assam, Meghalaya, Arunachal Pradesh, Nagaland, Manipur, Mizoram, and Tripura (NE-I & NE-II Telecom Circles).
-                    </p>
-                </div>
-            </div>
-
-            <!-- Footer Stamp -->
-            <div style="border-top: 1px solid #E2E8F0; padding-top: 14px; display: flex; justify-content: space-between; font-size: 10.5px; color: #575355;">
-                <span><strong>Avant Groups Divisions:</strong> Telecom | IT Services | Logistics | Agro | Energy</span>
-                <span>Generated from <strong>avanttelecom.in</strong> • © 2026 Avant Groups</span>
-            </div>
-        </div>
-    </div>
 
     <!-- MODAL 1: Connect With Us -->
     <div id="contactModal" class="fixed inset-0 z-50 hidden bg-avantCharcoal/60 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white max-w-md w-full rounded-3xl p-7 shadow-2xl border border-slate-100">
             <div class="flex justify-between items-center border-b border-slate-100 pb-4 mb-5">
                 <div>
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-avantRed">AVANT TELECOM</span>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-avantRed">M/S AVANT TELECOM</span>
                     <h3 class="text-xl font-extrabold text-avantCharcoal">Connect With Us</h3>
                 </div>
                 <button onclick="closeModal('contactModal')" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-avantRedLight text-avantCharcoal hover:text-avantRed flex items-center justify-center font-bold">&times;</button>
             </div>
             <form onsubmit="submitContactForm(event)" class="space-y-4 text-sm">
                 <div>
-                    <label class="block text-xs font-bold uppercase text-avantSlate mb-1">Service Division</label>
+                    <label class="block text-xs font-bold uppercase text-avantSlate mb-1">Service Required</label>
                     <select class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-avantCharcoal font-medium focus:border-avantRed outline-none">
-                        <option value="Avant Telecom" selected>Avant Telecom (5G / UBR / MW Deployment)</option>
-                        <option value="Avant IT Services">Avant IT Services</option>
-                        <option value="Avant Logistics">Avant Logistics</option>
-                        <option value="Avant Agro">Avant Agro</option>
+                        <option value="5G/4G & MW/UBR Deployment" selected>5G/4G & Microwave / UBR Deployment</option>
+                        <option value="Equipment Packaging & Transport">Equipment Packaging & Transportation</option>
+                        <option value="Telecom Tower Civil Projects">Telecom Tower Base & Civil Projects</option>
                     </select>
                 </div>
                 <div>
-                    <label class="block text-xs font-bold uppercase text-avantSlate mb-1">Your Name / Company</label>
-                    <input type="text" required placeholder="Enter name or organization" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-avantCharcoal focus:border-avantRed outline-none">
+                    <label class="block text-xs font-bold uppercase text-avantSlate mb-1">Your Name / Organization</label>
+                    <input type="text" required placeholder="Enter name or company" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-avantCharcoal focus:border-avantRed outline-none">
                 </div>
                 <div>
                     <label class="block text-xs font-bold uppercase text-avantSlate mb-1">Phone / Email</label>
@@ -762,7 +748,7 @@
                 </div>
                 <div>
                     <label class="block text-xs font-bold uppercase text-avantSlate mb-1">Project Requirement</label>
-                    <textarea rows="3" required placeholder="How can our team assist you?" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-avantCharcoal focus:border-avantRed outline-none"></textarea>
+                    <textarea rows="3" required placeholder="Describe site locations or project scope..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-avantCharcoal focus:border-avantRed outline-none"></textarea>
                 </div>
                 <button type="submit" class="w-full bg-avantRed hover:bg-avantRedDark text-white font-bold py-3 rounded-xl shadow-md transition">
                     Send Inquiry
@@ -835,10 +821,200 @@
     </div>
 
     <script>
-        const STORAGE_KEY = 'avant_telecom_news_v3';
+        // 100% RELIABLE VECTOR PDF GENERATOR (Never produces a blank PDF)
+        function downloadCompanyProfilePDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF({ unit: 'mm', format: 'a4', orientation: 'portrait' });
+
+            // Top Coral-Red Header Accent Bar
+            doc.setFillColor(249, 56, 34);
+            doc.rect(0, 0, 210, 6, 'F');
+
+            // Draw AT Red Circle Logo Mark
+            doc.setFillColor(249, 56, 34);
+            doc.circle(24, 22, 10, 'F');
+            doc.setTextColor(255, 255, 255);
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(14);
+            doc.text('AT', 24, 24, { align: 'center' });
+
+            // Company Title & Subtitle
+            doc.setTextColor(54, 52, 53);
+            doc.setFontSize(22);
+            doc.text('Avant Telecom', 38, 21);
+            doc.setFontSize(10);
+            doc.setTextColor(249, 56, 34);
+            doc.text('COMPANY PROFILE  |  M/S AVANT TELECOM', 38, 27);
+
+            // Right Header Stamp
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(8.5);
+            doc.setTextColor(87, 83, 85);
+            doc.text('MSME Reg: UDYAM-AS-01-0008134', 195, 18, { align: 'right' });
+            doc.text('Year Founded: 2024', 195, 23, { align: 'right' });
+            doc.text('Web: www.avanttelecom.in', 195, 28, { align: 'right' });
+
+            // Divider Line
+            doc.setDrawColor(249, 56, 34);
+            doc.setLineWidth(0.6);
+            doc.line(15, 35, 195, 35);
+
+            // SECTION 1: COMPANY INFORMATION & KEY LEADERSHIP BOX
+            doc.setFillColor(250, 250, 252);
+            doc.setDrawColor(226, 232, 240);
+            doc.roundedRect(15, 40, 180, 44, 3, 3, 'FD');
+
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(11);
+            doc.setTextColor(249, 56, 34);
+            doc.text('Company Information', 20, 48);
+            doc.text('Key Leadership & Management', 112, 48);
+
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(9.2);
+            doc.setTextColor(54, 52, 53);
+            doc.text('Company Name: M/S Avant Telecom', 20, 55);
+            doc.text('Year Founded: 2024', 20, 60.5);
+            doc.text('Registered Address: Baksha, Mushalpur - 781378', 20, 66);
+            doc.text('Corporate Office: Nayanpur, Guwahati - 781005', 20, 71.5);
+            doc.text('Email: support@avanttelecom.in', 20, 77);
+            doc.setFont('helvetica', 'bold');
+            doc.text('Phone: +91 6001590452', 20, 82);
+
+            // Right Column inside Box: Key People
+            doc.setFont('helvetica', 'bold');
+            doc.setTextColor(54, 52, 53);
+            doc.text('Key Person (Managing Director):', 112, 55.5);
+            doc.setFont('helvetica', 'normal');
+            doc.text('Madhusmita Deka (Managing Director)', 112, 61);
+            doc.text('Contact: +91 6001590452', 112, 66);
+
+            doc.setFont('helvetica', 'bold');
+            doc.text('Key Team Member (Project Manager):', 112, 73);
+            doc.setFont('helvetica', 'normal');
+            doc.text('Sandeep Kalita - Project Manager', 112, 78.5);
+            doc.text('Mobile: +91 8453222754', 112, 83);
+
+            // SECTION 2: MISSION & VISION STATEMENTS
+            let y = 94;
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(11.5);
+            doc.setTextColor(249, 56, 34);
+            doc.text('Mission Statement', 15, y);
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(9.5);
+            doc.setTextColor(54, 52, 53);
+            const missionLines = doc.splitTextToSize(
+                'To empower communities by delivering reliable, innovative, and cost-effective telecom solutions that connect people, businesses, and opportunities across every corner of Assam.',
+                180
+            );
+            doc.text(missionLines, 15, y + 6);
+
+            y += 20;
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(11.5);
+            doc.setTextColor(249, 56, 34);
+            doc.text('Vision Statement', 15, y);
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(9.5);
+            doc.setTextColor(54, 52, 53);
+            const visionLines = doc.splitTextToSize(
+                'To become the most trusted telecom partner in Northeast India, driving digital transformation and bridging the digital divide in underserved regions.',
+                180
+            );
+            doc.text(visionLines, 15, y + 6);
+
+            // SECTION 3: PRIMARY PROJECT PARTNERS & DEPLOYMENT MILESTONES
+            y += 21;
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(11.5);
+            doc.setTextColor(249, 56, 34);
+            doc.text('Key Clients & Deployment Highlights', 15, y);
+
+            y += 4;
+            // Partner 1 Box (Reliance Jio)
+            doc.setFillColor(239, 246, 255);
+            doc.setDrawColor(191, 219, 254);
+            doc.roundedRect(15, y, 87, 32, 2.5, 2.5, 'FD');
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(9);
+            doc.setTextColor(15, 60, 201);
+            doc.text('1ST PRIMARY PARTNER: RELIANCE JIO', 19, y + 7);
+            doc.setFontSize(13);
+            doc.setTextColor(54, 52, 53);
+            doc.text('150+ UBR & MW Sites', 19, y + 14);
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(8.5);
+            doc.text('• 150+ UBR & MW deployments from Aug 2025.', 19, y + 21);
+            doc.text('• Ongoing 86-site NE 5G & UBR expansion.', 19, y + 26.5);
+
+            // Partner 2 Box (Aviat Networks India / Airtel)
+            doc.setFillColor(240, 249, 255);
+            doc.setDrawColor(186, 230, 253);
+            doc.roundedRect(108, y, 87, 32, 2.5, 2.5, 'FD');
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(9);
+            doc.setTextColor(0, 94, 184);
+            doc.text('2ND PRIMARY PARTNER: AVIAT NETWORKS', 112, y + 7);
+            doc.setFontSize(13);
+            doc.setTextColor(54, 52, 53);
+            doc.text('70+ Sites (For Airtel)', 112, y + 14);
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(8.5);
+            doc.text('• 70+ sites on Aviat Networks equipment for Airtel.', 112, y + 21);
+            doc.text('• Various Local Construction Contracts.', 112, y + 26.5);
+
+            // SECTION 4: CORE SERVICES
+            y += 42;
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(11.5);
+            doc.setTextColor(249, 56, 34);
+            doc.text('Core Services', 15, y);
+
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(9.5);
+            doc.setTextColor(54, 52, 53);
+            const services = [
+                '•  5G & 4G Equipment Installation and Deinstallation',
+                '•  Microwave & UBR Installation & Deinstallation',
+                '•  Equipment Packaging & Transportation',
+                '•  Construction of Telecom Tower Bases',
+                '•  Execution of Small to Mid-Level Telecom Civil Projects'
+            ];
+            services.forEach((srv, idx) => {
+                doc.text(srv, 18, y + 7 + (idx * 6));
+            });
+
+            // SECTION 5: WORK REGION
+            y += 42;
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(11.5);
+            doc.setTextColor(249, 56, 34);
+            doc.text('Work Region', 15, y);
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(9.5);
+            doc.setTextColor(54, 52, 53);
+            const regionLines = doc.splitTextToSize(
+                'We currently operate across all states in Northeast India, excluding Sikkim (Assam, Meghalaya, Arunachal Pradesh, Nagaland, Manipur, Mizoram, and Tripura). Our team is well-versed with the local terrain, regulations, and logistical requirements unique to the region.',
+                180
+            );
+            doc.text(regionLines, 15, y + 6);
+
+            // Bottom Footer Bar
+            doc.setDrawColor(226, 232, 240);
+            doc.line(15, 280, 195, 280);
+            doc.setFontSize(8.5);
+            doc.setTextColor(120, 120, 120);
+            doc.text('M/S Avant Telecom • Regd: Baksha, Mushalpur - 781378 | Ph: 6001590452 | Email: support@avanttelecom.in', 105, 286, { align: 'center' });
+
+            // Trigger Instant Download
+            doc.save('Avant_Telecom_Company_Profile.pdf');
+        }
+
+        // News Feed Engine
+        const STORAGE_KEY = 'avant_telecom_news_v4';
         let isAuthorLoggedIn = false;
 
-        // Official Telecom News Items
         const defaultTelecomNews = [
             {
                 id: "news-jio-150",
@@ -846,7 +1022,7 @@
                 division: "Avant Telecom",
                 tag: "Reliance Jio Partner",
                 title: "150+ UBR & Microwave (MW) Deployments Completed for Reliance Jio",
-                content: "Since August 2025, Avant Telecom has successfully executed more than 150+ UBR and Microwave link deployments for primary project partner Reliance Jio across regional circles."
+                content: "Since August 2025, M/S Avant Telecom has successfully executed more than 150+ UBR and Microwave link deployments for primary project partner Reliance Jio across Northeast circles."
             },
             {
                 id: "news-aviat-70",
@@ -854,7 +1030,7 @@
                 division: "Avant Telecom",
                 tag: "Aviat Networks • Airtel",
                 title: "70+ Sites Commissioned on Aviat Networks Equipment for Airtel",
-                content: "Avant Telecom's field engineering teams have completed over 70+ high-capacity microwave sites utilizing Aviat Networks equipment for Bharti Airtel backhaul expansion."
+                content: "Field engineering teams led by Project Manager Sandeep Kalita have completed over 70+ high-capacity microwave sites utilizing Aviat Networks equipment for Bharti Airtel."
             },
             {
                 id: "news-1",
@@ -868,29 +1044,28 @@
                 id: "news-3",
                 date: "August 2026",
                 division: "Avant Telecom",
-                tag: "Statutory Compliance",
-                title: "100% EPF & ESIC Digital Wage Register Compliance Active",
-                content: "Avant Telecom's automated payroll systems ensure timely statutory EPF and ESIC contributions for all deployed field support engineers and technical staff."
+                tag: "Leadership & Operations",
+                title: "Turnkey 5G/4G, Tower Civil & Equipment Transport Operations Active",
+                content: "Under Managing Director Madhusmita Deka, M/S Avant Telecom operates across all Northeast states (excluding Sikkim) with 100% EPF and ESIC compliance."
             }
         ];
 
-        // Regional Coverage Data for Interactive North East Map
         const stateCoverageData = {
             assam: {
-                name: "Assam Circle (Corporate HQ Hub)",
-                hub: "Guwahati (Nayanpur HQ) & Upper Assam",
+                name: "Assam Circle (Guwahati & Baksa Hubs)",
+                hub: "Mushalpur Regd. Office & Guwahati HQ",
                 badge: "Primary Command Center",
-                jioScope: "Core hub for 150+ UBR & Microwave (MW) deployments since Aug 2025 & preventative maintenance.",
-                aviatScope: "High-density Aviat Networks microwave backhaul links deployed for Bharti Airtel across Brahmaputra valley.",
-                teams: "Central Engineering Dispatch, ODU Testing & EPF/ESIC Admin Hub"
+                jioScope: "Core hub for 150+ UBR & Microwave (MW) deployments since Aug 2025, 5G/4G installation & deinstallation.",
+                aviatScope: "High-density Aviat Networks microwave links deployed for Bharti Airtel alongside tower base civil works.",
+                teams: "MD: Madhusmita Deka (6001590452) | PM: Sandeep Kalita (8453222754)"
             },
             meghalaya: {
                 name: "Meghalaya (NE-I Circle)",
                 hub: "Shillong, Tura & Jowai Corridors",
                 badge: "Active 5G & MW Circle",
-                jioScope: "Priority state under the 86-site 5G & UBR upgrade rollout alongside existing UBR backhaul links.",
+                jioScope: "Priority state under the 86-site 5G & UBR upgrade rollout alongside equipment packaging & transport.",
                 aviatScope: "Terrain-resilient Aviat Networks microwave hops commissioned for Airtel hill-district connectivity.",
-                teams: "Dedicated Hill-Terrain Riggers & FSE Support Units"
+                teams: "Dedicated Hill-Terrain Riggers & Civil Execution Crew"
             },
             arunachal: {
                 name: "Arunachal Pradesh (NE-II Circle)",
@@ -912,7 +1087,7 @@
                 name: "Manipur (NE-II Circle)",
                 hub: "Imphal Valley & Surrounding Districts",
                 badge: "Backhaul Resilience",
-                jioScope: "UBR & Microwave capacity augmentation and 5G site readiness execution.",
+                jioScope: "UBR & Microwave capacity augmentation and 5G/4G equipment installation.",
                 aviatScope: "Aviat Networks microwave equipment installation & link testing for Airtel.",
                 teams: "On-Ground Technical Commissioning Team"
             },
@@ -930,7 +1105,7 @@
                 badge: "High-Density UBR Grid",
                 jioScope: "Fast-track UBR & 5G site upgrades boosting urban and semi-urban carrier throughput.",
                 aviatScope: "Aviat Networks microwave equipment commissioned for Airtel circle redundancy.",
-                teams: "Full-Time FSE & Preventive Maintenance Crew"
+                teams: "Full-Time FSE & Telecom Civil Project Crew"
             }
         };
 
@@ -938,12 +1113,10 @@
             const data = stateCoverageData[stateKey];
             if (!data) return;
 
-            // Update active button state
             document.querySelectorAll('.circle-tab').forEach(btn => btn.classList.remove('active'));
             const activeBtn = document.getElementById('btn-' + stateKey);
             if (activeBtn) activeBtn.classList.add('active');
 
-            // Render details card
             document.getElementById('stateDetailCard').innerHTML = `
                 <div class="flex items-center justify-between mb-3">
                     <span class="text-[10px] font-extrabold uppercase tracking-wider bg-avantRedLight text-avantRed px-3 py-1 rounded-full border border-avantRed/20">
@@ -962,32 +1135,12 @@
                         <p class="text-avantSlate leading-relaxed">${data.aviatScope}</p>
                     </div>
                     <div class="pt-2 flex items-center justify-between text-[11px] text-avantSlate font-semibold">
-                        <span><i class="fa-solid fa-users-gear text-emerald-600 mr-1.5"></i>${data.teams}</span>
+                        <span><i class="fa-solid fa-user-tie text-avantRed mr-1.5"></i>${data.teams}</span>
                     </div>
                 </div>
             `;
         }
 
-        // 1-Click PDF Company Profile Generator
-        function downloadCompanyProfilePDF() {
-            const element = document.getElementById('pdfProfileContent');
-            const wrapper = document.getElementById('pdfProfileWrapper');
-            wrapper.classList.remove('hidden');
-
-            const opt = {
-                margin:       [10, 10, 10, 10],
-                filename:     'Avant_Telecom_Company_Profile_2026.pdf',
-                image:        { type: 'jpeg', quality: 0.98 },
-                html2canvas:  { scale: 2, useCORS: true },
-                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            };
-
-            html2pdf().set(opt).from(element).save().then(() => {
-                wrapper.classList.add('hidden');
-            });
-        }
-
-        // News Feed Functions
         function getNewsList() {
             try {
                 const raw = localStorage.getItem(STORAGE_KEY);
@@ -1150,12 +1303,11 @@
 
         function submitContactForm(e) {
             e.preventDefault();
-            alert('Thank you! Your inquiry has been received by Avant Telecom.');
+            alert('Thank you! Your inquiry has been received by M/S Avant Telecom.');
             closeModal('contactModal');
             e.target.reset();
         }
 
-        // Initialize News Feed, Auto-Scroll, and Default Map State on Load
         document.addEventListener('DOMContentLoaded', () => {
             renderNewsFeed();
             selectStateCircle('assam');
