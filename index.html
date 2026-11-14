@@ -16,6 +16,9 @@
                         avantRedDark: '#E02D19',   /* Hover Coral-Red */
                         avantCharcoal: '#363435',  /* Logo Charcoal */
                         avantSlate: '#575355',     /* Gentle Muted Text */
+                        jioBlue: '#0F3CC9',        /* Reliance Jio Brand Blue */
+                        aviatBlue: '#005EB8',      /* Aviat Networks Brand Blue */
+                        airtelRed: '#E40000'       /* Airtel Accent Red */
                     }
                 }
             }
@@ -33,16 +36,16 @@
 
         /* Gentle Ambient Mesh Background */
         .ambient-hero {
-            background: radial-gradient(circle at 15% 20%, rgba(249, 56, 34, 0.08) 0%, transparent 45%),
-                        radial-gradient(circle at 85% 80%, rgba(54, 52, 53, 0.06) 0%, transparent 50%),
+            background: radial-gradient(circle at 12% 18%, rgba(249, 56, 34, 0.08) 0%, transparent 45%),
+                        radial-gradient(circle at 88% 82%, rgba(15, 60, 201, 0.05) 0%, transparent 50%),
                         linear-gradient(180deg, #FFFFFF 0%, #F4F5F8 100%);
         }
 
         /* Soft Frosted Glass Cards */
         .gentle-card {
-            background: rgba(255, 255, 255, 0.88);
+            background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(16px);
-            border: 1px solid rgba(226, 232, 240, 0.9);
+            border: 1px solid rgba(226, 232, 240, 0.95);
             box-shadow: 0 10px 30px -10px rgba(54, 52, 53, 0.06);
             transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -55,11 +58,11 @@
 
         /* News Viewport with Soft Top/Bottom Fade Masks */
         .news-viewport {
-            height: 410px;
+            height: 430px;
             overflow: hidden;
             position: relative;
-            mask-image: linear-gradient(to bottom, transparent 0%, black 6%, black 94%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 6%, black 94%, transparent 100%);
+            mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%);
         }
 
         /* Smooth Horizontal Top Ticker */
@@ -70,7 +73,7 @@
         }
         .marquee-content {
             display: inline-block;
-            animation: marqueeHoriz 32s linear infinite;
+            animation: marqueeHoriz 34s linear infinite;
         }
         .marquee-content:hover {
             animation-play-state: paused;
@@ -83,7 +86,7 @@
 </head>
 <body class="antialiased selection:bg-avantRed selection:text-white">
 
-    <!-- Top Live Breaking News Bar (Warm Charcoal & Soft Coral) -->
+    <!-- Top Live Breaking News Bar -->
     <div class="bg-avantCharcoal text-white text-xs py-2.5 px-4 border-b border-neutral-700/60">
         <div class="max-w-7xl mx-auto flex items-center">
             <span class="bg-avantRed text-white font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider mr-3 shrink-0 flex items-center text-[10px] shadow-sm">
@@ -97,11 +100,11 @@
         </div>
     </div>
 
-    <!-- Sticky Header with Exact Brand Logo -->
-    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
+    <!-- Sticky Header with Exact Avant Telecom Brand Logo -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
         <div class="max-w-7xl mx-auto px-6 py-3.5 flex justify-between items-center">
             <a href="#home" class="flex items-center space-x-3 group">
-                <!-- Tries loading your PNG file first; automatically displays exact vector replica if PNG isn't in folder -->
+                <!-- Loads your PNG file first; automatically displays exact vector replica if PNG isn't in folder -->
                 <img src="avant-telecom-high-resolution-logo-removebg-preview.png" 
                      alt="Avant Telecom" 
                      class="h-11 md:h-12 w-auto object-contain"
@@ -111,10 +114,8 @@
                 <div id="svgBrandLogo" class="hidden items-center space-x-3">
                     <svg class="w-11 h-11 shadow-md rounded-full shrink-0" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="50" cy="50" r="50" fill="#F93822"/>
-                        <!-- Rounded 'A' with inner dot -->
                         <path d="M22 72L34.5 31C35.8 27 40.2 27 41.5 31L54 72" stroke="white" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
                         <circle cx="38" cy="57" r="4.2" fill="white"/>
-                        <!-- Rounded 'T' -->
                         <path d="M57 30H82M69.5 30V72" stroke="white" stroke-width="6.5" stroke-linecap="round"/>
                     </svg>
                     <div class="flex flex-col">
@@ -124,9 +125,10 @@
                 </div>
             </a>
 
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-avantCharcoal">
+            <nav class="hidden md:flex items-center space-x-7 text-sm font-semibold text-avantCharcoal">
                 <a href="#home" class="hover:text-avantRed transition">Home</a>
-                <a href="#services" class="hover:text-avantRed transition">Telecom Operations</a>
+                <a href="#partners" class="hover:text-avantRed transition">Project Partners</a>
+                <a href="#services" class="hover:text-avantRed transition">Operations</a>
                 <a href="#telecom-news" class="text-avantRed flex items-center bg-avantRedLight px-3 py-1.5 rounded-full">
                     <span class="w-2 h-2 rounded-full bg-avantRed animate-pulse mr-2"></span> Telecom News
                 </a>
@@ -135,7 +137,7 @@
             </nav>
 
             <div class="flex items-center space-x-3">
-                <button onclick="openModal('contactModal')" class="bg-avantRed hover:bg-avantRedDark text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-md shadow-avantRed/20 hover:shadow-lg hover:shadow-avantRed/30 transition-all">
+                <button onclick="openModal('contactModal')" class="bg-avantRed hover:bg-avantRedDark text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-md shadow-avantRed/20 hover:shadow-lg transition-all">
                     Connect With Us
                 </button>
             </div>
@@ -144,42 +146,104 @@
 
     <!-- Gentle Eye-Catching Hero + Live Auto-Scrolling News Section -->
     <section id="home" class="ambient-hero py-14 md:py-20 px-6 border-b border-slate-200/70">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
-            <!-- Left Column: Telecom Identity -->
+            <!-- Left Column: Telecom Identity, Track Record & Partner Logos -->
             <div class="lg:col-span-7 space-y-6">
                 <div class="inline-flex items-center space-x-2.5 bg-white border border-slate-200 shadow-sm text-avantCharcoal text-xs font-bold px-4 py-2 rounded-full">
                     <span class="w-2 h-2 rounded-full bg-avantRed"></span>
-                    <span>NEXT-GEN DIGITAL & TELECOM INFRASTRUCTURE</span>
+                    <span>TELECOM INFRASTRUCTURE & MW ROLLOUT LEADER</span>
                 </div>
                 
                 <h1 class="text-4xl md:text-5xl font-extrabold text-avantCharcoal leading-[1.15] tracking-tight">
                     Empowering Seamless Connectivity Across <span class="text-avantRed underline decoration-avantRed/20 decoration-wavy underline-offset-8">North East India</span>
                 </h1>
                 
-                <p class="text-avantSlate text-lg leading-relaxed max-w-2xl">
-                    Avant Telecom delivers precision 5G & UBR microwave deployments, optical fiber network execution, and 100% statutory-compliant field engineering teams across regional telecom circles.
+                <p class="text-avantSlate text-base md:text-lg leading-relaxed max-w-2xl">
+                    Delivering high-capacity UBR & Microwave (MW) link deployments, 5G upgrades, and 100% statutory-compliant field engineering operations for premier telecom carriers and equipment OEMs since August 2025.
                 </p>
 
-                <!-- Soft Metric Highlights -->
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-                    <div class="gentle-card p-5 rounded-2xl border-l-4 border-l-avantRed">
-                        <div class="text-2xl font-extrabold text-avantCharcoal">86+ Sites</div>
-                        <div class="text-xs font-medium text-avantSlate mt-1">Active 5G & UBR Upgrades</div>
+                <!-- Updated Deployment Milestone Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-1">
+                    <!-- 150+ Reliance Jio Card -->
+                    <div class="gentle-card p-4 rounded-2xl border-l-4 border-l-jioBlue">
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-extrabold text-avantCharcoal">150+ Sites</span>
+                            <span class="text-[10px] font-bold bg-blue-50 text-jioBlue px-2 py-0.5 rounded-md border border-blue-200">Since Aug 2025</span>
+                        </div>
+                        <div class="text-xs font-bold text-jioBlue mt-1">Reliance Jio</div>
+                        <div class="text-[11px] text-avantSlate mt-0.5">UBR & MW Deployment</div>
                     </div>
-                    <div class="gentle-card p-5 rounded-2xl border-l-4 border-l-avantCharcoal">
-                        <div class="text-2xl font-extrabold text-avantCharcoal">Reliance Jio</div>
-                        <div class="text-xs font-medium text-avantSlate mt-1">Primary Project Partner</div>
+
+                    <!-- 70+ Aviat Networks / Airtel Card -->
+                    <div class="gentle-card p-4 rounded-2xl border-l-4 border-l-aviatBlue">
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-extrabold text-avantCharcoal">70+ Sites</span>
+                            <span class="text-[10px] font-bold bg-red-50 text-airtelRed px-2 py-0.5 rounded-md border border-red-200">For Airtel</span>
+                        </div>
+                        <div class="text-xs font-bold text-aviatBlue mt-1">Aviat Networks</div>
+                        <div class="text-[11px] text-avantSlate mt-0.5">MW Equipment Rollout</div>
                     </div>
-                    <div class="gentle-card p-5 rounded-2xl border-l-4 border-l-emerald-500">
-                        <div class="text-2xl font-extrabold text-avantCharcoal">100%</div>
-                        <div class="text-xs font-medium text-avantSlate mt-1">EPF & ESIC Compliant</div>
+
+                    <!-- 100% Compliance Card -->
+                    <div class="gentle-card p-4 rounded-2xl border-l-4 border-l-emerald-500">
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-extrabold text-avantCharcoal">86+ Sites</span>
+                            <span class="text-[10px] font-bold bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-md border border-emerald-200">Ongoing</span>
+                        </div>
+                        <div class="text-xs font-bold text-emerald-700 mt-1">5G & UBR Expansion</div>
+                        <div class="text-[11px] text-avantSlate mt-0.5">100% EPF & ESIC Compliant</div>
                     </div>
                 </div>
 
-                <div class="flex flex-wrap gap-4 pt-3">
-                    <a href="#services" class="bg-avantCharcoal hover:bg-black text-white font-semibold px-6 py-3.5 rounded-xl shadow-md transition flex items-center">
-                        <span>Explore Capabilities</span>
+                <!-- Primary Project Partners Bar with Crisp Embedded Logos -->
+                <div class="bg-white/90 border border-slate-200/90 rounded-2xl p-5 shadow-sm space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[11px] font-extrabold uppercase tracking-widest text-avantSlate">Primary Project Partners</span>
+                        <span class="text-[11px] font-semibold text-avantRed">220+ Combined Sites Executed</span>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                        <!-- 1st Partner: Reliance Jio Logo Badge -->
+                        <div class="flex items-center space-x-3.5 p-3 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-jioBlue/40 transition">
+                            <!-- Reliance Jio Official Style Vector Badge -->
+                            <svg class="w-12 h-12 shrink-0 shadow-sm rounded-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="50" fill="#0F3CC9"/>
+                                <text x="50" y="62" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="36" fill="#FFFFFF" text-anchor="middle" letter-spacing="-1">Jio</text>
+                            </svg>
+                            <div>
+                                <div class="flex items-center space-x-1.5">
+                                    <span class="text-[10px] font-extrabold uppercase bg-jioBlue text-white px-2 py-0.5 rounded">1st Partner</span>
+                                    <span class="text-xs font-extrabold text-avantCharcoal">Reliance Jio</span>
+                                </div>
+                                <p class="text-[11px] text-avantSlate mt-1 font-medium">150+ UBR & MW Sites (From Aug 2025)</p>
+                            </div>
+                        </div>
+
+                        <!-- 2nd Partner: Aviat Networks (for Airtel) Logo Badge -->
+                        <div class="flex items-center space-x-3.5 p-3 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-aviatBlue/40 transition">
+                            <!-- Aviat Networks Vector Logo Mark -->
+                            <svg class="w-12 h-12 shrink-0 shadow-sm rounded-xl" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="100" height="100" rx="20" fill="#005EB8"/>
+                                <!-- Signal Wave Arc -->
+                                <path d="M25 34C40 20 60 20 75 34" stroke="#38BDF8" stroke-width="5" stroke-linecap="round" fill="none"/>
+                                <path d="M34 42C44 33 56 33 66 42" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" fill="none"/>
+                                <text x="50" y="68" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="22" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">AVIAT</text>
+                                <text x="50" y="81" font-family="Plus Jakarta Sans, sans-serif" font-weight="600" font-size="9" fill="#BAE6FD" text-anchor="middle" letter-spacing="1.5">NETWORKS</text>
+                            </svg>
+                            <div>
+                                <div class="flex items-center space-x-1.5">
+                                    <span class="text-[10px] font-extrabold uppercase bg-aviatBlue text-white px-2 py-0.5 rounded">2nd Partner</span>
+                                    <span class="text-xs font-extrabold text-avantCharcoal">Aviat Networks</span>
+                                </div>
+                                <p class="text-[11px] text-avantSlate mt-1 font-medium">70+ MW Sites on <strong class="text-airtelRed">Airtel</strong> Network</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-4 pt-1">
+                    <a href="#partners" class="bg-avantCharcoal hover:bg-black text-white font-semibold px-6 py-3.5 rounded-xl shadow-md transition flex items-center">
+                        <span>View Partner Portfolio</span>
                         <i class="fa-solid fa-arrow-right ml-2 text-xs text-avantRed"></i>
                     </a>
                     <button onclick="openModal('contactModal')" class="bg-white hover:bg-avantRedLight text-avantCharcoal hover:text-avantRed border border-slate-300 hover:border-avantRed/40 font-semibold px-6 py-3.5 rounded-xl shadow-sm transition">
@@ -188,11 +252,11 @@
                 </div>
             </div>
 
-            <!-- Right Column: Fixed, Buttery-Smooth Auto-Scrolling Telecom News Feed -->
+            <!-- Right Column: 60fps Auto-Scrolling Telecom News Feed -->
             <div id="telecom-news" class="lg:col-span-5">
                 <div class="bg-white rounded-3xl p-6 shadow-xl shadow-slate-200/80 border border-slate-200/90 relative overflow-hidden">
                     <!-- Top Accent Bar -->
-                    <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-avantRed via-orange-400 to-avantCharcoal"></div>
+                    <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-avantRed via-jioBlue to-aviatBlue"></div>
 
                     <!-- News Feed Header -->
                     <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-4 pt-1">
@@ -233,11 +297,11 @@
                             <i class="fa-solid fa-mouse text-avantRed mr-1.5"></i> Hover to pause • Scroll wheel supported
                         </span>
                         <div class="flex items-center space-x-3">
-                            <button onclick="resetDefaultNews()" title="Reset to default official news" class="text-slate-400 hover:text-avantRed transition">
-                                <i class="fa-solid fa-rotate-right"></i> Sync
+                            <button onclick="resetDefaultNews()" title="Reset to default official news" class="text-slate-400 hover:text-avantRed transition font-semibold">
+                                <i class="fa-solid fa-rotate-right mr-1"></i>Sync
                             </button>
                             <a href="https://avantgroups.in/news.html" target="_blank" class="text-avantRed font-bold hover:underline">
-                                All Group News →
+                                Group News →
                             </a>
                         </div>
                     </div>
@@ -247,13 +311,92 @@
         </div>
     </section>
 
-    <!-- Core Telecom Services Section (Matches avantgroups.in/telecom.html) -->
+    <!-- Dedicated Primary Project Partners Showcase Section -->
+    <section id="partners" class="py-16 px-6 bg-white border-b border-slate-200/70">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="bg-avantRedLight text-avantRed text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider">Trusted Industry Collaborations</span>
+                <h2 class="text-3xl font-extrabold text-avantCharcoal mt-3">Our Primary Project Partners</h2>
+                <p class="text-avantSlate mt-2 text-sm md:text-base">
+                    Executing high-reliability microwave backhaul, UBR links, and 5G site rollouts for India's foremost telecommunications networks.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Partner 1 Card: Reliance Jio -->
+                <div class="gentle-card rounded-3xl p-8 border-t-4 border-t-jioBlue flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-6">
+                            <div class="flex items-center space-x-4">
+                                <svg class="w-16 h-16 shrink-0 shadow-md rounded-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="50" cy="50" r="50" fill="#0F3CC9"/>
+                                    <text x="50" y="63" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="38" fill="#FFFFFF" text-anchor="middle" letter-spacing="-1">Jio</text>
+                                </svg>
+                                <div>
+                                    <span class="text-[11px] font-extrabold uppercase tracking-wider text-jioBlue bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">1st Primary Partner</span>
+                                    <h3 class="text-2xl font-extrabold text-avantCharcoal mt-1.5">Reliance Jio</h3>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-3xl font-extrabold text-jioBlue block">150+</span>
+                                <span class="text-xs font-semibold text-avantSlate">Sites Deployed</span>
+                            </div>
+                        </div>
+                        <p class="text-avantSlate text-sm leading-relaxed mb-6">
+                            Since <strong>August 2025</strong>, Avant Telecom has deployed more than <strong>150+ UBR & Microwave (MW) sites</strong> for Reliance Jio across Assam and North East circles, alongside an additional <strong>86-site 5G & UBR upgrade rollout</strong> scheduled through December 2026.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2 text-xs font-semibold">
+                        <span class="bg-slate-100 text-avantCharcoal px-3 py-1.5 rounded-lg"><i class="fa-solid fa-check text-jioBlue mr-1.5"></i>150+ UBR & MW Links (Since Aug 2025)</span>
+                        <span class="bg-slate-100 text-avantCharcoal px-3 py-1.5 rounded-lg"><i class="fa-solid fa-check text-jioBlue mr-1.5"></i>86-Site 5G Expansion</span>
+                    </div>
+                </div>
+
+                <!-- Partner 2 Card: Aviat Networks (for Airtel) -->
+                <div class="gentle-card rounded-3xl p-8 border-t-4 border-t-aviatBlue flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-6">
+                            <div class="flex items-center space-x-4">
+                                <svg class="w-16 h-16 shrink-0 shadow-md rounded-2xl" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="100" height="100" rx="22" fill="#005EB8"/>
+                                    <path d="M25 34C40 20 60 20 75 34" stroke="#38BDF8" stroke-width="5" stroke-linecap="round" fill="none"/>
+                                    <path d="M34 42C44 33 56 33 66 42" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" fill="none"/>
+                                    <text x="50" y="68" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="22" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">AVIAT</text>
+                                    <text x="50" y="81" font-family="Plus Jakarta Sans, sans-serif" font-weight="600" font-size="9" fill="#BAE6FD" text-anchor="middle" letter-spacing="1.5">NETWORKS</text>
+                                </svg>
+                                <div>
+                                    <div class="flex items-center space-x-1.5">
+                                        <span class="text-[11px] font-extrabold uppercase tracking-wider text-aviatBlue bg-sky-50 px-2.5 py-1 rounded-full border border-sky-200">2nd Primary Partner</span>
+                                        <span class="text-[11px] font-extrabold uppercase tracking-wider text-airtelRed bg-red-50 px-2.5 py-1 rounded-full border border-red-200">Airtel Project</span>
+                                    </div>
+                                    <h3 class="text-2xl font-extrabold text-avantCharcoal mt-1.5">Aviat Networks</h3>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-3xl font-extrabold text-aviatBlue block">70+</span>
+                                <span class="text-xs font-semibold text-avantSlate">Airtel MW Sites</span>
+                            </div>
+                        </div>
+                        <p class="text-avantSlate text-sm leading-relaxed mb-6">
+                            Executed installation, commissioning, and link alignment across more than <strong>70+ telecom sites on Aviat Networks microwave equipment for Bharti Airtel</strong>, delivering high-availability carrier backhaul across challenging North East terrain.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2 text-xs font-semibold">
+                        <span class="bg-slate-100 text-avantCharcoal px-3 py-1.5 rounded-lg"><i class="fa-solid fa-check text-aviatBlue mr-1.5"></i>70+ Aviat MW Equipment Sites</span>
+                        <span class="bg-red-50 text-airtelRed px-3 py-1.5 rounded-lg"><i class="fa-solid fa-tower-broadcast mr-1.5"></i>Deployed for Airtel Backhaul</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Telecom Services Section -->
     <section id="services" class="py-20 px-6 max-w-7xl mx-auto">
         <div class="text-center max-w-3xl mx-auto mb-14">
             <span class="bg-avantRedLight text-avantRed text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider">Engineering Excellence</span>
             <h2 class="text-3xl md:text-4xl font-extrabold text-avantCharcoal mt-4">Telecom Infrastructure & Field Execution</h2>
             <p class="text-avantSlate mt-3 text-base">
-                Reliable network deployment, microwave ODU alignment, and round-the-clock site operations engineered for zero downtime across the North East region.
+                End-to-end microwave ODU link alignment, UBR commissioning, and round-the-clock site maintenance engineered for zero downtime.
             </p>
         </div>
 
@@ -263,9 +406,9 @@
                 <div class="w-14 h-14 rounded-2xl bg-avantRedLight text-avantRed flex items-center justify-center text-2xl mb-6 group-hover:bg-avantRed group-hover:text-white transition-colors duration-300 shadow-sm">
                     <i class="fa-solid fa-satellite-dish"></i>
                 </div>
-                <h3 class="text-xl font-bold text-avantCharcoal mb-3">5G & UBR Microwave Rollout</h3>
+                <h3 class="text-xl font-bold text-avantCharcoal mb-3">UBR & Microwave (MW) Rollout</h3>
                 <p class="text-avantSlate text-sm leading-relaxed">
-                    End-to-end site upgrades, Unlicensed Band Radio (UBR) installations, and outdoor unit (ODU) link alignment completed strictly within operator milestones.
+                    Over 220+ combined UBR and Microwave links commissioned across Reliance Jio and Aviat Networks (Airtel) projects with precision LOS alignment.
                 </p>
             </div>
 
@@ -274,9 +417,9 @@
                 <div class="w-14 h-14 rounded-2xl bg-avantRedLight text-avantRed flex items-center justify-center text-2xl mb-6 group-hover:bg-avantRed group-hover:text-white transition-colors duration-300 shadow-sm">
                     <i class="fa-solid fa-network-wired"></i>
                 </div>
-                <h3 class="text-xl font-bold text-avantCharcoal mb-3">Optical Fiber & Network Maintenance</h3>
+                <h3 class="text-xl font-bold text-avantCharcoal mb-3">5G Upgrades & Fiber Maintenance</h3>
                 <p class="text-avantSlate text-sm leading-relaxed">
-                    Preventive and corrective maintenance for active telecom sites, L2/L3 routing diagnostics, IP configuration, and rapid fault restoration.
+                    Full-scale 5G site upgrades, L2/L3 routing diagnostics, IP configuration, and rapid fault restoration across Assam and North East circles.
                 </p>
             </div>
 
@@ -336,7 +479,7 @@
                 <div>
                     <label class="block text-xs font-bold uppercase text-avantSlate mb-1">Service Division</label>
                     <select class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-avantCharcoal font-medium focus:border-avantRed outline-none">
-                        <option value="Avant Telecom" selected>Avant Telecom (5G / UBR / Field Support)</option>
+                        <option value="Avant Telecom" selected>Avant Telecom (5G / UBR / MW Deployment)</option>
                         <option value="Avant IT Services">Avant IT Services</option>
                         <option value="Avant Logistics">Avant Logistics</option>
                         <option value="Avant Agro">Avant Agro</option>
@@ -401,6 +544,15 @@
                     <input type="date" id="newsDate" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-avantCharcoal">
                 </div>
                 <div>
+                    <label class="block text-xs font-bold text-avantSlate mb-1">PARTNER / TAG</label>
+                    <select id="newsTag" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-avantCharcoal font-medium">
+                        <option value="Reliance Jio Project">Reliance Jio Project</option>
+                        <option value="Aviat Networks • Airtel">Aviat Networks • Airtel</option>
+                        <option value="5G & UBR Rollout">5G & UBR Rollout</option>
+                        <option value="Avant Telecom">Avant Telecom General</option>
+                    </select>
+                </div>
+                <div>
                     <label class="block text-xs font-bold text-avantSlate mb-1">HEADLINE TITLE</label>
                     <input type="text" id="newsTitle" required placeholder="e.g., 25 New UBR Sites Commissioned in NE" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-avantCharcoal focus:border-avantRed outline-none">
                 </div>
@@ -416,35 +568,43 @@
     </div>
 
     <script>
-        // Storage versioning key so stale cache never blocks new updates
-        const STORAGE_KEY = 'avant_telecom_news_v2';
+        // Bumped version key to v3 so the new 150+ Jio & 70+ Aviat/Airtel milestones load immediately
+        const STORAGE_KEY = 'avant_telecom_news_v3';
         let isAuthorLoggedIn = false;
 
-        // Official Telecom News Items (Pre-loaded from avantgroups.in/news.html)
+        // Official Telecom News Items with Jio 150+ and Aviat/Airtel 70+ updates included
         const defaultTelecomNews = [
+            {
+                id: "news-jio-150",
+                date: "November 2026",
+                division: "Avant Telecom",
+                tag: "Reliance Jio Partner",
+                title: "150+ UBR & Microwave (MW) Deployments Completed for Reliance Jio",
+                content: "Since August 2025, Avant Telecom has successfully executed more than 150+ UBR and Microwave link deployments for primary project partner Reliance Jio across regional circles."
+            },
+            {
+                id: "news-aviat-70",
+                date: "October 2026",
+                division: "Avant Telecom",
+                tag: "Aviat Networks • Airtel",
+                title: "70+ Sites Commissioned on Aviat Networks Equipment for Airtel",
+                content: "Avant Telecom's field engineering teams have completed over 70+ high-capacity microwave sites utilizing Aviat Networks equipment for Bharti Airtel backhaul expansion."
+            },
             {
                 id: "news-1",
                 date: "September 18, 2026",
                 division: "Avant Telecom",
                 tag: "5G & UBR Rollout",
                 title: "Avant Telecom Expands 5G & UBR Deployments Across North East",
-                content: "Avant Telecom expands 5G & UBR deployments across North East excluding Assam from this month onwards. Total 86 sites will be upgraded by Avant Telecom within the timeline provided by Jio. Expected to be completed by Dec-2026."
-            },
-            {
-                id: "news-2",
-                date: "October 14, 2026",
-                division: "Avant Telecom",
-                tag: "Field Operations",
-                title: "Reliance Jio Project Milestone & Zero-Outage Link Alignment",
-                content: "Dedicated Field Support Engineers (FSE) deployed across regional circles have achieved rapid ODU microwave link commissioning and preventive maintenance targets."
+                content: "Avant Telecom expands 5G & UBR deployments across North East excluding Assam from this month onwards. Total 86 sites will be upgraded within the timeline provided by Jio (Expected completion by Dec-2026)."
             },
             {
                 id: "news-3",
-                date: "November 05, 2026",
+                date: "August 2026",
                 division: "Avant Telecom",
                 tag: "Statutory Compliance",
                 title: "100% EPF & ESIC Digital Wage Register Compliance Active",
-                content: "Avant Telecom's automated payroll systems ensure timely statutory EPF and ESIC contributions for all field engineers and technical support personnel."
+                content: "Avant Telecom's automated payroll systems ensure timely statutory EPF and ESIC contributions for all deployed field support engineers and technical staff."
             }
         ];
 
@@ -471,12 +631,12 @@
 
             // Update Top Horizontal Breaking Bar dynamically
             topTicker.innerHTML = newsList.map(item => 
-                `<span class="mx-6">• <strong class="text-avantRed">[${item.date}]</strong> ${item.title}</span>`
+                `<span class="mx-6">• <strong class="text-avantRed">[${item.tag || item.date}]</strong> ${item.title}</span>`
             ).join('');
 
             // Build Card HTML
             const buildCards = (items) => items.map(item => `
-                <div class="p-4 rounded-2xl bg-slate-50/90 hover:bg-avantRedLight/40 border border-slate-200/90 hover:border-avantRed/40 transition-all shadow-sm relative group">
+                <div class="p-4 rounded-2xl bg-slate-50/95 hover:bg-avantRedLight/40 border border-slate-200/90 hover:border-avantRed/40 transition-all shadow-sm relative group">
                     <div class="flex items-center justify-between text-[11px] mb-1.5">
                         <span class="text-avantSlate font-semibold flex items-center">
                             <i class="fa-regular fa-calendar-check mr-1.5 text-avantRed"></i>${item.date}
@@ -505,22 +665,21 @@
             track.innerHTML = `<div id="primaryNewsSet" class="space-y-3.5">${buildCards(newsList)}</div>` +
                               `<div id="clonedNewsSet" class="space-y-3.5 pt-3.5">${buildCards(newsList)}</div>`;
 
-            // Reset scroll position smoothly when feed updates
             scrollOffset = 0;
         }
 
-        // 3. Buttery-Smooth 60fps JS Auto-Scroll Engine (Never gets stuck on DOM updates)
+        // 3. Buttery-Smooth 60fps JS Auto-Scroll Engine
         let scrollOffset = 0;
         let isHovered = false;
         let isManuallyPaused = false;
-        const scrollSpeed = 0.45; // Gentle, readable speed
+        const scrollSpeed = 0.45;
 
         function stepAutoScroll() {
             if (!isHovered && !isManuallyPaused) {
                 const primarySet = document.getElementById('primaryNewsSet');
                 const track = document.getElementById('newsTrack');
                 if (primarySet && track) {
-                    const resetHeight = primarySet.offsetHeight + 14; // +14px for gap
+                    const resetHeight = primarySet.offsetHeight + 14;
                     scrollOffset += scrollSpeed;
                     if (scrollOffset >= resetHeight) {
                         scrollOffset = 0;
@@ -564,7 +723,7 @@
                 id: 'news-' + Date.now(),
                 date: formattedDate,
                 division: "Avant Telecom",
-                tag: "Latest Update",
+                tag: document.getElementById('newsTag').value,
                 title: document.getElementById('newsTitle').value.trim(),
                 content: document.getElementById('newsBody').value.trim()
             };
@@ -613,7 +772,7 @@
                 closeModal('adminLoginModal');
                 document.getElementById('authorLoginBtn').classList.add('hidden');
                 document.getElementById('postNewsBtn').classList.remove('hidden');
-                renderNewsFeed(); // Shows delete buttons on cards for author
+                renderNewsFeed();
                 openModal('postNewsModal');
             }
         }
