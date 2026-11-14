@@ -111,7 +111,7 @@
 </head>
 <body class="antialiased selection:bg-avantRed selection:text-white">
 
-    <!-- Top Enterprise Announcement & Corporate Desk Bar -->
+    <!-- Top Enterprise Announcement & Official Email Desk Bar -->
     <div class="bg-avantDark text-white text-xs py-2.5 px-4 border-b border-neutral-800">
         <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
             <div class="flex items-center overflow-hidden flex-1">
@@ -123,11 +123,11 @@
                 </div>
             </div>
             <div class="hidden md:flex items-center space-x-5 shrink-0 text-[11px] text-neutral-300 border-l border-neutral-800 pl-5">
-                <a href="mailto:support@avanttelecom.in" class="hover:text-white transition">
+                <a href="mailto:support@avanttelecom.in" class="hover:text-white transition font-semibold">
                     <i class="fa-solid fa-envelope text-avantRed mr-1.5"></i>support@avanttelecom.in
                 </a>
-                <a href="tel:6001590452" class="hover:text-white transition font-semibold">
-                    <i class="fa-solid fa-phone text-avantRed mr-1.5"></i>+91 6001590452
+                <a href="mailto:support@avantgroups.in" class="hover:text-white transition font-semibold">
+                    <i class="fa-solid fa-envelope-open-text text-avantRed mr-1.5"></i>support@avantgroups.in
                 </a>
             </div>
         </div>
@@ -270,15 +270,15 @@
                     </div>
                 </div>
 
-                <!-- Executive Action Bar -->
+                <!-- Executive Action Bar (Email Only, No Phone Numbers) -->
                 <div class="flex flex-wrap gap-3.5 pt-1">
                     <button onclick="downloadCompanyProfilePDF()" class="bg-avantRed hover:bg-avantRedDark text-white font-bold px-6 py-3.5 rounded-xl shadow-md shadow-avantRed/20 transition flex items-center">
                         <i class="fa-solid fa-file-arrow-down mr-2.5"></i>
                         <span>Download Company Profile (PDF)</span>
                     </button>
-                    <a href="#services" class="bg-avantCharcoal hover:bg-black text-white font-semibold px-6 py-3.5 rounded-xl shadow-md transition flex items-center">
-                        <span>Explore Core Capabilities</span>
-                        <i class="fa-solid fa-arrow-right ml-2.5 text-xs text-avantRed"></i>
+                    <a href="mailto:support@avanttelecom.in" class="bg-avantCharcoal hover:bg-black text-white font-semibold px-6 py-3.5 rounded-xl shadow-md transition flex items-center">
+                        <i class="fa-solid fa-envelope mr-2.5 text-xs text-avantRed"></i>
+                        <span>support@avanttelecom.in</span>
                     </a>
                 </div>
             </div>
@@ -651,7 +651,7 @@
                     <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex items-center justify-between">
                         <div>
                             <span class="text-xs font-extrabold text-avantCharcoal block">Enterprise Project Desk</span>
-                            <span class="text-xs text-avantSlate">Rapid mobilization across Assam, NE-I & NE-II circles.</span>
+                            <span class="text-xs text-avantSlate">support@avanttelecom.in • support@avantgroups.in</span>
                         </div>
                         <button onclick="openModal('contactModal')" class="bg-avantRed hover:bg-avantRedDark text-white text-xs font-bold px-4 py-2.5 rounded-xl shrink-0 transition">
                             Request Proposal
@@ -678,7 +678,7 @@
         </div>
     </section>
 
-    <!-- World-Class Corporate Footer (Zero Personal Names/Contacts) -->
+    <!-- World-Class Corporate Footer (Zero Phone Numbers or Personal Names) -->
     <footer class="bg-avantDark text-neutral-400 py-12 px-6 text-sm border-t border-neutral-800">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-neutral-800">
             <div class="space-y-3">
@@ -699,10 +699,18 @@
             </div>
 
             <div class="space-y-2 text-xs">
-                <div class="text-white font-bold uppercase tracking-wider mb-2">Corporate Communications</div>
-                <p><i class="fa-solid fa-envelope text-avantRed mr-2"></i>support@avanttelecom.in</p>
-                <p><i class="fa-solid fa-phone text-avantRed mr-2"></i>+91 6001590452 (Corporate Desk)</p>
-                <p><i class="fa-solid fa-globe text-avantRed mr-2"></i>www.avanttelecom.in</p>
+                <div class="text-white font-bold uppercase tracking-wider mb-2">Official Email Channels</div>
+                <p>
+                    <a href="mailto:support@avanttelecom.in" class="hover:text-white transition">
+                        <i class="fa-solid fa-envelope text-avantRed mr-2"></i>support@avanttelecom.in
+                    </a>
+                </p>
+                <p>
+                    <a href="mailto:support@avantgroups.in" class="hover:text-white transition">
+                        <i class="fa-solid fa-envelope-open-text text-avantRed mr-2"></i>support@avantgroups.in
+                    </a>
+                </p>
+                <p><i class="fa-solid fa-globe text-avantRed mr-2"></i>www.avanttelecom.in | www.avantgroups.in</p>
             </div>
         </div>
         <div class="max-w-7xl mx-auto pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-neutral-500">
@@ -711,7 +719,7 @@
         </div>
     </footer>
 
-    <!-- MODAL 1: Partner & Service Inquiry -->
+    <!-- MODAL 1: Partner & Service Inquiry (Email-Only Contact Field) -->
     <div id="contactModal" class="fixed inset-0 z-50 hidden bg-avantDark/70 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white max-w-md w-full rounded-3xl p-7 shadow-2xl border border-slate-100">
             <div class="flex justify-between items-center border-b border-slate-100 pb-4 mb-5">
@@ -735,12 +743,15 @@
                     <input type="text" required placeholder="Enter organization or name" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-avantCharcoal focus:border-avantRed outline-none">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold uppercase text-avantSlate mb-1">Official Email / Phone</label>
-                    <input type="text" required placeholder="Enter contact details" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-avantCharcoal focus:border-avantRed outline-none">
+                    <label class="block text-xs font-bold uppercase text-avantSlate mb-1">Official Email Address</label>
+                    <input type="email" required placeholder="name@company.com" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-avantCharcoal focus:border-avantRed outline-none">
                 </div>
                 <div>
                     <label class="block text-xs font-bold uppercase text-avantSlate mb-1">Project Requirements</label>
                     <textarea rows="3" required placeholder="Specify circle, site count, or project requirements..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-avantCharcoal focus:border-avantRed outline-none"></textarea>
+                </div>
+                <div class="text-[11px] text-avantSlate bg-slate-50 p-3 rounded-xl border border-slate-200/80">
+                    Direct Email Desk: <strong class="text-avantCharcoal">support@avanttelecom.in</strong> &amp; <strong class="text-avantCharcoal">support@avantgroups.in</strong>
                 </div>
                 <button type="submit" class="w-full bg-avantRed hover:bg-avantRedDark text-white font-bold py-3 rounded-xl shadow-md transition">
                     Submit to Corporate Desk
@@ -813,7 +824,7 @@
     </div>
 
     <script>
-        // VECTOR PDF GENERATOR (Includes full official Company Profile details inside the downloaded PDF)
+        // VECTOR PDF GENERATOR (Zero Phone Numbers, Zero Personal Names — Strictly Corporate)
         function downloadCompanyProfilePDF() {
             const { jsPDF } = window.jspdf;
             const doc = new jsPDF({ unit: 'mm', format: 'a4', orientation: 'portrait' });
@@ -851,42 +862,39 @@
             doc.setLineWidth(0.6);
             doc.line(15, 35, 195, 35);
 
-            // SECTION 1: COMPANY INFORMATION & KEY MANAGEMENT (Included in Official PDF Profile)
+            // SECTION 1: CORPORATE CREDENTIALS & OFFICIAL CHANNELS BOX
             doc.setFillColor(250, 250, 252);
             doc.setDrawColor(226, 232, 240);
-            doc.roundedRect(15, 40, 180, 44, 3, 3, 'FD');
+            doc.roundedRect(15, 40, 180, 42, 3, 3, 'FD');
 
             doc.setFont('helvetica', 'bold');
             doc.setFontSize(11);
             doc.setTextColor(249, 56, 34);
             doc.text('Company Information', 20, 48);
-            doc.text('Key Management', 112, 48);
+            doc.text('Official Communications', 112, 48);
 
             doc.setFont('helvetica', 'normal');
             doc.setFontSize(9.2);
             doc.setTextColor(54, 52, 53);
-            doc.text('Company Name: M/S Avant Telecom', 20, 55);
-            doc.text('Year Founded: 2024', 20, 60.5);
-            doc.text('Registered Address: Baksha, Mushalpur - 781378', 20, 66);
-            doc.text('MSME Registration: UDYAM-AS-01-0008134', 20, 71.5);
-            doc.text('Email: support@avanttelecom.in', 20, 77);
-            doc.setFont('helvetica', 'bold');
-            doc.text('Phone: 6001590452', 20, 82);
+            doc.text('Company Name: M/S Avant Telecom', 20, 55.5);
+            doc.text('Year Founded: 2024', 20, 61.5);
+            doc.text('Registered Address: Baksha, Mushalpur - 781378', 20, 67.5);
+            doc.text('Operations Hub: Nayanpur, Guwahati - 781005', 20, 73.5);
+            doc.text('MSME Registration: UDYAM-AS-01-0008134', 20, 79);
 
             doc.setFont('helvetica', 'bold');
             doc.setTextColor(54, 52, 53);
-            doc.text('Key Person:', 112, 55.5);
+            doc.text('Telecom Division Desk:', 112, 55.5);
             doc.setFont('helvetica', 'normal');
-            doc.text('Madhusmita Deka (Managing Director)', 112, 61);
+            doc.text('support@avanttelecom.in', 112, 61);
 
             doc.setFont('helvetica', 'bold');
-            doc.text('Key Team Member:', 112, 70);
+            doc.text('Corporate Group Desk:', 112, 69);
             doc.setFont('helvetica', 'normal');
-            doc.text('Sandeep Kalita - Project Manager', 112, 75.5);
-            doc.text('Phone: 8453222754', 112, 81);
+            doc.text('support@avantgroups.in', 112, 74.5);
 
             // SECTION 2: MISSION & VISION STATEMENTS
-            let y = 94;
+            let y = 92;
             doc.setFont('helvetica', 'bold');
             doc.setFontSize(11.5);
             doc.setTextColor(249, 56, 34);
@@ -993,13 +1001,13 @@
             doc.line(15, 280, 195, 280);
             doc.setFontSize(8.5);
             doc.setTextColor(120, 120, 120);
-            doc.text('M/S Avant Telecom • Regd: Baksha, Mushalpur - 781378 | Ph: 6001590452 | Email: support@avanttelecom.in', 105, 286, { align: 'center' });
+            doc.text('M/S Avant Telecom • Regd: Baksha, Mushalpur - 781378 | Email: support@avanttelecom.in & support@avantgroups.in', 105, 286, { align: 'center' });
 
             doc.save('Avant_Telecom_Company_Profile.pdf');
         }
 
-        // News Feed Engine (v5 with purely corporate announcements)
-        const STORAGE_KEY = 'avant_telecom_news_v5';
+        // News Feed Engine (v6 — Purely Corporate)
+        const STORAGE_KEY = 'avant_telecom_news_v6';
         let isAuthorLoggedIn = false;
 
         const defaultTelecomNews = [
@@ -1290,7 +1298,7 @@
 
         function submitContactForm(e) {
             e.preventDefault();
-            alert('Thank you! Your inquiry has been routed to the M/S Avant Telecom Corporate Desk.');
+            alert('Thank you! Your inquiry has been routed to support@avanttelecom.in & support@avantgroups.in.');
             closeModal('contactModal');
             e.target.reset();
         }
