@@ -24,7 +24,7 @@ a{color:inherit;text-decoration:none}
 .lift{transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
 .lift:hover{transform:translateY(-5px)}
 .pill{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;padding:7px 14px;border-radius:99px;background:var(--tint);color:var(--red);letter-spacing:.03em}
-.btn{display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;font:inherit;font-weight:700;font-size:14px;padding:13px 22px;border-radius:16px;transition:.25s}
+.btn{white-space:nowrap;display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;font:inherit;font-weight:700;font-size:14px;padding:13px 22px;border-radius:16px;transition:.25s}
 .btn-p{background:linear-gradient(135deg,var(--red),var(--red2));color:#fff;box-shadow:0 10px 24px -8px rgba(249,56,34,.55)}
 .btn-p:hover{transform:translateY(-2px);box-shadow:0 14px 30px -8px rgba(249,56,34,.65)}
 .btn-g{background:var(--surface);color:var(--text);border:1px solid var(--line)}
@@ -40,16 +40,16 @@ a{color:inherit;text-decoration:none}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 /* nav */
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;padding:12px 0}
-.nav{display:flex;align-items:center;justify-content:space-between;padding:10px 14px 10px 20px;border-radius:22px}
-.logo{display:flex;align-items:center;gap:12px}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:10px 14px 10px 20px;border-radius:22px;gap:18px}
+.logo{display:flex;align-items:center;gap:12px;flex-shrink:0;white-space:nowrap}
 .logo b{display:block;font-size:19px;letter-spacing:-.02em;line-height:1.1}
-.logo small{font-size:10px;font-weight:700;color:var(--red);letter-spacing:.14em;text-transform:uppercase}
+.logo small{display:block;font-size:9.5px;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;margin-top:3px}
 nav ul{display:flex;gap:6px;list-style:none;margin:0;padding:0}
-nav a{font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 14px;border-radius:12px;transition:.2s}
+nav a{white-space:nowrap;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 14px;border-radius:12px;transition:.2s}
 nav a:hover{color:var(--red);background:var(--tint)}
-.acts{display:flex;gap:8px;align-items:center}
+.acts{display:flex;gap:8px;align-items:center;flex-shrink:0}
 .icon{width:42px;height:42px;padding:0;justify-content:center;border-radius:14px}
-@media(max-width:900px){nav{display:none}.hide-s{display:none}}
+@media(max-width:1120px){nav{display:none}.hide-s{display:none}.nav{justify-content:space-between}}
 /* hero */
 .hero{padding:70px 0 40px;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:start}
 @media(max-width:960px){.hero{grid-template-columns:1fr}}
@@ -231,7 +231,7 @@ footer p{margin:6px 0}footer a:hover{color:#fff}
         <small style="color:var(--red2);font-weight:800;letter-spacing:.12em">ACTIVE TELEMETRY FOOTPRINT</small>
         <h3>Assam, NE-I &amp; NE-II Telecom Circles</h3>
         <div class="chips" id="chips"></div>
-        <div class="rad-foot">Regd: Baksha, Mushalpur – 781378<br>Operations: Nayanpur, Guwahati – 781005<br><span style="color:#4ade80;font-weight:700">● 7 Northeast states active</span></div>
+        <div class="rad-foot">Office: Sukhdev Apartment, Nayanpur, Guwahati – 781005<br><span style="color:#4ade80;font-weight:700">● 7 Northeast states active</span></div>
       </div>
       <div>
         <div class="glass det" id="det"></div>
@@ -247,7 +247,7 @@ footer p{margin:6px 0}footer a:hover{color:#fff}
 <footer><div class="wrap">
   <div class="fg">
     <div><h5>M/S Avant Telecom</h5><p>A Venture of Avant Groups. 5G/4G, Microwave &amp; UBR deployments, logistics and telecom civil engineering across Northeast India.</p></div>
-    <div><h5>Offices</h5><p><b style="color:#ddd">Registered:</b> Baksha, Mushalpur – 781378, Assam</p><p><b style="color:#ddd">Operations:</b> Sukhdev Apartment, Nayanpur, Guwahati – 781005</p><p><b style="color:#ddd">MSME:</b> UDYAM-AS-01-0008134</p></div>
+    <div><h5>Office</h5><p>Sukhdev Apartment, Nayanpur,<br>Guwahati – 781005, Assam</p><p><b style="color:#ddd">MSME:</b> UDYAM-AS-01-0008134</p></div>
     <div><h5>Email Channels</h5><p><a href="mailto:support@avanttelecom.in">support@avanttelecom.in</a></p><p><a href="mailto:support@avantgroups.in">support@avantgroups.in</a></p><p>www.avanttelecom.in · www.avantgroups.in</p></div>
   </div>
   <div class="copy"><span>© 2026 M/S Avant Telecom (Avant Groups). All rights reserved.</span><span>Operating across Northeast India (excluding Sikkim)</span></div>
@@ -256,11 +256,11 @@ footer p{margin:6px 0}footer a:hover{color:#fff}
 <div class="modal" id="modal" onclick="if(event.target===this)closeM()"><div class="mb">
   <div style="display:flex;justify-content:space-between;align-items:center"><h3>Corporate Inquiry</h3><button class="btn btn-g icon" onclick="closeM()" aria-label="Close">×</button></div>
   <form id="form">
-    <label>Service scope</label><select id="f1"><option>5G/4G &amp; Microwave / UBR Deployment</option><option>Equipment Packaging &amp; Transportation</option><option>Telecom Tower Base &amp; Civil Projects</option></select>
-    <label>Organization / name</label><input id="f2" required placeholder="Your organization or name">
-    <label>Email address</label><input id="f3" type="email" required placeholder="name@company.com">
-    <label>Project requirements</label><textarea id="f4" rows="3" required placeholder="Circle, site count, requirements…"></textarea>
-    <button class="btn btn-p" style="width:100%;justify-content:center;margin-top:18px">Send to Corporate Desk</button>
+    <label>Service required *</label><select id="f1" required><option value="">Select a service…</option><option>5G/4G &amp; Microwave / UBR Deployment</option><option>Equipment Packaging &amp; Transportation</option><option>Telecom Tower Base &amp; Civil Projects</option></select>
+    <label>Full name</label><input id="f2" required placeholder="Your full name">
+    <label>Email</label><input id="f3" type="email" required placeholder="name@company.com">
+    <label>Message</label><textarea id="f4" rows="3" required placeholder="How can we help?"></textarea>
+    <button id="sendBtn" class="btn btn-p" style="width:100%;justify-content:center;margin-top:18px">SEND MESSAGE</button><p id="fs" style="font-size:13px;font-weight:600;margin:12px 0 0;text-align:center"></p>
   </form>
 </div></div>
 
@@ -270,7 +270,7 @@ var NEWS=[
 {d:"October 2026",t:"Aviat • Airtel",h:"70+ Sites Commissioned on Aviat Networks Equipment for Airtel",p:"Our microwave engineering teams completed over 70 high-capacity backhaul sites using Aviat Networks equipment for Bharti Airtel."},
 {d:"September 18, 2026",t:"5G & UBR Rollout",h:"5G & UBR Deployments Expand Across the Northeast",p:"Expansion across the Northeast (excluding Assam) begins this month. All 86 sites will be upgraded within Jio’s timeline, with completion expected by December 2026."},
 {d:"August 2026",t:"Infrastructure & Civil",h:"Turnkey 5G/4G, Tower Civil & Transport Operations Active",p:"End-to-end hardware installation, tower base construction and equipment logistics across all Northeast states (excluding Sikkim)."}];
-var ST={assam:["Assam Circle (Central Hub)","Guwahati & Baksa Hubs","Primary Command Center","Core hub for 150+ UBR & MW deployments since Aug 2025, plus 5G/4G installation & deinstallation.","High-density Aviat microwave links for Bharti Airtel alongside tower base civil works.","Central dispatch, warehousing & turnkey civil division"],
+var ST={assam:["Assam Circle (Central Hub)","Guwahati Hub","Primary Command Center","Core hub for 150+ UBR & MW deployments since Aug 2025, plus 5G/4G installation & deinstallation.","High-density Aviat microwave links for Bharti Airtel alongside tower base civil works.","Central dispatch, warehousing & turnkey civil division"],
 meghalaya:["Meghalaya (NE-I)","Shillong, Tura & Jowai","Active 5G & MW Circle","Priority state in the 86-site 5G & UBR upgrade, with equipment packaging & transport.","Terrain-resilient Aviat microwave hops for Airtel hill-district connectivity.","Hill-terrain rigging & civil units"],
 arunachal:["Arunachal Pradesh (NE-II)","Itanagar, Tawang & Pasighat","High-Altitude MW Links","Long-span UBR and 5G microwave backhaul upgrades linking remote valley and border towns.","Aviat high-power ODU installations for Airtel network expansion.","High-altitude LOS alignment & logistics"],
 nagaland:["Nagaland (NE-II)","Kohima, Dimapur & Mokokchung","UBR & 5G Expansion","Active 5G site upgrades and UBR link commissioning toward the Dec 2026 target.","Aviat microwave hop integration supporting Airtel core transport.","Field engineering & rapid link restoration"],
@@ -285,8 +285,12 @@ function pick(k){var d=ST[k];document.querySelectorAll('.chip').forEach(function
 $('det').innerHTML='<span class="bd">'+d[2]+'</span><h3>'+d[0]+'</h3><div class="hub">📍 '+d[1]+'</div><div class="box jb"><b>Reliance Jio (1st Partner)</b>'+d[3]+'</div><div class="box ab"><b>Aviat Networks · Airtel (2nd Partner)</b>'+d[4]+'</div><div style="margin-top:14px;font-size:12px;font-weight:600;color:var(--muted)">⚙ '+d[5]+'</div>'}
 $('chips').innerHTML=Object.keys(ST).map(function(k){return '<button class="chip" data-k="'+k+'" onclick="pick(\''+k+'\')">'+ST[k][0].split(' (')[0]+'</button>'}).join('');
 function openM(){$('modal').classList.add('open')}function closeM(){$('modal').classList.remove('open')}
-$('form').onsubmit=function(e){e.preventDefault();var b=encodeURIComponent('Organization: '+$('f2').value+'\nEmail: '+$('f3').value+'\nScope: '+$('f1').value+'\n\n'+$('f4').value);
-location.href='mailto:support@avanttelecom.in?cc=support@avantgroups.in&subject='+encodeURIComponent('Inquiry: '+$('f1').value)+'&body='+b;closeM();this.reset()};
+/* Paste your Google Apps Script Web App URL here (same one used on avantgroups.in) */
+var SHEET_ENDPOINT='';
+$('form').onsubmit=function(e){e.preventDefault();var f=this,s=$('fs'),b=$('sendBtn'),p=new URLSearchParams({service:$('f1').value,name:$('f2').value,email:$('f3').value,message:$('f4').value,source:'avanttelecom.in'});
+if(!SHEET_ENDPOINT){location.href='mailto:support@avanttelecom.in?cc=support@avantgroups.in&subject='+encodeURIComponent('Inquiry: '+$('f1').value)+'&body='+encodeURIComponent('Name: '+$('f2').value+'\nEmail: '+$('f3').value+'\n\n'+$('f4').value);return}
+b.disabled=true;b.textContent='SENDING…';
+fetch(SHEET_ENDPOINT,{method:'POST',mode:'no-cors',body:p}).then(function(){s.style.color='var(--ok)';s.textContent='✓ Thank you! Your message has been sent.';f.reset();setTimeout(function(){closeM();s.textContent=''},2200)}).catch(function(){s.style.color='var(--red)';s.textContent='Could not send. Please email support@avanttelecom.in.'}).then(function(){b.disabled=false;b.textContent='SEND MESSAGE'})};
 $('pp').onclick=function(){var p=$('newsBox').classList.toggle('paused');this.textContent=p?'▶':'❚❚'};
 $('themeBtn').onclick=function(){var r=document.documentElement,dark=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;r.dataset.theme=dark?'light':'dark'};
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
@@ -299,14 +303,14 @@ d.setFont('helvetica','normal');d.setFontSize(8.5);d.setTextColor(87,83,85);d.te
 d.setDrawColor(249,56,34);d.setLineWidth(.6);d.line(15,35,195,35);
 function H(t,y){d.setFont('helvetica','bold');d.setFontSize(11.5);d.setTextColor(249,56,34);d.text(t,15,y)}
 function P(t,y,x){d.setFont('helvetica','normal');d.setFontSize(9.5);d.setTextColor(54,52,53);d.text(d.splitTextToSize(t,180),x||15,y)}
-H('Company Information',46);P('Company: M/S Avant Telecom\nRegistered Address: Baksha, Mushalpur - 781378\nOperations Hub: Nayanpur, Guwahati - 781005\nEmail: support@avanttelecom.in | support@avantgroups.in',52);
+H('Company Information',46);P('Company: M/S Avant Telecom\nOffice: Sukhdev Apartment, Nayanpur, Guwahati - 781005\nEmail: support@avanttelecom.in | support@avantgroups.in',52);
 H('Mission',80);P('To empower communities by delivering reliable, innovative, and cost-effective telecom solutions that connect people, businesses, and opportunities across every corner of Assam.',86);
 H('Vision',104);P('To become the most trusted telecom partner in Northeast India, driving digital transformation and bridging the digital divide in underserved regions.',110);
 H('Key Clients & Deployment Highlights',128);P('1st Primary Partner: Reliance Jio\n- 150+ UBR & MW deployments from Aug 2025\n- Ongoing 86-site Northeast 5G & UBR expansion (target Dec 2026)',134);
 P('2nd Primary Partner: Aviat Networks India\n- 70+ sites on Aviat Networks equipment for Airtel\n- Various local construction contracts',156);
 H('Core Services',182);P('- 5G & 4G Equipment Installation and Deinstallation\n- Microwave & UBR Installation & Deinstallation\n- Equipment Packaging & Transportation\n- Construction of Telecom Tower Bases\n- Small to Mid-Level Telecom Civil Projects',188);
 H('Work Region',222);P('We operate across all states in Northeast India, excluding Sikkim, with strong knowledge of local terrain, regulations and logistics.',228);
-d.setDrawColor(226,232,240);d.line(15,280,195,280);d.setFontSize(8.5);d.setTextColor(120,120,120);d.text('M/S Avant Telecom | Regd: Baksha, Mushalpur - 781378 | support@avanttelecom.in',105,286,{align:'center'});
+d.setDrawColor(226,232,240);d.line(15,280,195,280);d.setFontSize(8.5);d.setTextColor(120,120,120);d.text('M/S Avant Telecom | Sukhdev Apartment, Nayanpur, Guwahati - 781005 | support@avanttelecom.in',105,286,{align:'center'});
 d.save('Avant_Telecom_Company_Profile.pdf')}
 news();pick('assam');
 </script>
